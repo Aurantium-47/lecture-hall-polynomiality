@@ -1,0 +1,11 @@
+README.md
+main.tex
+main.pdf
+SUMMARY_ZH.md
+REFERENCES.md
+RIGHTS.md
+verify.py
+requirements.txt
+verification.json
+PUBLIC_FILES.txt
+SHA256SUMS.txt

@@ -1,0 +1,420 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Polynomiality of the Lecture Hall sequence via signed Dyck paths},pdfauthor={},pdfsubject={Lecture Hall polynomials and Stieltjes-Rogers moments},pdfcreator={}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\LH}{\ell}
+\newcommand{\transpose}{\mathsf T}
+\title{Polynomiality of the Lecture Hall sequence\\via signed Dyck paths}
+\author{}
+\date{October 13, 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Katth\"an defined a sequence of rational functions by prescribing certain
+Toeplitz minors and conjectured that every term is a polynomial. We identify
+this sequence with a specialization of the Stieltjes--Rogers moment
+polynomials: the down-step weight at height $h$ is $y_hy_{h+1}$, with a
+negative sign precisely when $h\ge4$ is even. Classical Hankel determinant
+identities, together with the signs arising from row reversal and the
+uniqueness of the defining recurrence, establish this identification for
+every index. Thus the polynomiality conjecture follows. We give a
+self-contained derivation of the required classical identities and an
+explicit coefficient formula indexed by compositions. The latter implies
+that the $i$th term has exactly $2^{i-2}$ nonzero monomials for $i\ge2$.
+We state the interpretation of two typographical inconsistencies in the
+source and explain its support within that paper.
+\end{abstract}
+
+\section{The sequence and its moment representation}
+
+Let $R=\Z[y_1,y_2,\ldots]$, where the variables are algebraically
+independent, and let $K$ be its fraction field. For a sequence
+$P=(P_1,P_2,\ldots)$ in $K$, define
+\[
+ M(P)_{r,c}=\begin{cases}-P_{c-r+1},&c\ge r,\\0,&c<r,\end{cases}
+ \qquad r,c\ge1.
+\]
+We use the following square minors:
+\begin{equation}\label{eq:E}
+ E_i(P)=-\det M(P)_{
+ \{1,\ldots,\lceil i/2\rceil\},
+ \{\lfloor i/2\rfloor+1,\ldots,i\}},\qquad i\ge1.
+\end{equation}
+Set
+\begin{equation}\label{eq:T}
+ T_i=\prod_{j=1}^{i}y_j^{i+1-j}.
+\end{equation}
+The Lecture Hall sequence is the unique sequence
+$\LH=(\LH_1,\LH_2,\ldots)$ in $K$ satisfying
+\begin{equation}\label{eq:definition}
+ E_i(\LH)=T_i\qquad(i\ge1).
+\end{equation}
+Existence and uniqueness are recalled in Lemma~\ref{lem:unique} below.
+Katth\"an \cite[Definition 3.1 and Proposition 3.3]{Katthan} established
+that these terms are integer Laurent polynomials and conjectured that
+they are polynomials \cite[Conjecture 3.4]{Katthan}.
+
+\subsection{Interpretation of the source definition}\label{sec:source}
+
+Equation~\eqref{eq:E} uses the definition determined by the square-matrix
+description and examples in \cite{Katthan}. On page 3 of the specified
+arXiv version, both the displayed column set and the following sentence
+start at $\lfloor i/2\rfloor$, without the $+1$. That set has one more
+column than the prescribed number of rows; for $i=1$ it also includes
+column 0. It therefore does not specify an ordinary determinant.
+
+The intended square minor is fixed by three pieces of internal evidence.
+First, the source describes the largest top-aligned square block, with
+top-right entry $-P_i$, that contains none of the structural zeros below
+the diagonal. If its size is $k$, its columns are $i-k+1,\ldots,i$, and
+the condition is $i-k+1\ge k$. Its largest possible size is
+$k=\lceil i/2\rceil$, giving exactly \eqref{eq:E}. Second, all four
+determinants in Example 3.2 agree with \eqref{eq:E}. Third, Definition 4.1
+defines $\LH_S$ using columns $S+1$ and identifies
+$\LH_{\{\lfloor i/2\rfloor,\ldots,i-1\}}$ with $E_i(\LH)$.
+This again gives the columns in \eqref{eq:E}.
+
+There is a second inconsistency in Example 3.2 on page 4: the printed last
+term of $\LH_4$ is $y_1y_2^2y_3^2y_4^2$. The fourth defining equation,
+$\LH_2\LH_4-\LH_3^2=T_4$, instead gives
+\begin{equation}\label{eq:ell4}
+ \LH_4=y_1^2y_2^3(y_1+y_3)^2+y_1^2y_2^2y_3^2y_4.
+\end{equation}
+This is also the expression listed in Section 6, page 8, of the source.
+We use the defining equations and this consistent expression. These are
+explicit interpretations supported by the source itself; they are not
+presented as a formally issued erratum.
+
+\subsection{Statement and relation to existing theory}
+
+A Dyck path of semilength $n$ starts at $(0,0)$, ends at $(2n,0)$, uses
+steps $(1,1)$ and $(1,-1)$, and never goes below height 0. Give each up
+step weight 1 and each down step from height $h$ weight $\alpha_h$. Write
+$\mu_n(\alpha)$ for the sum of the products of step weights over all
+such paths, with $\mu_0=1$. These are the Stieltjes--Rogers polynomials;
+see \cite[Theorem 9.1(b)]{Sokal} and the path interpretation of continued
+fractions in \cite{Flajolet}.
+
+Define the signs and specialized weights by
+\begin{equation}\label{eq:weights}
+ \varepsilon_h=\begin{cases}-1,&h\ge4\text{ and }h\text{ is even},\\
+ 1,&\text{otherwise},\end{cases}
+ \qquad \alpha_h=\varepsilon_h y_hy_{h+1}.
+\end{equation}
+
+\begin{theorem}\label{thm:main}
+For the Lecture Hall sequence defined by \eqref{eq:E}--\eqref{eq:definition},
+\begin{equation}\label{eq:main}
+ \LH_{n+1}=y_1\mu_n(\alpha)\qquad(n\ge0),
+\end{equation}
+with the specialization \eqref{eq:weights}. In particular,
+$\LH_i\in\Z[y_1,\ldots,y_i]$ for every $i\ge1$.
+\end{theorem}
+
+This proves Conjecture 3.4 of \cite{Katthan} under the source interpretation
+in Section~\ref{sec:source}. The contribution presented here is the explicit
+identification \eqref{eq:main} and its connection to the prescribed
+Toeplitz minors. The underlying Hankel identities are classical: they
+follow directly from \cite[Theorem 9.5(b,c)]{Sokal}. Section~\ref{sec:hankel}
+includes a derivation to keep the argument self-contained. We do not
+claim these general identities as new, nor assert priority for the
+specific identification. The initial-algebra and SAGBI statements in
+Conjecture 4.2 of \cite{Katthan} are outside the scope of this note.
+
+\section{Classical Hankel identities for Dyck moments}\label{sec:hankel}
+
+In this section the $\alpha_h$ are independent variables. All identities
+are polynomial identities over $\Z$, so they remain valid under signed
+specializations, including those with zero weights.
+
+\begin{lemma}[Hankel products]\label{lem:hankel}
+For every $m\ge1$, the Dyck moments satisfy
+\begin{align}
+ H_m^{(0)}&:=\det[\mu_{i+j}]_{0\le i,j<m}
+   =\prod_{h=1}^{m-1}(\alpha_{2h-1}\alpha_{2h})^{m-h},\label{eq:H0}\\
+ H_m^{(1)}&:=\det[\mu_{i+j+1}]_{0\le i,j<m}
+   =\alpha_1^m\prod_{h=1}^{m-1}
+       (\alpha_{2h}\alpha_{2h+1})^{m-h}.\label{eq:H1}
+\end{align}
+Empty products are 1.
+\end{lemma}
+
+\begin{proof}
+Group the steps of a Dyck path into consecutive pairs and divide its
+heights at even times by 2. The resulting Motzkin path has up-step weight
+1 and down-step weight
+\[
+ \lambda_h=\alpha_{2h-1}\alpha_{2h}\qquad(h\ge1).
+\]
+The two possible horizontal steps at height $h\ge1$ have weights
+$\alpha_{2h}$ and $\alpha_{2h+1}$; at height 0 only the latter is allowed.
+Their total weights are therefore
+\[
+ b_0=\alpha_1,\qquad b_h=\alpha_{2h}+\alpha_{2h+1}\quad(h\ge1).
+\]
+Let $J$ be the infinite matrix indexed by the nonnegative integers with
+$J_{h,h}=b_h$ and $J_{h,h+1}=1$ for $h\ge0$, and
+$J_{h,h-1}=\lambda_h$ for $h\ge1$; all other entries are zero.
+Matrix multiplication enumerates these paths,
+so $\mu_n=(J^n)_{0,0}$. Each relevant entry of a fixed power involves only
+finitely many indices.
+
+Set $d_0=1$, $d_h=\lambda_1\cdots\lambda_h$, and
+$D=\operatorname{diag}(d_0,d_1,\ldots)$. Directly,
+$JD=DJ^\transpose$, and hence
+\begin{equation}\label{eq:balance}
+ (J^j)_{h,0}=d_h(J^j)_{0,h}\qquad(h,j\ge0).
+\end{equation}
+No division by $d_h$ is used. Fix $m\ge1$ and put
+$L_{i,h}=(J^i)_{0,h}$ for $0\le i,h<m$. Since a path of length $i$
+cannot reach a height greater than $i$, and the unique path reaching
+height $i$ has weight 1, $L$ is unit lower triangular.
+
+Let $D_m$ and $J_m$ denote the leading $m\times m$ blocks of $D$ and $J$.
+Using \eqref{eq:balance} gives
+\begin{equation}\label{eq:factor0}
+ [\mu_{i+j}]_{0\le i,j<m}=LD_mL^\transpose.
+\end{equation}
+Indeed, the intermediate height in $J^iJ^j$ is at most $\min(i,j)$.
+For the shifted matrix, write
+\begin{align*}
+ \mu_{i+j+1}
+ &=\sum_{a,b\ge0}(J^i)_{0,a}J_{a,b}(J^j)_{b,0}\\
+ &=\sum_{a,b=0}^{m-1}L_{i,a}(J_m)_{a,b}d_bL_{j,b}.
+\end{align*}
+The truncation is exact: a nonzero summand requires $a\le i<m$ and
+$b\le j<m$. Consequently,
+\begin{equation}\label{eq:factor1}
+ [\mu_{i+j+1}]_{0\le i,j<m}=LJ_mD_mL^\transpose.
+\end{equation}
+Taking determinants in \eqref{eq:factor0} proves \eqref{eq:H0}.
+
+For \eqref{eq:H1}, let $\delta_m=\det J_m$ and $\delta_0=1$.
+Expansion of a tridiagonal determinant yields
+\[
+ \delta_1=\alpha_1,\qquad
+ \delta_m=b_{m-1}\delta_{m-1}
+             -\lambda_{m-1}\delta_{m-2}\quad(m\ge2).
+\]
+Induction gives $\delta_m=\prod_{h=1}^{m}\alpha_{2h-1}$: after using the
+induction hypothesis, the summand containing $\alpha_{2m-2}$ from
+$b_{m-1}$ cancels the second term of the recurrence. This is a polynomial
+cancellation and does not require any factor to be invertible.
+Taking determinants in \eqref{eq:factor1} now gives
+\[
+ H_m^{(1)}=\left(\prod_{h=1}^m\alpha_{2h-1}\right)
+              \prod_{h=1}^{m-1}(\alpha_{2h-1}\alpha_{2h})^{m-h},
+\]
+which rearranges to \eqref{eq:H1}. For $m=1$, the two formulas read
+$H_1^{(0)}=1$ and $H_1^{(1)}=\alpha_1$, as required.
+\end{proof}
+
+For comparison, the two Stieltjes--Rogers factorizations in
+\cite[Theorem 9.5(b,c)]{Sokal} have diagonal entries
+$\prod_{j=1}^{2h}\alpha_j$ and $\prod_{j=1}^{2h+1}\alpha_j$,
+respectively, for $h\ge0$. Their leading principal determinants give
+exactly \eqref{eq:H0} and \eqref{eq:H1}. Positivity assumptions from
+analytic moment problems are not needed here.
+
+\section{Identification with the Lecture Hall sequence}
+
+\begin{lemma}[Triangular recurrence]\label{lem:unique}
+There is exactly one sequence in $K$ satisfying \eqref{eq:definition}.
+\end{lemma}
+\begin{proof}
+The first two equations give $\LH_1=y_1$ and $\LH_2=y_1^2y_2$.
+For $i\ge3$, put $k=\lceil i/2\rceil$. The entry $-P_i$ occurs just
+once in the minor in \eqref{eq:E}, in its first row and last column.
+Its cofactor, after shifting both remaining index sets down by 1, is
+the minor defining $E_{i-2}$. Keeping track of the determinant signs
+gives
+\[
+ E_i(P)=(-1)^kE_{i-2}(P)P_i+Q_i(P_1,\ldots,P_{i-1})
+\]
+for a polynomial $Q_i$. After the previous equations have been solved,
+the coefficient of $P_i$ is the nonzero monomial $(-1)^kT_{i-2}$.
+It is invertible in $K$, so each equation has exactly one solution for
+its new term. Induction proves both existence and uniqueness.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Let $P_{n+1}=y_1\mu_n(\alpha)$ with \eqref{eq:weights}. Define
+\[
+ s_m=(-1)^{1+m(m+1)/2}.
+\]
+Reverse the row order in the square minor \eqref{eq:E} and factor a
+minus sign from each row. The row reversal has sign
+$(-1)^{m(m-1)/2}$, and the negative sign outside the determinant must
+also be included. Thus for every $m\ge1$,
+\begin{align}
+ E_{2m-1}(P)&=s_m\det[P_{r+s+1}]_{0\le r,s<m}
+             =s_my_1^m H_m^{(0)},\label{eq:odd}\\
+ E_{2m}(P)&=s_m\det[P_{r+s+2}]_{0\le r,s<m}
+             =s_my_1^m H_m^{(1)}.\label{eq:even}
+\end{align}
+
+Apply Lemma~\ref{lem:hankel}. In \eqref{eq:H0}, both
+$\alpha_{2h-1}$ and $\alpha_{2h}$ have exponent $m-h$. After the
+substitution \eqref{eq:weights} and multiplication by $y_1^m$, the
+exponent of $y_j$ is $2m-j$ for $1\le j\le2m-1$. In \eqref{eq:H1},
+$\alpha_1$ has exponent $m$, while $\alpha_{2h}$ and
+$\alpha_{2h+1}$ have exponent $m-h$. The resulting exponent of $y_j$
+is $2m+1-j$ for $1\le j\le2m$. These are precisely the exponents
+in $T_{2m-1}$ and $T_{2m}$.
+
+For $m\ge2$, the sign in each product is
+\[
+ (-1)^{\sum_{h=2}^{m-1}(m-h)}
+   =(-1)^{(m-2)(m-1)/2}=s_m,
+\]
+since the last exponent and $1+m(m+1)/2$ differ by $2m$.
+For $m=1$ the two products give $y_1$ and $y_1^2y_2$ directly, and
+$s_1=1$. Hence
+\[
+ y_1^mH_m^{(0)}=s_mT_{2m-1},\qquad
+ y_1^mH_m^{(1)}=s_mT_{2m}.
+\]
+Equations~\eqref{eq:odd}--\eqref{eq:even} therefore give
+$E_i(P)=T_i$ for every $i\ge1$. Lemma~\ref{lem:unique} implies
+$P_i=\LH_i$. Finally, a Dyck path of semilength $n$ has height at
+most $n$, so $y_1\mu_n(\alpha)$ is a finite sum in
+$\Z[y_1,\ldots,y_{n+1}]$.
+\end{proof}
+
+\begin{remark}
+The uniqueness argument takes place in the fraction field of independent
+variables. At a numerical specialization with some $y_j=0$, the
+specialized defining equations need not determine a unique sequence.
+This does not restrict the polynomial identity in Theorem~\ref{thm:main},
+which can itself be evaluated at arbitrary values.
+\end{remark}
+
+\section{Coefficients and generating function}
+
+\begin{proposition}\label{prop:coefficients}
+For every $n\ge1$,
+\begin{equation}\label{eq:composition}
+ \LH_{n+1}=y_1
+ \sum_{\substack{r\ge1,\ m_1+\cdots+m_r=n\\m_1,\ldots,m_r\ge1}}
+ \left(\prod_{j=1}^{r-1}
+       \binom{m_j+m_{j+1}-1}{m_{j+1}}\right)
+ (-1)^{m_4+m_6+\cdots}
+ \prod_{j=1}^{r}(y_jy_{j+1})^{m_j}.
+\end{equation}
+An absent $m_j$ is read as zero. Consequently $\LH_i$ has exactly
+$2^{i-2}$ nonzero monomials for every $i\ge2$.
+\end{proposition}
+\begin{proof}
+For a nonempty Dyck path, let $m_j$ be the number of down steps from
+height $j$, and let $r$ be its maximum height. Every $m_j$ with
+$1\le j\le r$ is positive and their sum is $n$.
+
+Use the usual contour correspondence between Dyck paths and plane
+rooted trees. Then $m_j$ is the number of vertices at depth $j$.
+Given the vertices at depth $j$ in their left-to-right order, specifying
+the number of children of each is a weak composition of $m_{j+1}$ into
+$m_j$ parts. There are
+$\binom{m_j+m_{j+1}-1}{m_{j+1}}$ choices. These choices can be made
+independently at each depth and determine the ordered tree uniquely.
+The root has $m_1$ children, contributing a factor of 1. Thus the product
+of binomial coefficients in \eqref{eq:composition} counts paths with
+the prescribed profile. Their common weight is
+$\prod_j\alpha_j^{m_j}$, which proves the formula by
+Theorem~\ref{thm:main}.
+
+Different compositions produce different monomials. If $e_j$ is the
+exponent of $y_j$, then $m_1=e_1-1$ and
+$m_j=e_j-m_{j-1}$ for $j\ge2$, with missing parts set to zero.
+Thus the profile can be recovered from the monomial. Each coefficient
+has strictly positive absolute value, so no profile disappears by
+cancellation. There are $2^{n-1}$ compositions of $n$, giving the claim
+with $i=n+1$.
+\end{proof}
+
+For example, the first terms are $\LH_1=y_1$, $\LH_2=y_1^2y_2$,
+$\LH_3=y_1^2y_2^2(y_1+y_3)$, the expression \eqref{eq:ell4}, and
+\begin{align*}
+ \LH_5={}&y_1^2y_2^4(y_1+y_3)^3
+       +2y_1^2y_2^3y_3^2y_4(y_1+y_3)\\
+       &+y_1^2y_2^2y_3^2y_4^2(y_3-y_5).
+\end{align*}
+In particular, polynomiality does not mean coefficientwise
+nonnegativity.
+
+The path interpretation also gives the formal Stieltjes continued
+fraction
+\begin{equation}\label{eq:fraction}
+ \sum_{n\ge0}\mu_n(\alpha)z^n
+ =\cfrac{1}{1-\cfrac{\alpha_1z}{1-\cfrac{\alpha_2z}{1-\cfrac{\alpha_3z}{\ddots}}}}.
+\end{equation}
+Indeed, if $F_h$ enumerates excursions above height $h$, the first-return
+decomposition gives $F_h=1+\alpha_{h+1}zF_{h+1}F_h$.
+The denominator in $F_h=(1-\alpha_{h+1}zF_{h+1})^{-1}$ has constant
+term 1. Moreover, $[z^n]F_0$ only uses heights up to $n$, so the infinite
+fraction is well-defined coefficient by coefficient. There is no
+analytic convergence or sign condition.
+
+\section{Exact finite checks and scope}
+
+The accompanying \texttt{verify.py} provides three exact checks. It
+generates the path polynomials by stepwise dynamic programming and
+substitutes them into the original negative Toeplitz minors
+\eqref{eq:E}, checking all symbolic identities for $1\le i\le10$.
+It also checks the defining equations through $i=40$ for each of the
+three integer assignments
+\[
+ y_j=1,\qquad y_j=j,\qquad
+ y_j=(-1)^j\bigl((j\bmod5)+1\bigr).
+\]
+Finally, it compares the path polynomials with the composition formula
+through $\mu_{12}$, equivalently $\LH_{13}$. The recorded output is
+\texttt{verification.json}; the calculation uses exact integer and
+polynomial arithmetic. The last comparison does not claim a symbolic
+Toeplitz determinant check through index 13.
+
+These finite checks aid reproducibility and detect indexing or sign
+errors. The all-index statement follows from the preceding proof, not
+from extrapolation of the checks. The argument establishes polynomiality
+and the displayed coefficient formula; it does not establish the SAGBI
+or initial-algebra conjectures of \cite{Katthan}.
+
+\paragraph{AI assistance.}
+This work was developed with AI assistance. The mathematical argument
+is given in full, and exact finite verification code is supplied for
+reproducibility.
+
+\begin{thebibliography}{9}
+
+\bibitem{Katthan}
+Lukas Katth\"an,
+\emph{The Lecture Hall Cone as a toric deformation},
+arXiv:1809.01377v1 (2018).
+\url{https://arxiv.org/abs/1809.01377v1}.
+
+\bibitem{Sokal}
+Alan D. Sokal,
+\emph{A simple algorithm for expanding a power series as a continued fraction},
+Expositiones Mathematicae \textbf{41} (2023), 245--287.
+\href{https://doi.org/10.1016/j.exmath.2022.12.001}{doi:10.1016/j.exmath.2022.12.001}.
+Also arXiv:2206.15434.
+
+\bibitem{Flajolet}
+Philippe Flajolet,
+\emph{Combinatorial aspects of continued fractions},
+Discrete Mathematics \textbf{32} (1980), 125--161.
+\url{https://algo.inria.fr/flajolet/Publications/Flajolet80b.pdf}.
+
+\end{thebibliography}
+\end{document}
