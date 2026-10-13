@@ -66,8 +66,8 @@ theorem negativeToeplitzMatrix_det_reverse {R : Type} [CommRing R]
     Equiv.Perm.sign (Fin.revPerm : Equiv.Perm (Fin ((i + 1) / 2))) *
         (negativeToeplitzMatrix P i).det =
       (-1 : R) ^ ((i + 1) / 2) *
-        (fun r c : Fin ((i + 1) / 2) => P (r.val + c.val + (1 - i % 2)) :
-          Matrix (Fin ((i + 1) / 2)) (Fin ((i + 1) / 2)) R).det := by
+        Matrix.det (fun r c : Fin ((i + 1) / 2) => P (r.val + c.val + (1 - i % 2)) :
+          Matrix (Fin ((i + 1) / 2)) (Fin ((i + 1) / 2)) R) := by
   have h := congrArg Matrix.det (negativeToeplitzMatrix_reverse (R := R) P i)
   rw [Matrix.det_permute] at h
   simpa only [Matrix.det_neg, Fintype.card_fin] using h
