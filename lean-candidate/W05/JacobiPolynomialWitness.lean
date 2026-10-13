@@ -11,7 +11,15 @@ theorem finiteJacobi_map {R S : Type} [Semiring R] [Semiring S]
     f.mapMatrix (finiteJacobi α N) = finiteJacobi (fun h => f (α h)) N := by
   ext i j
   change f (finiteJacobi α N i j) = finiteJacobi (fun h => f (α h)) N i j
-  simp only [finiteJacobi, apply_ite, map_add, map_mul, map_one, map_zero]
+  by_cases hdiag : j.val = i.val
+  · by_cases hi0 : i.val = 0
+    · simp only [finiteJacobi, if_pos hdiag, if_pos hi0]
+    · simp only [finiteJacobi, if_pos hdiag, if_neg hi0, map_add]
+  · by_cases hup : j.val = i.val + 1
+    · simp only [finiteJacobi, if_neg hdiag, if_pos hup, map_one]
+    · by_cases hdown : i.val = j.val + 1
+      · simp only [finiteJacobi, if_neg hdiag, if_neg hup, if_pos hdown, map_mul]
+      · simp only [finiteJacobi, if_neg hdiag, if_neg hup, if_neg hdown, map_zero]
 
 /-- The canonical moment is natural under a genuine coefficient ring homomorphism. -/
 theorem canonicalJacobiMoment_map {R S : Type} [Semiring R] [Semiring S]
