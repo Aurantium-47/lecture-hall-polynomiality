@@ -5,7 +5,8 @@ namespace W05
 /-- The unit lower bidiagonal factor of the actual finite Jacobi matrix. -/
 def jacobiLowerBidiagonal {R : Type} [Semiring R] (α : ℕ → R) (N : ℕ) :
     Matrix (Fin N) (Fin N) R :=
-  1 + fun i j => if i.val = j.val + 1 then α (2 * i.val) else 0
+  (1 : Matrix (Fin N) (Fin N) R) +
+    fun i j => if i.val = j.val + 1 then α (2 * i.val) else 0
 
 /-- The upper bidiagonal factor, with odd-indexed weights on its diagonal. -/
 def jacobiUpperBidiagonal {R : Type} [Semiring R] (α : ℕ → R) (N : ℕ) :
@@ -101,7 +102,7 @@ theorem jacobiUpperBidiagonal_det_product {R : Type} [CommRing R]
   rw [Matrix.det_of_upperTriangular htri]
   apply Finset.prod_congr rfl
   intro i hi
-  simp only [jacobiUpperBidiagonal, if_pos rfl]
+  simp [jacobiUpperBidiagonal]
 
 /-- Closed determinant formula for the actual finite Jacobi matrix, with zero weights allowed. -/
 theorem finiteJacobi_det_product {R : Type} [CommRing R]
