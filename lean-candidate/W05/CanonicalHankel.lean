@@ -68,8 +68,13 @@ theorem negativeToeplitzMatrix_det_reverse {R : Type} [CommRing R]
       (-1 : R) ^ ((i + 1) / 2) *
         Matrix.det (fun r c : Fin ((i + 1) / 2) => P (r.val + c.val + (1 - i % 2)) :
           Matrix (Fin ((i + 1) / 2)) (Fin ((i + 1) / 2)) R) := by
-  have h := congrArg Matrix.det (negativeToeplitzMatrix_reverse (R := R) P i)
-  rw [Matrix.det_permute] at h
-  simpa only [Matrix.det_neg, Fintype.card_fin] using h
+  let H : Matrix (Fin ((i + 1) / 2)) (Fin ((i + 1) / 2)) R :=
+    fun r c => P (r.val + c.val + (1 - i % 2))
+  have hr : (negativeToeplitzMatrix P i).submatrix Fin.revPerm id = -H :=
+    negativeToeplitzMatrix_reverse (R := R) P i
+  calc
+    _ = (-H).det := (Matrix.det_permute Fin.revPerm (negativeToeplitzMatrix P i)).symm.trans
+      (congrArg Matrix.det hr)
+    _ = _ := by simpa only [Fintype.card_fin] using Matrix.det_neg H
 
 end W05
