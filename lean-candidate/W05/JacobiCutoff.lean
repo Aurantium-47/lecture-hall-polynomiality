@@ -65,6 +65,7 @@ theorem finiteJacobi_pow_cutoff {R : Type} [Semiring R] (α : ℕ → R)
       · rw [finiteJacobi_lower_band α M (e k) (e j) (by exact hfar),
           finiteJacobi_lower_band α N k j hfar, mul_zero, mul_zero]
       · have hkcut : i.val + k.val + p < 2 * N := by omega
+        simp only [e, Fin.coe_castLEEmb]
         rw [ih i k hkcut, finiteJacobi_castLE α hNM k j]
 
 /-- Closed power moments stabilize through degree 2m-1 in a block of size m. -/
