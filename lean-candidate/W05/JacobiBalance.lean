@@ -79,6 +79,10 @@ theorem finiteJacobi_pow_balance_at_zero {R : Type} [CommSemiring R]
       jacobiDiagonalWeight α h.val * (finiteJacobi α (N + 1) ^ p) 0 h := by
   have heq := congrArg (fun M : Matrix (Fin (N + 1)) (Fin (N + 1)) R => M h 0)
     (finiteJacobi_pow_balance α (N + 1) p)
-  simpa [jacobiDiagonal, jacobiDiagonalWeight] using heq
+  simp only [jacobiDiagonal, Matrix.mul_diagonal, Matrix.diagonal_mul,
+    Matrix.transpose_apply] at heq
+  have hd0 : jacobiDiagonalWeight α (0 : Fin (N + 1)).val = 1 := by
+    simp [jacobiDiagonalWeight]
+  simpa only [hd0, mul_one] using heq
 
 end W05
