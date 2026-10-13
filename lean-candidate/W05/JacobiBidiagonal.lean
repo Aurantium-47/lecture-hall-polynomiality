@@ -5,8 +5,9 @@ namespace W05
 /-- The unit lower bidiagonal factor of the actual finite Jacobi matrix. -/
 def jacobiLowerBidiagonal {R : Type} [Semiring R] (α : ℕ → R) (N : ℕ) :
     Matrix (Fin N) (Fin N) R :=
-  (1 : Matrix (Fin N) (Fin N) R) +
+  let S : Matrix (Fin N) (Fin N) R :=
     fun i j => if i.val = j.val + 1 then α (2 * i.val) else 0
+  (1 : Matrix (Fin N) (Fin N) R) + S
 
 /-- The upper bidiagonal factor, with odd-indexed weights on its diagonal. -/
 def jacobiUpperBidiagonal {R : Type} [Semiring R] (α : ℕ → R) (N : ℕ) :
