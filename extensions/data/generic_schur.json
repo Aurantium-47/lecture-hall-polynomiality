@@ -1,0 +1,3142 @@
+{
+  "maximum_partition_size": 11,
+  "method": "Dyck dynamics + exact Bareiss JT determinant",
+  "records": [
+    {
+      "partition": [],
+      "profile": [],
+      "leading_coefficient": 1,
+      "term_count": 1,
+      "polynomial_sha256": "9c1af1bf6cf8be0bfa6ca7e1c72ce26ed7e5510b880bba9fe25a0327f640d63b"
+    },
+    {
+      "partition": [
+        1
+      ],
+      "profile": [
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 1,
+      "polynomial_sha256": "be6fd85ea6cd41ca6c1f72a82852e24c7bc275b347156fab21a12bcfc59fe837"
+    },
+    {
+      "partition": [
+        2
+      ],
+      "profile": [
+        2
+      ],
+      "leading_coefficient": 1,
+      "term_count": 2,
+      "polynomial_sha256": "bc7d5f4dc2c15f99a3490dd2af824d19ba780792d6201794d0bfe95796264e40"
+    },
+    {
+      "partition": [
+        1,
+        1
+      ],
+      "profile": [
+        1,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 1,
+      "polynomial_sha256": "5c5ea808f520e76bfb5b0e6e17c4f6bb7b1c0fc4468c3e16b5a89fc41d0b63f5"
+    },
+    {
+      "partition": [
+        3
+      ],
+      "profile": [
+        3
+      ],
+      "leading_coefficient": 1,
+      "term_count": 4,
+      "polynomial_sha256": "cb2943564d794db690b23d35885dabcfb06ada71b0c67a35b42b5c05992bbff4"
+    },
+    {
+      "partition": [
+        2,
+        1
+      ],
+      "profile": [
+        2,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 3,
+      "polynomial_sha256": "4cd1e946686ba41e8e1a4d0589e6317b5afe410fd90516511c75adf9bf24e477"
+    },
+    {
+      "partition": [
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        1,
+        2
+      ],
+      "leading_coefficient": 1,
+      "term_count": 2,
+      "polynomial_sha256": "e6c2e624dd30e286602e5bfe9510880708722fb515bcce2631a59f9e76b99b11"
+    },
+    {
+      "partition": [
+        4
+      ],
+      "profile": [
+        4
+      ],
+      "leading_coefficient": 1,
+      "term_count": 8,
+      "polynomial_sha256": "efaa9c42180be2dd68505c84658866cf2e47fd43b921c4f07e7f45223fde1d89"
+    },
+    {
+      "partition": [
+        3,
+        1
+      ],
+      "profile": [
+        3,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 7,
+      "polynomial_sha256": "9f09776a7a64d0ad151a750a18c358d0ebd3858f4ba6f0a231c5f770e79e95ce"
+    },
+    {
+      "partition": [
+        2,
+        2
+      ],
+      "profile": [
+        2,
+        1,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 1,
+      "polynomial_sha256": "ee1c66b66376636455346162a47058ca59dc31e81ce8df7aaf981b6b10713fd5"
+    },
+    {
+      "partition": [
+        2,
+        1,
+        1
+      ],
+      "profile": [
+        2,
+        2
+      ],
+      "leading_coefficient": 1,
+      "term_count": 6,
+      "polynomial_sha256": "9bf2b16b2b24e174f6aad5aa9946e4ecb1e257045210ccabbf9468b887ba2ef4"
+    },
+    {
+      "partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        1,
+        3
+      ],
+      "leading_coefficient": -1,
+      "term_count": 4,
+      "polynomial_sha256": "b37a9d96820d1298c2f5b450ae16937b425b70f19e47a1ef1c351f3e812bcbeb"
+    },
+    {
+      "partition": [
+        5
+      ],
+      "profile": [
+        5
+      ],
+      "leading_coefficient": 1,
+      "term_count": 16,
+      "polynomial_sha256": "fa1328e4544080fbc4735e6add91dea51f73841cd1bd1c4b7b9e6c8bd55fdeb9"
+    },
+    {
+      "partition": [
+        4,
+        1
+      ],
+      "profile": [
+        4,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 15,
+      "polynomial_sha256": "ca72c4c2d6c02e7f2df4b55e2ac6de2e00bb4905fa91f17f9c97d70656397593"
+    },
+    {
+      "partition": [
+        3,
+        2
+      ],
+      "profile": [
+        3,
+        1,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 4,
+      "polynomial_sha256": "1b8dc884abe76a6af88d9d6fa10f90d02f9931dcf6a27106045397e8403ec194"
+    },
+    {
+      "partition": [
+        3,
+        1,
+        1
+      ],
+      "profile": [
+        3,
+        2
+      ],
+      "leading_coefficient": 1,
+      "term_count": 14,
+      "polynomial_sha256": "38ae5455946d3c5db2d8c207995f482342fe01653f1df5ef980a97a4ae3d9a44"
+    },
+    {
+      "partition": [
+        2,
+        2,
+        1
+      ],
+      "profile": [
+        2,
+        2,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 3,
+      "polynomial_sha256": "f718e5486e4490be5a1747e02eca2fc3dc82e27aed34de83fe23286df77e0e02"
+    },
+    {
+      "partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        2,
+        3
+      ],
+      "leading_coefficient": -1,
+      "term_count": 12,
+      "polynomial_sha256": "47a7d23641990dd7d1d696fd2658faa38a145266b77a1d7081839fab9cb59650"
+    },
+    {
+      "partition": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        1,
+        4
+      ],
+      "leading_coefficient": 1,
+      "term_count": 8,
+      "polynomial_sha256": "72b1e981d26781b84764e95793c5d0cd00c546fd090da6524dc02f3f987b4856"
+    },
+    {
+      "partition": [
+        6
+      ],
+      "profile": [
+        6
+      ],
+      "leading_coefficient": 1,
+      "term_count": 32,
+      "polynomial_sha256": "4d3f929c94da41c9e5c57e4bd11226527428910b2daceb190e672c3f299b915d"
+    },
+    {
+      "partition": [
+        5,
+        1
+      ],
+      "profile": [
+        5,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 31,
+      "polynomial_sha256": "ee522c10da96f724cce3c19e426e11e1f49b4e2a334ca97d098e712393de88a2"
+    },
+    {
+      "partition": [
+        4,
+        2
+      ],
+      "profile": [
+        4,
+        1,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 11,
+      "polynomial_sha256": "5539629a1bd83cec3c17c2488e7910c22c7b9b3eb72ba77c09f16084420efec5"
+    },
+    {
+      "partition": [
+        4,
+        1,
+        1
+      ],
+      "profile": [
+        4,
+        2
+      ],
+      "leading_coefficient": 1,
+      "term_count": 30,
+      "polynomial_sha256": "8d12352e78ac80f90e50d9d887d74e04d1262c2fe147efa8a999db2508b64e12"
+    },
+    {
+      "partition": [
+        3,
+        3
+      ],
+      "profile": [
+        3,
+        1,
+        2
+      ],
+      "leading_coefficient": -1,
+      "term_count": 3,
+      "polynomial_sha256": "d7c53fc1805c360c71fc5e1a6865873b2436f6d0015a1c45f4e69dbdbc0436f7"
+    },
+    {
+      "partition": [
+        3,
+        2,
+        1
+      ],
+      "profile": [
+        3,
+        2,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 10,
+      "polynomial_sha256": "5135149b15d5ba93cb624ec2d647e9d7006300556d8d6b29e2817036b9937ca8"
+    },
+    {
+      "partition": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        3,
+        3
+      ],
+      "leading_coefficient": -1,
+      "term_count": 28,
+      "polynomial_sha256": "cab4ea0bd0868b7b33d561d4d715cb2b82733cb3eb80a8ea350263652b3117f5"
+    },
+    {
+      "partition": [
+        2,
+        2,
+        2
+      ],
+      "profile": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 1,
+      "polynomial_sha256": "776d8de3f12b6e0d9cb841d2c91c608c090b29f1dce4d51a0b87c2c700762cb0"
+    },
+    {
+      "partition": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "profile": [
+        2,
+        3,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 7,
+      "polynomial_sha256": "8bd18838b1edd0b2cd0e679ff8ed5a4ec23083f34cd147dc4043e721633c1c44"
+    },
+    {
+      "partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        2,
+        4
+      ],
+      "leading_coefficient": 1,
+      "term_count": 24,
+      "polynomial_sha256": "2b3396cfd30b9b84235e67503cdb7369c893ab82a52adb856cf46d09d78c8997"
+    },
+    {
+      "partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        1,
+        5
+      ],
+      "leading_coefficient": -1,
+      "term_count": 16,
+      "polynomial_sha256": "13b97da98a99b53c22425d80d50564127215da9e91bf4a2107948153d73c9fca"
+    },
+    {
+      "partition": [
+        7
+      ],
+      "profile": [
+        7
+      ],
+      "leading_coefficient": 1,
+      "term_count": 64,
+      "polynomial_sha256": "8c4ef3668f1e45a1ccc488df24f6c27da5e16adae58a3d6864acdd50825f608c"
+    },
+    {
+      "partition": [
+        6,
+        1
+      ],
+      "profile": [
+        6,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 63,
+      "polynomial_sha256": "cd7ddbc8ae8ed1e086a25c7616452471cb56317792d9d29fe0b4ae531298102e"
+    },
+    {
+      "partition": [
+        5,
+        2
+      ],
+      "profile": [
+        5,
+        1,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 26,
+      "polynomial_sha256": "75d75345d55a7a362b0a5ca879f1c05f7f19efebead649e47e38eb941961eb64"
+    },
+    {
+      "partition": [
+        5,
+        1,
+        1
+      ],
+      "profile": [
+        5,
+        2
+      ],
+      "leading_coefficient": 1,
+      "term_count": 62,
+      "polynomial_sha256": "09a887d9a57260b0f408f3fb02fe18bd05f6ccfe4d074a201157fcd12f5c91e4"
+    },
+    {
+      "partition": [
+        4,
+        3
+      ],
+      "profile": [
+        4,
+        1,
+        2
+      ],
+      "leading_coefficient": -1,
+      "term_count": 12,
+      "polynomial_sha256": "2142f6581dfcf858022e9303600be8f8dabf5485a018c82095dd4bb24e580e11"
+    },
+    {
+      "partition": [
+        4,
+        2,
+        1
+      ],
+      "profile": [
+        4,
+        2,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 25,
+      "polynomial_sha256": "3e5711df9caf7963866a934df8372e13ba063688efdb731a7eb161d8cc3fe1f4"
+    },
+    {
+      "partition": [
+        4,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        4,
+        3
+      ],
+      "leading_coefficient": -1,
+      "term_count": 60,
+      "polynomial_sha256": "0c1da10b5166d6fe0c5e6f084ca191bf22ac32a388ee98c8838b89f61f9565f4"
+    },
+    {
+      "partition": [
+        3,
+        3,
+        1
+      ],
+      "profile": [
+        3,
+        2,
+        2
+      ],
+      "leading_coefficient": 1,
+      "term_count": 10,
+      "polynomial_sha256": "e761cd4d4339a67296c0f7cf2f4a554a1cfb4776321e1f98191997518b8dba3c"
+    },
+    {
+      "partition": [
+        3,
+        2,
+        2
+      ],
+      "profile": [
+        3,
+        2,
+        1,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 5,
+      "polynomial_sha256": "0131d668002a7e107a824f893f0fc2e093f5003bdec27eb8e77950e416cbd3b1"
+    },
+    {
+      "partition": [
+        3,
+        2,
+        1,
+        1
+      ],
+      "profile": [
+        3,
+        3,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 22,
+      "polynomial_sha256": "652b5ce80ec26587045c1d819cf7cd5d9cbdea756c76a852cb223dae9259eca8"
+    },
+    {
+      "partition": [
+        3,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        3,
+        4
+      ],
+      "leading_coefficient": 1,
+      "term_count": 56,
+      "polynomial_sha256": "2a30cf3ee785b3b074bc65a0b5e4911d92e497834ca0a583c344ea2eb80e3bfb"
+    },
+    {
+      "partition": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "profile": [
+        2,
+        3,
+        1,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 4,
+      "polynomial_sha256": "97da68752bbcb3b9c39e51f0594cfedd2be10aaca330616454205fb16eca6a6c"
+    },
+    {
+      "partition": [
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        2,
+        4,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 15,
+      "polynomial_sha256": "c9d9073e0a7c2de410190a6a7b0a5bb1e79b6369ede608c423f39714409bcd82"
+    },
+    {
+      "partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        2,
+        5
+      ],
+      "leading_coefficient": -1,
+      "term_count": 48,
+      "polynomial_sha256": "5e30c546281b434e76c85af7900915a35b10f1fa6ee7f7371cbe56e4808d6014"
+    },
+    {
+      "partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        1,
+        6
+      ],
+      "leading_coefficient": 1,
+      "term_count": 32,
+      "polynomial_sha256": "19d1f8b1ea0f9a67e8b613df5c70e8a5d56bf99a6041e682d7d9bc4b525b677d"
+    },
+    {
+      "partition": [
+        8
+      ],
+      "profile": [
+        8
+      ],
+      "leading_coefficient": 1,
+      "term_count": 128,
+      "polynomial_sha256": "8ee466185432b8d1108fef24c76fb4a0c8fe2acf4a6330bbc0cccb1349744513"
+    },
+    {
+      "partition": [
+        7,
+        1
+      ],
+      "profile": [
+        7,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 127,
+      "polynomial_sha256": "4271ee72ac2ba8a1c0579580b0e1be1fa70198362681785f2811d59ab4963bf3"
+    },
+    {
+      "partition": [
+        6,
+        2
+      ],
+      "profile": [
+        6,
+        1,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 57,
+      "polynomial_sha256": "98d503d1f66e6030e2e5ae27cc25daef1bdb7898992e76ab2fa6274252742231"
+    },
+    {
+      "partition": [
+        6,
+        1,
+        1
+      ],
+      "profile": [
+        6,
+        2
+      ],
+      "leading_coefficient": 1,
+      "term_count": 126,
+      "polynomial_sha256": "a76fcdd7bf6028252d3475140c97958f69121793ea0d0c3e05cfbe52fca2ddb3"
+    },
+    {
+      "partition": [
+        5,
+        3
+      ],
+      "profile": [
+        5,
+        1,
+        2
+      ],
+      "leading_coefficient": -1,
+      "term_count": 33,
+      "polynomial_sha256": "518f5d09691d4a4cdc25279e503c4eb9de515f67cb14195438a9db83ca4b2002"
+    },
+    {
+      "partition": [
+        5,
+        2,
+        1
+      ],
+      "profile": [
+        5,
+        2,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 56,
+      "polynomial_sha256": "41f552931d2aa7357851f7bdfa70c70593307b481328e99a49507f3dcfa0b43e"
+    },
+    {
+      "partition": [
+        5,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        5,
+        3
+      ],
+      "leading_coefficient": -1,
+      "term_count": 124,
+      "polynomial_sha256": "75996a03933265849624b4919eab7e8fdf45169a54a24d7dbc011ea39c7e6bfd"
+    },
+    {
+      "partition": [
+        4,
+        4
+      ],
+      "profile": [
+        4,
+        1,
+        3
+      ],
+      "leading_coefficient": -1,
+      "term_count": 10,
+      "polynomial_sha256": "bd859f0eb9b565613cd68bbc7b78cbd6c2aa2b493b28a5b4ad818542cc049ac4"
+    },
+    {
+      "partition": [
+        4,
+        3,
+        1
+      ],
+      "profile": [
+        4,
+        2,
+        2
+      ],
+      "leading_coefficient": 1,
+      "term_count": 31,
+      "polynomial_sha256": "90629a46eda1857f5691d572ee503daf2cca66c86830d985ad70aac231a0d063"
+    },
+    {
+      "partition": [
+        4,
+        2,
+        2
+      ],
+      "profile": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 16,
+      "polynomial_sha256": "1261fafc66824641df35f5e1595271234045447c433c6f4bebce633b3662f542"
+    },
+    {
+      "partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "profile": [
+        4,
+        3,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 53,
+      "polynomial_sha256": "87ada129021a4a4a3b03fe29327ba2ea6bc7d0b0f091cefd19c37551f3aa8d9f"
+    },
+    {
+      "partition": [
+        4,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        4,
+        4
+      ],
+      "leading_coefficient": 1,
+      "term_count": 120,
+      "polynomial_sha256": "5e4c0548b4e8b788c7dfe373d804970df31c2890370c9616644ab4a8351cf40f"
+    },
+    {
+      "partition": [
+        3,
+        3,
+        2
+      ],
+      "profile": [
+        3,
+        2,
+        2,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 6,
+      "polynomial_sha256": "fd0ee5a6ec1a32405b3d737857c6a96c6aaa4638fe893ccbaf0ca9a6ff5eb02f"
+    },
+    {
+      "partition": [
+        3,
+        3,
+        1,
+        1
+      ],
+      "profile": [
+        3,
+        3,
+        2
+      ],
+      "leading_coefficient": -1,
+      "term_count": 25,
+      "polynomial_sha256": "e9fd85bf2a78f149e030753fd432821e9286ffa5b5abc6a0312854fc94a6c9a4"
+    },
+    {
+      "partition": [
+        3,
+        2,
+        2,
+        1
+      ],
+      "profile": [
+        3,
+        3,
+        1,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 15,
+      "polynomial_sha256": "993b8d2f2952e44325c5f8b6bc25fd30b88205870f2f379b010ff3c32f9bd0ca"
+    },
+    {
+      "partition": [
+        3,
+        2,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        3,
+        4,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 46,
+      "polynomial_sha256": "a104862a6f71f1b4b34f82cac39f299f398fe859d19dda1f3d95e16d29fe0361"
+    },
+    {
+      "partition": [
+        3,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        3,
+        5
+      ],
+      "leading_coefficient": -1,
+      "term_count": 112,
+      "polynomial_sha256": "e3747db88f5b8256a6ef33be4ba0f566b04c76689e15a946d32e4295ded73478"
+    },
+    {
+      "partition": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "profile": [
+        2,
+        3,
+        1,
+        2
+      ],
+      "leading_coefficient": -1,
+      "term_count": 3,
+      "polynomial_sha256": "6a6c538fda51a8aa00707615c9d6343aec4076ed7138b17296a64d0f0abaab6a"
+    },
+    {
+      "partition": [
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "profile": [
+        2,
+        4,
+        1,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 11,
+      "polynomial_sha256": "4b3273faf9a76bdd28696f9ef113144708a2ec909fd723b173a00c0772db10b8"
+    },
+    {
+      "partition": [
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        2,
+        5,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 31,
+      "polynomial_sha256": "f588853dbbf460b7e4189b7e24fa4e0a21ca92bd62f4ae5a0611049c8df1c5c3"
+    },
+    {
+      "partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        2,
+        6
+      ],
+      "leading_coefficient": 1,
+      "term_count": 96,
+      "polynomial_sha256": "2faa5af60317c0209c36176fb215c1235b99ffe39a96bf65e8dbae06515e778c"
+    },
+    {
+      "partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        1,
+        7
+      ],
+      "leading_coefficient": -1,
+      "term_count": 64,
+      "polynomial_sha256": "3294009cdc918c7a769105f5251a492b05e1849df8ca6d701fe9ba690ab813c4"
+    },
+    {
+      "partition": [
+        9
+      ],
+      "profile": [
+        9
+      ],
+      "leading_coefficient": 1,
+      "term_count": 256,
+      "polynomial_sha256": "ccdd0b6a13dadf68e5c85a3ae6ee9fdb96dbd6efa11d8471c4aa3cde9dfda6f3"
+    },
+    {
+      "partition": [
+        8,
+        1
+      ],
+      "profile": [
+        8,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 255,
+      "polynomial_sha256": "0a6c953da2efbdaed992d9e00055e8430617d1897450e961e6e9e97516fb7b12"
+    },
+    {
+      "partition": [
+        7,
+        2
+      ],
+      "profile": [
+        7,
+        1,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 120,
+      "polynomial_sha256": "e8a1fc812d6b5a368e0df4abe0c48023e9460d51200963d58e5531ec45c6c644"
+    },
+    {
+      "partition": [
+        7,
+        1,
+        1
+      ],
+      "profile": [
+        7,
+        2
+      ],
+      "leading_coefficient": 1,
+      "term_count": 254,
+      "polynomial_sha256": "5cb91fcc272c789cfc3daa9e08378e3bf932a2c2686d59615a6af12263e9983c"
+    },
+    {
+      "partition": [
+        6,
+        3
+      ],
+      "profile": [
+        6,
+        1,
+        2
+      ],
+      "leading_coefficient": -1,
+      "term_count": 78,
+      "polynomial_sha256": "70ae90d9babecb633d334237df1930cf0c323923550a72ad97e7f8ff52a41d54"
+    },
+    {
+      "partition": [
+        6,
+        2,
+        1
+      ],
+      "profile": [
+        6,
+        2,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 119,
+      "polynomial_sha256": "bc9a61d62ad7ef4656bd06659620a3a1fe0461075bd4dca5869401c93ba119be"
+    },
+    {
+      "partition": [
+        6,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        6,
+        3
+      ],
+      "leading_coefficient": -1,
+      "term_count": 252,
+      "polynomial_sha256": "56588b74f404acea7f2061604ca0dd84a4a0fa68a78725c2580254dbbaef9e59"
+    },
+    {
+      "partition": [
+        5,
+        4
+      ],
+      "profile": [
+        5,
+        1,
+        3
+      ],
+      "leading_coefficient": -1,
+      "term_count": 38,
+      "polynomial_sha256": "f54bb7958c06ae65b35ff9ed63f81f2acbd85aa3fceaefb2f4a46e39f102bef9"
+    },
+    {
+      "partition": [
+        5,
+        3,
+        1
+      ],
+      "profile": [
+        5,
+        2,
+        2
+      ],
+      "leading_coefficient": 1,
+      "term_count": 76,
+      "polynomial_sha256": "7cc5ed791c3efa16ded3396ba0752a295a04731b5a43d90ec5c557d8d548dcba"
+    },
+    {
+      "partition": [
+        5,
+        2,
+        2
+      ],
+      "profile": [
+        5,
+        2,
+        1,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 42,
+      "polynomial_sha256": "3bc64f8a156982b2c85ce7d18343168213984d550b5942b7e4eee45d09f54e3f"
+    },
+    {
+      "partition": [
+        5,
+        2,
+        1,
+        1
+      ],
+      "profile": [
+        5,
+        3,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 116,
+      "polynomial_sha256": "a1cb609e9991357831dc3de380863f7db9e417f9f47a514548d2cc03a2090d62"
+    },
+    {
+      "partition": [
+        5,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        5,
+        4
+      ],
+      "leading_coefficient": 1,
+      "term_count": 248,
+      "polynomial_sha256": "c00094e5449d4a890934923ed875ec19a4d3b9f23e89b091646145b04b8f8d68"
+    },
+    {
+      "partition": [
+        4,
+        4,
+        1
+      ],
+      "profile": [
+        4,
+        2,
+        3
+      ],
+      "leading_coefficient": 1,
+      "term_count": 34,
+      "polynomial_sha256": "520ca0f33e3ccd969ad96f81d9b4105748ab38e4a634d9f0997108b03c563665"
+    },
+    {
+      "partition": [
+        4,
+        3,
+        2
+      ],
+      "profile": [
+        4,
+        2,
+        2,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 25,
+      "polynomial_sha256": "e89b0c8f71709268966a91e3a4300020e624cad61e1cbb26d9b33ef0043e4e5b"
+    },
+    {
+      "partition": [
+        4,
+        3,
+        1,
+        1
+      ],
+      "profile": [
+        4,
+        3,
+        2
+      ],
+      "leading_coefficient": -1,
+      "term_count": 70,
+      "polynomial_sha256": "9ed5d70f2baffabf6e6b6115a23d96a246d82c04608859822f3c1b1b9b95422f"
+    },
+    {
+      "partition": [
+        4,
+        2,
+        2,
+        1
+      ],
+      "profile": [
+        4,
+        3,
+        1,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 41,
+      "polynomial_sha256": "1d3622550df1ce6b1f51677f628a24e0967a47f01c4c34222f22ce9f13899db2"
+    },
+    {
+      "partition": [
+        4,
+        2,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        4,
+        4,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 109,
+      "polynomial_sha256": "b8a650ba6f9407334ebdfe57550c68af75fe08dad4e0baf8ce57c4e58d2fc9a8"
+    },
+    {
+      "partition": [
+        4,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        4,
+        5
+      ],
+      "leading_coefficient": -1,
+      "term_count": 240,
+      "polynomial_sha256": "586f1265826532380255b4dc0825dc247b2aa826eeb5e1fa3f3b54d466633b27"
+    },
+    {
+      "partition": [
+        3,
+        3,
+        3
+      ],
+      "profile": [
+        3,
+        2,
+        2,
+        1,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 1,
+      "polynomial_sha256": "e619bdf76d12f7e966e97329496d53835cb0d2776e98a12db90caa271c27bc99"
+    },
+    {
+      "partition": [
+        3,
+        3,
+        2,
+        1
+      ],
+      "profile": [
+        3,
+        3,
+        2,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 22,
+      "polynomial_sha256": "3d268df100cf178b910fe692909aafd1be9c17c8a23dedaed2eb28452a7f605a"
+    },
+    {
+      "partition": [
+        3,
+        3,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        3,
+        4,
+        2
+      ],
+      "leading_coefficient": 1,
+      "term_count": 56,
+      "polynomial_sha256": "cafeab71210fb3ea4bd7aa785034258052ebd4d1eac9428bc5b61f57dc5fb3c3"
+    },
+    {
+      "partition": [
+        3,
+        2,
+        2,
+        2
+      ],
+      "profile": [
+        3,
+        3,
+        1,
+        2
+      ],
+      "leading_coefficient": -1,
+      "term_count": 15,
+      "polynomial_sha256": "0912416b4ae63779d56bb6b3684d3120e03d34ea8d6ff6cc7d0a40e0c0c18467"
+    },
+    {
+      "partition": [
+        3,
+        2,
+        2,
+        1,
+        1
+      ],
+      "profile": [
+        3,
+        4,
+        1,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 37,
+      "polynomial_sha256": "5946703d010b4dc49907e6b5e2263ad431b41f2e91737cdc552d0b7872e55b80"
+    },
+    {
+      "partition": [
+        3,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        3,
+        5,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 94,
+      "polynomial_sha256": "816d4ab68ab225a1b0aae5ad2333647157a3222931a54549480d62d1779dcd4d"
+    },
+    {
+      "partition": [
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        3,
+        6
+      ],
+      "leading_coefficient": 1,
+      "term_count": 224,
+      "polynomial_sha256": "0298095e8a69fea2419d8ae58e5e4ce5ac4d8423dd6ad7a2d6d7f462ce7b54a8"
+    },
+    {
+      "partition": [
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "profile": [
+        2,
+        4,
+        1,
+        2
+      ],
+      "leading_coefficient": 1,
+      "term_count": 12,
+      "polynomial_sha256": "b5c77d6e4a79e1cf30bf892fcbbbdbc7ba8d15e4243dfd6bb11f4b3a4b85d592"
+    },
+    {
+      "partition": [
+        2,
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        2,
+        5,
+        1,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 26,
+      "polynomial_sha256": "17eded461bf417ca20facfcb5c5458e7fba5459da025edd41c199b3287d47076"
+    },
+    {
+      "partition": [
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        2,
+        6,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 63,
+      "polynomial_sha256": "bf1dcf070f5ef6a91d33e7b40af5f91087433ea5e4d6fd7fb59b88dbf0e44bc7"
+    },
+    {
+      "partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        2,
+        7
+      ],
+      "leading_coefficient": -1,
+      "term_count": 192,
+      "polynomial_sha256": "68f84a70ca69c3bac07206c8306fbb24ae8bca99680c94a2cf5a28472c74c991"
+    },
+    {
+      "partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        1,
+        8
+      ],
+      "leading_coefficient": 1,
+      "term_count": 128,
+      "polynomial_sha256": "44d7b381c2a6500c548a6bc08310fe098092172f192e125b4dd0877ddcfa494f"
+    },
+    {
+      "partition": [
+        10
+      ],
+      "profile": [
+        10
+      ],
+      "leading_coefficient": 1,
+      "term_count": 512,
+      "polynomial_sha256": "d7e459393ca1a1be8ed88f929bcfbacd1137faeb253e7b53205039fa71717cb0"
+    },
+    {
+      "partition": [
+        9,
+        1
+      ],
+      "profile": [
+        9,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 511,
+      "polynomial_sha256": "07005d3154eed35469436341e5b7ccd7ddb7a4732fdc5ad9347748b1722261e4"
+    },
+    {
+      "partition": [
+        8,
+        2
+      ],
+      "profile": [
+        8,
+        1,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 247,
+      "polynomial_sha256": "534a0d1678549c0c9b0a99f58da3b40f9b75a1304a9564c56b0204010f5837ef"
+    },
+    {
+      "partition": [
+        8,
+        1,
+        1
+      ],
+      "profile": [
+        8,
+        2
+      ],
+      "leading_coefficient": 1,
+      "term_count": 510,
+      "polynomial_sha256": "6911242b1887bfc02210a7b566a688f70b09582366e6299b4af8e295868d50d9"
+    },
+    {
+      "partition": [
+        7,
+        3
+      ],
+      "profile": [
+        7,
+        1,
+        2
+      ],
+      "leading_coefficient": -1,
+      "term_count": 171,
+      "polynomial_sha256": "1e92630fa227c3e2127f7ae13bcde0d0b1885af30a7637c2ba924d7df6e49c7e"
+    },
+    {
+      "partition": [
+        7,
+        2,
+        1
+      ],
+      "profile": [
+        7,
+        2,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 246,
+      "polynomial_sha256": "7d38a5426bfa46333db26eb08eff9dd4066dd91bd4e719b11ee42b9d1ecb2886"
+    },
+    {
+      "partition": [
+        7,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        7,
+        3
+      ],
+      "leading_coefficient": -1,
+      "term_count": 508,
+      "polynomial_sha256": "92a80c224f6a730725b02f228a629f7bdea734fa08456b4acc3b3b9c9b8d5ccf"
+    },
+    {
+      "partition": [
+        6,
+        4
+      ],
+      "profile": [
+        6,
+        1,
+        3
+      ],
+      "leading_coefficient": -1,
+      "term_count": 102,
+      "polynomial_sha256": "a1f683ff2a8786bc939447ac38a25e324508ee6ffbc6f2c28e16b6fde9cbd259"
+    },
+    {
+      "partition": [
+        6,
+        3,
+        1
+      ],
+      "profile": [
+        6,
+        2,
+        2
+      ],
+      "leading_coefficient": 1,
+      "term_count": 169,
+      "polynomial_sha256": "a3588a59a7c27385fcb4679d26b40cb91ef041202fd43cba36124d59e64f263c"
+    },
+    {
+      "partition": [
+        6,
+        2,
+        2
+      ],
+      "profile": [
+        6,
+        2,
+        1,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 99,
+      "polynomial_sha256": "5f246de2ba29e4bfd598335c0375550c083edf99b5a77db7842a327690ce1136"
+    },
+    {
+      "partition": [
+        6,
+        2,
+        1,
+        1
+      ],
+      "profile": [
+        6,
+        3,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 243,
+      "polynomial_sha256": "0ed7024ce4e6e5728ddd17c156c9a44accacdbb5f3312cdd5bfa5357eeb14661"
+    },
+    {
+      "partition": [
+        6,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        6,
+        4
+      ],
+      "leading_coefficient": 1,
+      "term_count": 504,
+      "polynomial_sha256": "4c42da312086040e9919149481293a9d5ff6a06c8e717374db51fee51c56e428"
+    },
+    {
+      "partition": [
+        5,
+        5
+      ],
+      "profile": [
+        5,
+        1,
+        4
+      ],
+      "leading_coefficient": -1,
+      "term_count": 35,
+      "polynomial_sha256": "30cfa7f9b21d27f0ebc5802fa4102eedf7420da0d65fc930e1c60a93a5c33eb7"
+    },
+    {
+      "partition": [
+        5,
+        4,
+        1
+      ],
+      "profile": [
+        5,
+        2,
+        3
+      ],
+      "leading_coefficient": 1,
+      "term_count": 98,
+      "polynomial_sha256": "9fbc960fadff151bc7018e9c7d42468baa9b6824e884760bd76d9609b72826e9"
+    },
+    {
+      "partition": [
+        5,
+        3,
+        2
+      ],
+      "profile": [
+        5,
+        2,
+        2,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 71,
+      "polynomial_sha256": "7c31cb031a174897b072125cb9468b045bb9e246e3d7dd3451b99cc6057e1053"
+    },
+    {
+      "partition": [
+        5,
+        3,
+        1,
+        1
+      ],
+      "profile": [
+        5,
+        3,
+        2
+      ],
+      "leading_coefficient": -1,
+      "term_count": 163,
+      "polynomial_sha256": "c331f8b667f2e1c66cc4be1db15908e409c5049b3752d9b61a033ea27448a52f"
+    },
+    {
+      "partition": [
+        5,
+        2,
+        2,
+        1
+      ],
+      "profile": [
+        5,
+        3,
+        1,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 98,
+      "polynomial_sha256": "26b9cb07bf577588ab52d61001bc041e88447e05d4f1181f5850b578556e2e16"
+    },
+    {
+      "partition": [
+        5,
+        2,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        5,
+        4,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 236,
+      "polynomial_sha256": "85c787a5da58c83f287cbcb9239c53c36471d5205e7ba354896e2b143665acbb"
+    },
+    {
+      "partition": [
+        5,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        5,
+        5
+      ],
+      "leading_coefficient": -1,
+      "term_count": 496,
+      "polynomial_sha256": "8593bdc313ff639b7426f750099c712c651ca11a73622488ac5f6620638eca12"
+    },
+    {
+      "partition": [
+        4,
+        4,
+        2
+      ],
+      "profile": [
+        4,
+        2,
+        3,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 27,
+      "polynomial_sha256": "8d20e7d353352bcab2613dd9282480d37abc3bd05eabfd8881dc8d8f052f96c9"
+    },
+    {
+      "partition": [
+        4,
+        4,
+        1,
+        1
+      ],
+      "profile": [
+        4,
+        3,
+        3
+      ],
+      "leading_coefficient": -1,
+      "term_count": 86,
+      "polynomial_sha256": "0d9aac5341ac435d1ba056f4ebbc93eeb26f280b5ee4fd6a643825ae51adf8cc"
+    },
+    {
+      "partition": [
+        4,
+        3,
+        3
+      ],
+      "profile": [
+        4,
+        2,
+        2,
+        1,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 6,
+      "polynomial_sha256": "fadcd18b36c2ee454ffc6077b24ced733b679ee9b73655c0cc3100be8736cbb6"
+    },
+    {
+      "partition": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "profile": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 68,
+      "polynomial_sha256": "54bbb3c55b1eab129e04d386eea43340d598ee8a6afc9b7c590d842453e5323a"
+    },
+    {
+      "partition": [
+        4,
+        3,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        4,
+        4,
+        2
+      ],
+      "leading_coefficient": 1,
+      "term_count": 149,
+      "polynomial_sha256": "9215dbfe5a6bb5875ea1cd81d5a1ffdc2315e5b52cda853622b84ac1f0b7ef4e"
+    },
+    {
+      "partition": [
+        4,
+        2,
+        2,
+        2
+      ],
+      "profile": [
+        4,
+        3,
+        1,
+        2
+      ],
+      "leading_coefficient": -1,
+      "term_count": 48,
+      "polynomial_sha256": "929e5ddcf0a87fde412a05158ae0414ef534f3fcf98d113c2df11a3991eb3f29"
+    },
+    {
+      "partition": [
+        4,
+        2,
+        2,
+        1,
+        1
+      ],
+      "profile": [
+        4,
+        4,
+        1,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 94,
+      "polynomial_sha256": "31173b609250f9b57472a65f682289a24efb7f8d22e66277b10d39b889fc2417"
+    },
+    {
+      "partition": [
+        4,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        4,
+        5,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 221,
+      "polynomial_sha256": "b98216f982f65eaaf55eacdf075b02fd7005e40afed743c4f27b7d4022a0e7fa"
+    },
+    {
+      "partition": [
+        4,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        4,
+        6
+      ],
+      "leading_coefficient": 1,
+      "term_count": 480,
+      "polynomial_sha256": "1e1c11c8cf7074dc80d98befa46bc388fcb9b45c43012cc0fcd857e2777b576e"
+    },
+    {
+      "partition": [
+        3,
+        3,
+        3,
+        1
+      ],
+      "profile": [
+        3,
+        3,
+        2,
+        1,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 5,
+      "polynomial_sha256": "91cd947721f2e030eb4c3aab61f6e49a1925e2661e5a9ed58298a899d55140f5"
+    },
+    {
+      "partition": [
+        3,
+        3,
+        2,
+        2
+      ],
+      "profile": [
+        3,
+        3,
+        2,
+        2
+      ],
+      "leading_coefficient": -1,
+      "term_count": 20,
+      "polynomial_sha256": "99f9e8af5a77a83681751599d2d0ba2de404ca288ed292581a0c3ff604f7243c"
+    },
+    {
+      "partition": [
+        3,
+        3,
+        2,
+        1,
+        1
+      ],
+      "profile": [
+        3,
+        4,
+        2,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 58,
+      "polynomial_sha256": "e81c4b548c0305bd7ca7e681b3c5fe75b9e05e4b8e87b8e3c462f8abf54b6e25"
+    },
+    {
+      "partition": [
+        3,
+        3,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        3,
+        5,
+        2
+      ],
+      "leading_coefficient": -1,
+      "term_count": 119,
+      "polynomial_sha256": "a81eebf979e932820b5cfeb9dad10ebda8884e086bf0701353f154a3f0604084"
+    },
+    {
+      "partition": [
+        3,
+        2,
+        2,
+        2,
+        1
+      ],
+      "profile": [
+        3,
+        4,
+        1,
+        2
+      ],
+      "leading_coefficient": 1,
+      "term_count": 45,
+      "polynomial_sha256": "8e4117f933311ab2939ee8859c1c73621dbe409fd1d8617450bd5df1c6db8981"
+    },
+    {
+      "partition": [
+        3,
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        3,
+        5,
+        1,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 83,
+      "polynomial_sha256": "c3c61454acfe9163fbe81e6ca22acbe40e39eda1ac5cb0a95b04223fcad956ec"
+    },
+    {
+      "partition": [
+        3,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        3,
+        6,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 190,
+      "polynomial_sha256": "0811526e402fb2e7832ac6e214a1e8e0f7b518f964eb8c19e594639078c00249"
+    },
+    {
+      "partition": [
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        3,
+        7
+      ],
+      "leading_coefficient": -1,
+      "term_count": 448,
+      "polynomial_sha256": "c1ee59040e52e2c04b205905d509d940a334ddcbeacf883de8f3dc667f588b59"
+    },
+    {
+      "partition": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "profile": [
+        2,
+        4,
+        1,
+        3
+      ],
+      "leading_coefficient": -1,
+      "term_count": 10,
+      "polynomial_sha256": "5b78a3b17ae18d49cbdd8a52d05e70565261aef12ae304895fdae621f847fddb"
+    },
+    {
+      "partition": [
+        2,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "profile": [
+        2,
+        5,
+        1,
+        2
+      ],
+      "leading_coefficient": -1,
+      "term_count": 33,
+      "polynomial_sha256": "5d8a7505dd889f2e81da3678ebd2bb5ee9bcd3505b7de5bbbe8295a32896340f"
+    },
+    {
+      "partition": [
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        2,
+        6,
+        1,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 57,
+      "polynomial_sha256": "09a8ad70eafd286e3f0a143e3829e3433b3c4859b7bb6d28999556aac6a7038d"
+    },
+    {
+      "partition": [
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        2,
+        7,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 127,
+      "polynomial_sha256": "0a85ffc63686eb566dcc97964ea2ac059972441c7dfab88fbf9ba271e2f554c5"
+    },
+    {
+      "partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        2,
+        8
+      ],
+      "leading_coefficient": 1,
+      "term_count": 384,
+      "polynomial_sha256": "bf5eff2bf12f62c0cdcd7ae332e6c50eeb0b8de89a7d14a804c1567c1ee62f0d"
+    },
+    {
+      "partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        1,
+        9
+      ],
+      "leading_coefficient": -1,
+      "term_count": 256,
+      "polynomial_sha256": "e6510ac38cc237ab9a6c33b777724bb548e5e866a7c41b6dd95aee6e290d2350"
+    },
+    {
+      "partition": [
+        11
+      ],
+      "profile": [
+        11
+      ],
+      "leading_coefficient": 1,
+      "term_count": 1024,
+      "polynomial_sha256": "44e7d5601eaa26d87031a9c3303bbc1528bfbb5646a3bc915a8e5b44acb7f334"
+    },
+    {
+      "partition": [
+        10,
+        1
+      ],
+      "profile": [
+        10,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 1023,
+      "polynomial_sha256": "1c8ff40665d11249912f5f1a0da010daf70a71cb879ead8fe2edca945305e0ac"
+    },
+    {
+      "partition": [
+        9,
+        2
+      ],
+      "profile": [
+        9,
+        1,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 502,
+      "polynomial_sha256": "63db9ee926335b8ed213b0cb0d8c3294855c6ccc56cf37e6b1b12e71e9ee61e6"
+    },
+    {
+      "partition": [
+        9,
+        1,
+        1
+      ],
+      "profile": [
+        9,
+        2
+      ],
+      "leading_coefficient": 1,
+      "term_count": 1022,
+      "polynomial_sha256": "325069299c51266c30523463fd70af656e2ad64866fcbb81a5475cd748cb4770"
+    },
+    {
+      "partition": [
+        8,
+        3
+      ],
+      "profile": [
+        8,
+        1,
+        2
+      ],
+      "leading_coefficient": -1,
+      "term_count": 360,
+      "polynomial_sha256": "445e0d75b60e96e45fa9491f50154afa09c095b4e8e08183a1cd71fd895d4ff8"
+    },
+    {
+      "partition": [
+        8,
+        2,
+        1
+      ],
+      "profile": [
+        8,
+        2,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 501,
+      "polynomial_sha256": "006f4d3ba8e88ca1f35441d957e0fff6670236cec35673f481f15cb124e0736b"
+    },
+    {
+      "partition": [
+        8,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        8,
+        3
+      ],
+      "leading_coefficient": -1,
+      "term_count": 1020,
+      "polynomial_sha256": "ea73d085bff376b2fbcccc351b93ca4278d63dbc5b98f73c24cb122750dd3e7b"
+    },
+    {
+      "partition": [
+        7,
+        4
+      ],
+      "profile": [
+        7,
+        1,
+        3
+      ],
+      "leading_coefficient": -1,
+      "term_count": 238,
+      "polynomial_sha256": "1cea0c69b257c732858937bd170c99f29c07573103b5506eb51175b33f60ce92"
+    },
+    {
+      "partition": [
+        7,
+        3,
+        1
+      ],
+      "profile": [
+        7,
+        2,
+        2
+      ],
+      "leading_coefficient": 1,
+      "term_count": 358,
+      "polynomial_sha256": "f1c03cdbdb3d12099b7f25224865ce1b3025e2055c943cb620a343c12f45732b"
+    },
+    {
+      "partition": [
+        7,
+        2,
+        2
+      ],
+      "profile": [
+        7,
+        2,
+        1,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 219,
+      "polynomial_sha256": "ad8a4103137d88621a98531aed9bffed34a0be223fbefc1444f243c68705b4b0"
+    },
+    {
+      "partition": [
+        7,
+        2,
+        1,
+        1
+      ],
+      "profile": [
+        7,
+        3,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 498,
+      "polynomial_sha256": "ef494fc687c15084fda59d75319482301431c6fbe9fde0b5fd242d93be2bdd61"
+    },
+    {
+      "partition": [
+        7,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        7,
+        4
+      ],
+      "leading_coefficient": 1,
+      "term_count": 1016,
+      "polynomial_sha256": "67659d5816cdc8c630fe3f7611c3499ffbec9be74653043e7aba4b2a1f51f151"
+    },
+    {
+      "partition": [
+        6,
+        5
+      ],
+      "profile": [
+        6,
+        1,
+        4
+      ],
+      "leading_coefficient": -1,
+      "term_count": 123,
+      "polynomial_sha256": "915e119d75ea4efa97258063425f8822aca670f32f69fd6657c2db88b021fb18"
+    },
+    {
+      "partition": [
+        6,
+        4,
+        1
+      ],
+      "profile": [
+        6,
+        2,
+        3
+      ],
+      "leading_coefficient": 1,
+      "term_count": 234,
+      "polynomial_sha256": "c6647084733a5c9a52d7247cf3536569e5befbcf8e8adf51d65aecf1d8e3693a"
+    },
+    {
+      "partition": [
+        6,
+        3,
+        2
+      ],
+      "profile": [
+        6,
+        2,
+        2,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 172,
+      "polynomial_sha256": "f3bd31e2bff88d0e1c9dd95e6c439b0e9c835d2b60bce123ffb4687e81f47a61"
+    },
+    {
+      "partition": [
+        6,
+        3,
+        1,
+        1
+      ],
+      "profile": [
+        6,
+        3,
+        2
+      ],
+      "leading_coefficient": -1,
+      "term_count": 352,
+      "polynomial_sha256": "f7844bbf506377c7328c8bf1e8e674b1f28b76738233784d249b5625d03caf9c"
+    },
+    {
+      "partition": [
+        6,
+        2,
+        2,
+        1
+      ],
+      "profile": [
+        6,
+        3,
+        1,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 218,
+      "polynomial_sha256": "54126c86e5bfce15d364fc3149aa6aa98801b24141a817b4072dc07acb7f3de3"
+    },
+    {
+      "partition": [
+        6,
+        2,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        6,
+        4,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 491,
+      "polynomial_sha256": "f3213846bcf9a0287b7e155c80cdc6dea25d8b1037c798a8c036366be769b68b"
+    },
+    {
+      "partition": [
+        6,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        6,
+        5
+      ],
+      "leading_coefficient": -1,
+      "term_count": 1008,
+      "polynomial_sha256": "a48eabf53f7e2c13957ccb3f01b45c0de53ecbaefa621c1e003a44fd21d84714"
+    },
+    {
+      "partition": [
+        5,
+        5,
+        1
+      ],
+      "profile": [
+        5,
+        2,
+        4
+      ],
+      "leading_coefficient": 1,
+      "term_count": 115,
+      "polynomial_sha256": "58733e1d271cd7eb992857b90d1e524b3b14b1cbd1aff7e29a966b2a722b87a3"
+    },
+    {
+      "partition": [
+        5,
+        4,
+        2
+      ],
+      "profile": [
+        5,
+        2,
+        3,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 98,
+      "polynomial_sha256": "b97326664488f301bd631b898c40f8dd91424f832707db290efdaa3acebd506d"
+    },
+    {
+      "partition": [
+        5,
+        4,
+        1,
+        1
+      ],
+      "profile": [
+        5,
+        3,
+        3
+      ],
+      "leading_coefficient": -1,
+      "term_count": 222,
+      "polynomial_sha256": "8f1d15f01d3a2f2dc7d4896dc42234e6cc0381c87bcc7da41fb8c09a5aab0e78"
+    },
+    {
+      "partition": [
+        5,
+        3,
+        3
+      ],
+      "profile": [
+        5,
+        2,
+        2,
+        1,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 22,
+      "polynomial_sha256": "4a66dc324e6fba37633705de8d3400f280ea855563b50a336395d70f1c0428ae"
+    },
+    {
+      "partition": [
+        5,
+        3,
+        2,
+        1
+      ],
+      "profile": [
+        5,
+        3,
+        2,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 169,
+      "polynomial_sha256": "1a0bcc5318b63b21f5f498abd9fd86b45aa506ac9862ac0f16bf21c5cf5428b2"
+    },
+    {
+      "partition": [
+        5,
+        3,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        5,
+        4,
+        2
+      ],
+      "leading_coefficient": 1,
+      "term_count": 338,
+      "polynomial_sha256": "37e3e79ea3f7468bde14c4a2ff37101ceb2a08bd854f5cbc6c5c85aa9326b401"
+    },
+    {
+      "partition": [
+        5,
+        2,
+        2,
+        2
+      ],
+      "profile": [
+        5,
+        3,
+        1,
+        2
+      ],
+      "leading_coefficient": -1,
+      "term_count": 126,
+      "polynomial_sha256": "2e818c8882fc83b5783c816a6a19497d657596e852aeb7c8e62701aef393d771"
+    },
+    {
+      "partition": [
+        5,
+        2,
+        2,
+        1,
+        1
+      ],
+      "profile": [
+        5,
+        4,
+        1,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 214,
+      "polynomial_sha256": "1a7aef4a5c585de0c8dab76bbc336f42e5a8ca98ec7d1745878d4d542f9f9590"
+    },
+    {
+      "partition": [
+        5,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        5,
+        5,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 476,
+      "polynomial_sha256": "971482cbf1e318dd83e39b4fd6282bddfd8cb842a4a72b75f22fa778c3a9603a"
+    },
+    {
+      "partition": [
+        5,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        5,
+        6
+      ],
+      "leading_coefficient": 1,
+      "term_count": 992,
+      "polynomial_sha256": "194e3735caf7b3af1f6a8ee77f884d423c97bbfbb1f88eb954d7f736308cdefa"
+    },
+    {
+      "partition": [
+        4,
+        4,
+        3
+      ],
+      "profile": [
+        4,
+        2,
+        3,
+        1,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 10,
+      "polynomial_sha256": "895495da08a7682f0e282110df506bd518d032162621ab11ab99de9bf33a026d"
+    },
+    {
+      "partition": [
+        4,
+        4,
+        2,
+        1
+      ],
+      "profile": [
+        4,
+        3,
+        3,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 91,
+      "polynomial_sha256": "a20b25959063fbf0338a6ee682004166b5d8739e25fecf770d3ac434cbe87ea2"
+    },
+    {
+      "partition": [
+        4,
+        4,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        4,
+        4,
+        3
+      ],
+      "leading_coefficient": 1,
+      "term_count": 194,
+      "polynomial_sha256": "33277ed9e119077e13af29a6ad5252dbf6ee4798d1a3e13a4168402ab4f1e9b5"
+    },
+    {
+      "partition": [
+        4,
+        3,
+        3,
+        1
+      ],
+      "profile": [
+        4,
+        3,
+        2,
+        1,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 21,
+      "polynomial_sha256": "70bdf0d699fe6e92753735b1110daa9f686c0066cc371c5e982bc7936ce3dfe8"
+    },
+    {
+      "partition": [
+        4,
+        3,
+        2,
+        2
+      ],
+      "profile": [
+        4,
+        3,
+        2,
+        2
+      ],
+      "leading_coefficient": -1,
+      "term_count": 79,
+      "polynomial_sha256": "01d9dd7764ebbf3f905a5626c46eca4d2d3604818bd9f1b8d2293bb373773c4b"
+    },
+    {
+      "partition": [
+        4,
+        3,
+        2,
+        1,
+        1
+      ],
+      "profile": [
+        4,
+        4,
+        2,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 159,
+      "polynomial_sha256": "2b75083a7e0144528a151a80689ca81b9620d3a29dc30f43c20e4cfe66b5ab12"
+    },
+    {
+      "partition": [
+        4,
+        3,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        4,
+        5,
+        2
+      ],
+      "leading_coefficient": -1,
+      "term_count": 308,
+      "polynomial_sha256": "91d8dda952c9317d88afdb7a7e890e2ec94dcce2e75a8576479158603424f166"
+    },
+    {
+      "partition": [
+        4,
+        2,
+        2,
+        2,
+        1
+      ],
+      "profile": [
+        4,
+        4,
+        1,
+        2
+      ],
+      "leading_coefficient": 1,
+      "term_count": 123,
+      "polynomial_sha256": "8746e33d818f20c4d6307c44ea6c711dff78ef9c06529f0e7bb2a83a8c170b34"
+    },
+    {
+      "partition": [
+        4,
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        4,
+        5,
+        1,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 203,
+      "polynomial_sha256": "f8346bc07cca6592c1295258fe61f9b63fe3fe1b210acaee5d49f492adb361e8"
+    },
+    {
+      "partition": [
+        4,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        4,
+        6,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 445,
+      "polynomial_sha256": "9d0961a88dd0730ed6fe8e647e36192df5671e7e15955198d40c8613b1222bf8"
+    },
+    {
+      "partition": [
+        4,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        4,
+        7
+      ],
+      "leading_coefficient": -1,
+      "term_count": 960,
+      "polynomial_sha256": "bb0053769bc2a3b98840831a20b24d92cfaa8a560647f490f4879cb345bb5d47"
+    },
+    {
+      "partition": [
+        3,
+        3,
+        3,
+        2
+      ],
+      "profile": [
+        3,
+        3,
+        2,
+        2,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 6,
+      "polynomial_sha256": "c5c10931e142aea5eade20d2289a99d7d28a1fff73ccc29cacbea63b529947fe"
+    },
+    {
+      "partition": [
+        3,
+        3,
+        3,
+        1,
+        1
+      ],
+      "profile": [
+        3,
+        4,
+        2,
+        1,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 16,
+      "polynomial_sha256": "8209bac70811bfc88de5e0c3b480c272bbf9b3f2f7a1827ff3208bc9068a6904"
+    },
+    {
+      "partition": [
+        3,
+        3,
+        2,
+        2,
+        1
+      ],
+      "profile": [
+        3,
+        4,
+        2,
+        2
+      ],
+      "leading_coefficient": 1,
+      "term_count": 69,
+      "polynomial_sha256": "74e9f81a3a6260b20d16f11ee862b528d8fca578b486b451d77274f4d11250bf"
+    },
+    {
+      "partition": [
+        3,
+        3,
+        2,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        3,
+        5,
+        2,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 134,
+      "polynomial_sha256": "06e22716d644e7290f77ad24d34d2ac88eb9c44aa520b9b3e08e05766fbb48f8"
+    },
+    {
+      "partition": [
+        3,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        3,
+        6,
+        2
+      ],
+      "leading_coefficient": 1,
+      "term_count": 246,
+      "polynomial_sha256": "a304725af4c05acb23fe36a4904f765724f2fd6eaa585b23113cdc3351eb9e3b"
+    },
+    {
+      "partition": [
+        3,
+        2,
+        2,
+        2,
+        2
+      ],
+      "profile": [
+        3,
+        4,
+        1,
+        3
+      ],
+      "leading_coefficient": -1,
+      "term_count": 48,
+      "polynomial_sha256": "2b222ce44f1c7a8fd506580ad8fd2a062a40020c4232733ee3bf2b79364ba33d"
+    },
+    {
+      "partition": [
+        3,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "profile": [
+        3,
+        5,
+        1,
+        2
+      ],
+      "leading_coefficient": -1,
+      "term_count": 111,
+      "polynomial_sha256": "5e49fa1756d0c4383c05ff35e36bbdada74d1e7b0967a17442d2ff4663213f3f"
+    },
+    {
+      "partition": [
+        3,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        3,
+        6,
+        1,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 177,
+      "polynomial_sha256": "b8ef1449da711c386875d0f8199b4d786897d20e801cf600fc840df9c942ccee"
+    },
+    {
+      "partition": [
+        3,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        3,
+        7,
+        1
+      ],
+      "leading_coefficient": -1,
+      "term_count": 382,
+      "polynomial_sha256": "bc590d34a1ea71a997a0f92bed9dfe5a510cc9f0b7e66802cc75f5e73563251d"
+    },
+    {
+      "partition": [
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        3,
+        8
+      ],
+      "leading_coefficient": 1,
+      "term_count": 896,
+      "polynomial_sha256": "19817e511519b65a75311f8271e74ac13b610e81eeaa7028ea0c99f287832df2"
+    },
+    {
+      "partition": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "profile": [
+        2,
+        5,
+        1,
+        3
+      ],
+      "leading_coefficient": 1,
+      "term_count": 38,
+      "polynomial_sha256": "6abd0a571a51ef180fa8379c579606e251d86f1c6c6eb81c60fa24c196d4774b"
+    },
+    {
+      "partition": [
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        2,
+        6,
+        1,
+        2
+      ],
+      "leading_coefficient": 1,
+      "term_count": 78,
+      "polynomial_sha256": "accd3a44f5c75d89899619911bf0e51f8e87883a051ad6be4bf11d3d15b77bcd"
+    },
+    {
+      "partition": [
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        2,
+        7,
+        1,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 120,
+      "polynomial_sha256": "99616fd09fb84dbc55fe79974705acf59622d601a61d8bbe26179e131b79f59e"
+    },
+    {
+      "partition": [
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        2,
+        8,
+        1
+      ],
+      "leading_coefficient": 1,
+      "term_count": 255,
+      "polynomial_sha256": "47b1568e82ef9a7aa09d12ab4cd7617ede982030d9a0056c164d9cd8896f915c"
+    },
+    {
+      "partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        2,
+        9
+      ],
+      "leading_coefficient": -1,
+      "term_count": 768,
+      "polynomial_sha256": "b7dcada9613ea045d283ae61befd1b01a3e14cd9c475a50f18da289ed9ebb0c7"
+    },
+    {
+      "partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "profile": [
+        1,
+        10
+      ],
+      "leading_coefficient": 1,
+      "term_count": 512,
+      "polynomial_sha256": "a4eb6c3e96e884592e677de3b9d190c20fb1eee7fbfe21a34c8b37b67e605459"
+    }
+  ]
+}

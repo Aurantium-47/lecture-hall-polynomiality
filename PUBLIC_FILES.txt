@@ -9,3 +9,16 @@ requirements.txt
 verification.json
 PUBLIC_FILES.txt
 SHA256SUMS.txt
+extensions/LectureHall_extensions.tex
+extensions/LectureHall_extensions.pdf
+extensions/code/verify_extensions.py
+extensions/code/compare_data.py
+extensions/code/check_integrity.py
+extensions/requirements.txt
+extensions/data/symbolic_minors.json
+extensions/data/small_minors_full.json
+extensions/data/generic_schur.json
+extensions/data/bijections.json
+extensions/data/hilbert_checks.json
+extensions/data/summary.json
+extensions/MANIFEST.json

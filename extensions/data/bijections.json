@@ -1,0 +1,85 @@
+{
+  "note": "Tests only the closed combinatorial formulas, not the symbolic minors.",
+  "records": [
+    {
+      "n": 1,
+      "subsets": 1,
+      "distinct_hilbert_images": 1
+    },
+    {
+      "n": 2,
+      "subsets": 2,
+      "distinct_hilbert_images": 2
+    },
+    {
+      "n": 3,
+      "subsets": 4,
+      "distinct_hilbert_images": 4
+    },
+    {
+      "n": 4,
+      "subsets": 8,
+      "distinct_hilbert_images": 8
+    },
+    {
+      "n": 5,
+      "subsets": 16,
+      "distinct_hilbert_images": 16
+    },
+    {
+      "n": 6,
+      "subsets": 32,
+      "distinct_hilbert_images": 32
+    },
+    {
+      "n": 7,
+      "subsets": 64,
+      "distinct_hilbert_images": 64
+    },
+    {
+      "n": 8,
+      "subsets": 128,
+      "distinct_hilbert_images": 128
+    },
+    {
+      "n": 9,
+      "subsets": 256,
+      "distinct_hilbert_images": 256
+    },
+    {
+      "n": 10,
+      "subsets": 512,
+      "distinct_hilbert_images": 512
+    },
+    {
+      "n": 11,
+      "subsets": 1024,
+      "distinct_hilbert_images": 1024
+    },
+    {
+      "n": 12,
+      "subsets": 2048,
+      "distinct_hilbert_images": 2048
+    },
+    {
+      "n": 13,
+      "subsets": 4096,
+      "distinct_hilbert_images": 4096
+    },
+    {
+      "n": 14,
+      "subsets": 8192,
+      "distinct_hilbert_images": 8192
+    },
+    {
+      "n": 15,
+      "subsets": 16384,
+      "distinct_hilbert_images": 16384
+    },
+    {
+      "n": 16,
+      "subsets": 32768,
+      "distinct_hilbert_images": 32768
+    }
+  ]
+}

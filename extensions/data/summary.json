@@ -1,0 +1,19 @@
+{
+  "status": "all exact checks passed",
+  "environment": {
+    "python": "3.13.5",
+    "sympy": "1.14.0"
+  },
+  "symbolic_n": 11,
+  "symbolic_subsets": 1024,
+  "symbolic_total_terms": 884566,
+  "largest_symbolic_term_count": 5427,
+  "generic_partition_size": 11,
+  "generic_partitions": 195,
+  "bijection_n": 16,
+  "formula_bijection_tests": 65535,
+  "hilbert_n": 8,
+  "degree_bound": 40,
+  "lattice_points_enumerated": 24485,
+  "full_small_minor_count": 128
+}

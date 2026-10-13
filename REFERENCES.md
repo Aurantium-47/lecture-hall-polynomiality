@@ -1,5 +1,9 @@
 # References
 
+The root manuscript is the corrected polynomiality baseline, [v0.1.1](https://github.com/Aurantium-47/lecture-hall-polynomiality/releases/tag/v0.1.1), commit `f6e01a2697549781bf15facf86c6f17184facfaf`. The extension in `extensions/` retains that identification as prior work and reproduces its needed foundation in Appendix A. Its new statements concern the generic leading-term formula, the specified subset map, the initial algebra, and the integral family; the baseline composition formula remains in the root manuscript.
+
+For the extension's source problem, Katthän's Definition 4.1 fixes the minors; Conjecture 4.2(i)(ii) asks for the initial-algebra and Hilbert-basis assertions; Problem 5.1 asks for the specific leading-term subset map. The source's Theorem 4.6 already reports finite verification through `n=12`; the extension's recorded `n=11` symbolic checks are not a new finite range. The generic determinant and counting arguments in the extension are supplied in full. The classical Lecture Hall series, continued fractions, Hankel identities, and general idea of SAGBI degeneration are not presented as new concepts.
+
 ## Katthan2018
 
 Lukas Katthän. *The Lecture Hall Cone as a toric deformation*. arXiv:1809.01377v1, 2018.

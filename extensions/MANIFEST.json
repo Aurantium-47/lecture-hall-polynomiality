@@ -1,0 +1,68 @@
+{
+  "hash_algorithm": "SHA-256",
+  "excluded": [
+    "MANIFEST.json"
+  ],
+  "files": [
+    {
+      "path": "LectureHall_extensions.tex",
+      "bytes": 36931,
+      "sha256": "486da37686be9f0a84e87b447f05e14eb98a4116a59f9a4755d3cfa505bea8ec"
+    },
+    {
+      "path": "LectureHall_extensions.pdf",
+      "bytes": 404963,
+      "sha256": "c475cecc2b99cde98baa55b79d50986ca897f752bf1543ec902c3f033e198ad7"
+    },
+    {
+      "path": "code/verify_extensions.py",
+      "bytes": 14825,
+      "sha256": "14c2083fb8508d33ae37f25532303c1d79db597d69ef6f334839165ab4d00666"
+    },
+    {
+      "path": "code/compare_data.py",
+      "bytes": 878,
+      "sha256": "788e298f4cf5428c39bc73647fc9f9ac4e596d2e1a0f945a9e6834a409f2beba"
+    },
+    {
+      "path": "code/check_integrity.py",
+      "bytes": 1080,
+      "sha256": "95fed6ade07c3c92ac7804eb5ae3b1164c5bedb98597a0e78d06d489f5bd6db7"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 14,
+      "sha256": "25f9f1fb1988b230147a1d3092d34e09c069eb7a6c6d6df46b3973b9f2d36efc"
+    },
+    {
+      "path": "data/symbolic_minors.json",
+      "bytes": 596863,
+      "sha256": "6e49a6c4d0da3ecb565e30f1ad8843f0a903a151c15d84eb135a5f51ab0e0c12"
+    },
+    {
+      "path": "data/small_minors_full.json",
+      "bytes": 744702,
+      "sha256": "42d7aa81fb0e350f73dfc029f94f5623f4aab73103d6b90fae3905594ddf3427"
+    },
+    {
+      "path": "data/generic_schur.json",
+      "bytes": 58199,
+      "sha256": "d61a5854e09f03330a5c047872e2eb60602438bef35ea7bbe884e6451d37bb1c"
+    },
+    {
+      "path": "data/bijections.json",
+      "bytes": 1483,
+      "sha256": "ad4091490c2b3e17409c6841038062700867d8ea7de85eb0b7d71ec72d6167f6"
+    },
+    {
+      "path": "data/hilbert_checks.json",
+      "bytes": 161455,
+      "sha256": "d144ee9724ec0835b42ba47808b61a59b846bedb24541c81a03986b4dcc09fa3"
+    },
+    {
+      "path": "data/summary.json",
+      "bytes": 462,
+      "sha256": "644c4863265528de535bf2c6ca5609058eaf3f62dfb52c3f601ec3935cad7b5c"
+    }
+  ]
+}

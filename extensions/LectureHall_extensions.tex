@@ -1,0 +1,834 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,longtable}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\hypersetup{pdftitle={Schur leading terms and a toric degeneration of the Lecture Hall algebra},pdfauthor={Aurantium},pdfsubject={Lecture Hall initial algebra, explicit subset map, and integral flat family}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\N}{\mathbb Z_{\ge0}}
+\newcommand{\LT}{\operatorname{LT}}
+\newcommand{\inA}{\operatorname{in}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\vol}{\operatorname{vol}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\transpose}{\mathsf T}
+\title{Schur leading terms and a toric degeneration\\of the Lecture Hall algebra}
+\author{Aurantium}
+\date{October 13, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Starting from the signed-moment identification of the Lecture Hall polynomials
+with signed Stieltjes--Rogers moments, we determine the leading term of every
+proposed SAGBI generator. The key identity is a highest-degree recursion for
+Schur determinants of arbitrary Stieltjes--Rogers moments. Its iteration
+reads off the Frobenius coordinates of the indexing partition. After the
+Lecture Hall sign specialization, every leading coefficient is $1$, and the
+resulting exponents give an explicit bijection from subsets of $[n-1]$ to
+the Hilbert basis of the Lecture Hall cone.
+
+We then prove that the initial algebra is the entire Lecture Hall semigroup
+ring, for every $n$ and over every field. The last step uses equality of
+elementary lattice-point growth constants, not the Lecture Hall Theorem.
+Thus the argument proves Katth\"an's Conjecture 4.2 and answers Problem 5.1,
+with the explicitly stated square-minor interpretation. It also produces a
+monic integral SAGBI basis and an explicit free, hence flat, one-parameter
+degeneration. All needed determinant and counting arguments are included.
+Finite exact records and code accompany this note; they are not used as proofs.
+No claim of publication priority is made.
+\end{abstract}
+
+\section{Definitions and statements}
+All variables below are algebraically independent unless a specialization
+is explicitly stated. Let $\mu_j(\alpha_1,\alpha_2,\ldots)$ be the sum of
+weights of Dyck paths of semilength $j$: up steps have weight $1$ and a down
+step from height $h$ has weight $\alpha_h$. Set $\mu_0=1$ and $\mu_j=0$ for
+$j<0$. Define
+\begin{equation}\label{eq:weights}
+ \epsilon_h=\begin{cases}-1&h\ge4\text{ is even},\\1&\text{otherwise},\end{cases}
+ \qquad \alpha_h=\epsilon_h y_hy_{h+1},\qquad
+ \ell_{j+1}=y_1\mu_j(\alpha)\quad(j\ge0).
+\end{equation}
+Also set $\ell_j=0$ for $j\le0$.
+The polynomiality note \cite{Polynomiality} establishes that these are the Lecture Hall polynomials.
+Appendix~\ref{app:identification} reproves the needed identification so that
+the present argument is self-contained.
+
+For $S=\{s_1<\cdots<s_r\}\subseteq[n-1]$, $r>0$, put
+\begin{equation}\label{eq:minor}
+ \ell_S=(-1)^{r+1}\det[\ell_{s_j+2-i}]_{1\le i,j\le r},
+ \qquad \ell_\varnothing=\ell_1=y_1.
+\end{equation}
+This is the negative of the top-row minor of the negative upper-triangular
+Toeplitz matrix in Katth\"an's Definition 4.1 \cite{Katthan}.
+Let
+\[
+ A_n(k)=k[\ell_1,\ldots,\ell_n]\subseteq k[y_1,\ldots,y_n],\qquad
+ \mathcal B_n=\{\ell_S:S\subseteq[n-1]\}.
+\]
+The term order is degree-lexicographic, with $y_1>\cdots>y_n$.
+For a polynomial its leading term includes its coefficient.
+Write
+\begin{equation}\label{eq:cone}
+ C_n=\left\{x\in\mathbb R^n:
+ \frac{x_1}{n}\ge\frac{x_2}{n-1}\ge\cdots\ge x_n\ge0\right\},
+ \qquad L_n=C_n\cap\Z^n.
+\end{equation}
+The semigroup algebra $k[L_n]$ is the subalgebra spanned by the monomials
+$y^e$ with $e\in L_n$.
+
+\begin{theorem}[All dimensions; all characteristics]\label{thm:main}
+For every $n\ge1$ and every field $k$,
+\[
+ \inA_{\mathrm{deglex}}A_n(k)=k[L_n].
+\]
+The set $\mathcal B_n$ is a minimal SAGBI basis. Its leading coefficients
+are all $1$, and its leading exponents run bijectively through
+\begin{equation}\label{eq:hilbert}
+ \mathcal H_n=\{(1,0,\ldots,0)\}\ \cup\
+ \{(a+1,a,b_3,\ldots,b_t,0,\ldots,0):
+ 1\le a\le n-1,\quad a>b_3>\cdots>b_t>0\},
+\end{equation}
+where the tail after $a$ may be empty. This set is the Hilbert basis of $L_n$.
+\end{theorem}
+
+Here is the promised explicit formula. For nonempty $S$ define a partition
+of length $r$ by
+\begin{equation}\label{eq:lambda}
+ \lambda_i=s_{r+1-i}-r+i\qquad(1\le i\le r).
+\end{equation}
+Let $D$ be its Durfee size, and let
+\[
+ A_i=\lambda_i-i,\qquad B_i=\lambda'_i-i\quad(1\le i\le D)
+\]
+be its Frobenius arm and leg lengths. Form the sequence
+\begin{equation}\label{eq:profile}
+ (d_1,d_2,d_3,d_4,\ldots)=(A_1+1,B_1,A_2+1,B_2,\ldots,A_D+1,B_D),
+\end{equation}
+remove a final zero if present, and pad with zeros thereafter.
+
+\begin{theorem}[Leading-term formula and the subset map]\label{thm:formula}
+For every nonempty $S\subseteq[n-1]$,
+\begin{equation}\label{eq:leading}
+ \LT(\ell_S)=y_1^{r+d_1}\prod_{j=2}^n y_j^{d_{j-1}+d_j}.
+\end{equation}
+In particular the first two exponents are $\max(S)+1$ and $\max(S)$.
+Together with $\LT(\ell_\varnothing)=y_1$, formula~\eqref{eq:leading}
+is an explicit, invertible description of the map in Katth\"an's
+Problem 5.1.
+\end{theorem}
+
+The source conventions matter. The square minor defining $E_i$ uses rows
+$1,\ldots,\lceil i/2\rceil$ and columns $\lfloor i/2\rfloor+1,\ldots,i$.
+This is the interpretation in \cite{Polynomiality}, supported by
+the source's examples and Definition 4.1. We likewise retain the corrected
+fourth polynomial consistent with the defining equations and the source's
+Section 6. These are not represented as author-issued errata.
+
+\section{A determinant identity from reciprocal series}
+We first work with an arbitrary sequence $h_0=1,h_1,h_2,\ldots$ over a
+commutative ring, with $h_j=0$ for $j<0$. Define $e_j$ by
+\[
+ \left(\sum_{j\ge0}h_jz^j\right)
+ \left(\sum_{j\ge0}(-1)^je_jz^j\right)=1,
+ \qquad e_0=1,
+\]
+and set $e_j=0$ for $j<0$.
+For a partition $\lambda$ of length $r$, write
+\[
+ s_\lambda(h)=\det[h_{\lambda_i-i+j}]_{1\le i,j\le r},
+ \qquad s_\varnothing(h)=1.
+\]
+Trailing zero parts do not change this determinant: the bottom row then
+has a $1$ in its last position and zeros before it, and expansion removes
+that row and column.
+
+\begin{lemma}[Dual Jacobi--Trudi identity]\label{lem:dual}
+For every partition $\lambda$,
+\[
+ s_\lambda(h)=s_{\lambda'}(e).
+\]
+\end{lemma}
+\begin{proof}
+The empty case is immediate. Set $L=\lambda_1$, $N=r+L$, and index the
+$N\times N$ matrix $U$ by $0,\ldots,N-1$, with $U_{ab}=h_{a-b}$.
+It is lower triangular with determinant $1$, and its inverse has entries
+$(U^{-1})_{ab}=(-1)^{a-b}e_{a-b}$, by the reciprocal-series identity.
+
+Use the row set $I=\{\lambda_i+r-i:1\le i\le r\}$ and column set
+$J=\{0,\ldots,r-1\}$. Reversing both ordered index sets identifies the
+minor $U_{I,J}$ with $s_\lambda(h)$. The complement of $I$ is, in increasing
+order,
+\[
+ I^c=\{r+j-1-\lambda'_j:1\le j\le L\},\qquad
+ J^c=\{r,\ldots,r+L-1\}.
+\]
+To check the first formula, its entries are strictly increasing, lie in
+$[0,N-1]$, and cannot equal $\lambda_i+r-i$: equality would say
+$\lambda_i+\lambda'_j=i+j-1$, whereas if $\lambda_i\ge j$ the left side
+is at least $i+j$, and otherwise it is at most $i+j-2$.
+The two sets therefore are complementary by cardinality.
+
+The complementary-minor identity gives
+\[
+ \det U_{I,J}=(-1)^{\sum I+\sum J}\det(U^{-1})_{J^c,I^c}.
+\]
+Here $\sum I+\sum J\equiv |\lambda|\pmod2$.
+The transposed complementary minor has entries
+\[
+ (-1)^{\lambda'_j-j+i}e_{\lambda'_j-j+i}.
+\]
+Their determinant has the overall sign $(-1)^{|\lambda|}$, so the two
+signs cancel.
+
+For completeness, the complementary-minor identity follows by permuting
+selected rows and columns to the front and writing the resulting matrix
+in four blocks $A,B,C,D$, in row order.
+When $A$ is invertible, the determinant of the whole matrix is
+$\det A\det(D-CA^{-1}B)$, while the corresponding bottom-right block of
+the inverse is $(D-CA^{-1}B)^{-1}$. The permutation signs give the displayed
+formula. Proving this first for a generic matrix and clearing denominators
+makes it a polynomial identity, hence valid for the present matrix as well.
+\end{proof}
+
+Return now to the Dyck moments with independent weights $\alpha_h$.
+Write $h_j=\mu_j(\alpha_1,\alpha_2,\ldots)$ and
+$\widehat h_j=\mu_j(\alpha_2,\alpha_3,\ldots)$.
+First-return decomposition of a Dyck path gives the formal identity
+\begin{equation}\label{eq:reciprocal}
+ H(z):=\sum_{j\ge0}h_jz^j
+ =\frac{1}{1-\alpha_1z\widehat H(z)},\qquad
+ \widehat H(z)=\sum_{j\ge0}\widehat h_jz^j.
+\end{equation}
+Consequently
+\begin{equation}\label{eq:e}
+ e_j=(-1)^{j-1}\alpha_1\widehat h_{j-1}\qquad(j\ge1).
+\end{equation}
+All these are identities of formal power series; a coefficient of order
+$j$ uses only finitely many heights.
+
+\begin{lemma}[Highest-degree recursion]\label{lem:peel}
+For nonempty $\lambda$, set $L=\lambda_1$ and
+$\nu=(\lambda_2,\lambda_3,\ldots)'$. Then
+\begin{align}
+ \deg_{\alpha_1}s_\lambda(\mu)&=L,\label{eq:degreealpha}\\
+ [\alpha_1^L]s_\lambda(\mu)
+ &=(-1)^{|\lambda|-L}s_\nu(\widehat\mu).\label{eq:peel}
+\end{align}
+\end{lemma}
+\begin{proof}
+By Lemma~\ref{lem:dual}, $s_\lambda(h)$ is the size-$L$ determinant
+$\det[e_{\lambda'_i-i+j}]$. Every entry has degree at most $1$ in
+$\alpha_1$, by~\eqref{eq:e}. To extract the coefficient of $\alpha_1^L$,
+replace an entry of index $q\ge1$ by $(-1)^{q-1}\widehat h_{q-1}$,
+and an entry of index $q\le0$ by zero. Every determinant term has the
+same sign $(-1)^{|\lambda|-L}$.
+After removing this sign the determinant is
+\[
+ \det[\widehat h_{\lambda'_i-1-i+j}]_{1\le i,j\le L}
+ =s_{(\lambda'_1-1,\ldots,\lambda'_L-1)}(\widehat h)
+ =s_\nu(\widehat h).
+\]
+An entry of index $q\le0$ is correctly zero because its new moment index
+$q-1$ is negative. Trailing zero parts can be removed as noted above.
+Finally $|\nu|=|\lambda|-L<|\lambda|$. Induction on partition size,
+starting with $s_\varnothing=1$, proves that the extracted coefficient is
+nonzero, and therefore the degree bound is exact.
+\end{proof}
+
+\section{Frobenius coordinates give the generic leading term}
+Apply repeatedly the operation
+\[
+ \lambda\longmapsto(\lambda_2,\lambda_3,\ldots)'.
+\]
+At each stage record the first row length. Denote the resulting positive
+sequence by $(d_1,\ldots,d_t)$.
+
+\begin{proposition}[Generic Schur--moment leading term]\label{prop:generic}
+In lexicographic order $\alpha_1>\alpha_2>\cdots$,
+\begin{equation}\label{eq:generic}
+ \LT s_\lambda(\mu(\alpha))
+ =(-1)^{\sum_{j\ge1}d_{2j}}
+   \prod_{h\ge1}\alpha_h^{d_h}.
+\end{equation}
+The $d_h$ are exactly the sequence in~\eqref{eq:profile}, with a final zero
+omitted. In particular, every such generic Schur determinant is nonzero
+and has leading coefficient $1$ or $-1$.
+\end{proposition}
+\begin{proof}
+Lemma~\ref{lem:peel} successively determines the greatest possible exponent
+of $\alpha_1$, then of $\alpha_2$ among those terms, and so on. It removes
+$d_h$ cells at stage $h$, so the total sign exponent is
+\[
+ \sum_{h\ge1}\sum_{j>h}d_j
+ =\sum_{j\ge1}(j-1)d_j
+ \equiv\sum_{j\ge1}d_{2j}\pmod2.
+\]
+For the coordinate formula, after two operations the remaining shape is
+$(\lambda_2-1,\lambda_3-1,\ldots)$, with zero parts removed. Thus after
+$2i-2$ operations, for $i\le D$, its row lengths are the positive entries of
+$(\lambda_i-i+1,\lambda_{i+1}-i+1,\ldots)$; nonpositive entries are omitted.
+The next row length is $\lambda_i-i+1=A_i+1$, and the row length after
+transposition and removal is $\lambda'_i-i=B_i$. The operations stop
+exactly when the shape is empty. This proves both claims.
+\end{proof}
+
+\begin{remark}
+The proof uses only reciprocal-series algebra and determinant identities.
+It does not use positivity or analytic moment theory. The continued
+fraction/path framework is classical \cite{Flajolet,Sokal}; the precise
+leading-term statement above is proved here, without a priority claim.
+\end{remark}
+
+\section{Specialization, signs, and the explicit bijection}
+\begin{proof}[Proof of Theorem~\ref{thm:formula}]
+Substitute $\ell_{j+1}=y_1\mu_j$ in~\eqref{eq:minor}, transpose the moment
+matrix, and reverse both its rows and columns. The two reversal signs
+cancel, and~\eqref{eq:lambda} gives
+\begin{equation}\label{eq:schurminor}
+ \ell_S=(-1)^{r+1}y_1^r s_\lambda(\mu(\alpha)).
+\end{equation}
+This is valid also when the original Toeplitz minor has structural zeros,
+because negative moment indices are defined to be zero.
+
+Under $\alpha_h=\epsilon_h y_hy_{h+1}$ a profile $d$ becomes the exponent
+vector
+\[
+ (r+d_1,d_1+d_2,d_2+d_3,\ldots).
+\]
+This map on profiles is injective and preserves lexicographic comparisons:
+at the first differing profile coordinate the corresponding $y$-exponents
+differ in the same direction. Thus distinct monomials do not merge.
+Moreover the Schur determinant is homogeneous of degree $|\lambda|$ in
+$\alpha$, so all its specialized terms have total degree
+$r+2|\lambda|$. Lexicographic and degree-lexicographic leading terms
+therefore coincide for this polynomial.
+
+The generic sign from~\eqref{eq:generic} is $(-1)^{\sum_i B_i}$.
+The specialized negative weights contribute $(-1)^{\sum_{i\ge2}B_i}$.
+Combining these with the prefactor in~\eqref{eq:schurminor}, the final sign
+is $(-1)^{r+1+B_1}=1$, because $B_1=r-1$.
+This proves~\eqref{eq:leading}. Since $d_1=\lambda_1=\max(S)-r+1$ and
+$d_2=r-1$, the first two exponents have the asserted values.
+\end{proof}
+
+\begin{proposition}[Image and inverse]\label{prop:bijection}
+Formula~\eqref{eq:leading}, together with the empty subset, gives a bijection
+onto the set $\mathcal H_n$ in~\eqref{eq:hilbert}.
+\end{proposition}
+\begin{proof}
+For a nonempty partition its positive profile is consecutive, and
+\[
+ d_i>d_{i+2}\quad\text{whenever }d_i>0,
+\]
+where missing terms are zero. This follows from the strict decrease of the
+Frobenius arm lengths and of the leg lengths. If the leading exponent is
+$e=(r+d_1,d_1+d_2,\ldots)$, then $e_1=e_2+1$, and
+\[
+ e_j-e_{j+1}=d_{j-1}-d_{j+1}>0
+\]
+through its positive tail, for $j\ge2$. Also $e_2=\max(S)\le n-1$.
+Since $e_2\le n-1$, its strictly decreasing positive tail has at most
+$n-1$ entries, so the vector has at most $n$ nonzero coordinates.
+Thus $e\in\mathcal H_n$.
+
+Here is a constructive inverse. Omit trailing zeros from $e\in\mathcal H_n$.
+For $e=(1)$ use $S=\varnothing$. Otherwise put
+\begin{equation}\label{eq:inverseprofile}
+ d_i=e_{i+1}-e_{i+2}+e_{i+3}-\cdots\quad(1\le i<\text{length}(e)).
+\end{equation}
+All these numbers are positive, since the tail is strictly decreasing.
+Also $d_i-d_{i+2}=e_{i+1}-e_{i+2}>0$.
+The two sequences
+\[
+ A_i=d_{2i-1}-1,\qquad B_i=d_{2i},
+\]
+with a final $B_i=0$ when needed, are strictly decreasing nonnegative
+integer sequences of the same length. They define a unique partition:
+for $1\le i\le D$ its row length is $i+A_i$, and for $i>D$ its row
+length is $\#\{j:j+B_j\ge i\}$.
+To verify this construction, place a diagonal cell at $(i,i)$, its $A_i$
+cells to the right, and its $B_i$ cells below, for each $i$. Strict decrease
+ensures that the union is a Ferrers diagram and recovers exactly these arm
+and leg lengths.
+
+Let $\lambda$ be this partition and $r=\ell(\lambda)=B_1+1=d_2+1$,
+where $d_2=0$ if absent. Then set
+\begin{equation}\label{eq:inverseS}
+ S=\{\lambda_i+r-i:1\le i\le r\}.
+\end{equation}
+Its elements are distinct positive integers and its largest is
+$d_1+r-1=e_1-1\le n-1$. Equations~\eqref{eq:inverseprofile} give
+$e_j=d_{j-1}+d_j$ for $j\ge2$, and $r+d_1=e_1$ because
+$e_1=e_2+1$. Hence this inverse really recovers $e$ and the original $S$.
+\end{proof}
+
+For example, $S=\{2,5,7\}$ gives $\lambda=(5,4,2)$ and
+$d=(5,2,3,1)$. Therefore
+\[
+ \LT(\ell_{\{2,5,7\}})=y_1^8y_2^7y_3^5y_4^4y_5.
+\]
+Conversely, alternating tails of $(8,7,5,4,1)$ recover $(5,2,3,1)$.
+The rank $r$ can also be recovered directly as $e_1-e_2+e_3-e_4+\cdots$.
+
+\section{The Hilbert basis and an equal-growth principle}
+\begin{lemma}[Elementary Hilbert-basis description]\label{lem:hilbert}
+The indecomposable nonzero elements of $L_n$ are precisely $\mathcal H_n$.
+Every $x\in L_n$ is a sum of elements of $\mathcal H_n$.
+\end{lemma}
+\begin{proof}
+For $n=1$ the assertion is immediate. Suppose $n\ge2$ and put
+$g=x_1-x_2$. The first normalized inequality implies
+$x_2\le(n-1)g$. Hence $g\ge1$ if $x\ne0$.
+The integer points with $g=1$ are exactly~\eqref{eq:hilbert}:
+$x_2\le n-1$, and any two consecutive positive coordinates must decrease
+strictly. Conversely, an integer vector of the displayed form belongs to
+$C_n$. Indeed $x_{i+1}\le n-i$, and whenever it is positive,
+$x_i-x_{i+1}\ge1$; therefore
+$(n-i)(x_i-x_{i+1})\ge x_{i+1}$, which is the normalized inequality.
+
+For a general nonzero $x$ construct $g$ vectors, indexed by $t=0,\ldots,g-1$.
+For $i\ge2$ put
+\[
+ b_i^{(t)}=\min\{n-i+1,\max\{0,x_i-t(n-i+1)\}\},\qquad
+ b_1^{(t)}=b_2^{(t)}+1.
+\]
+The normalized tails equal
+$\min\{1,\max\{0,x_i/(n-i+1)-t\}\}$, so they remain weakly decreasing.
+The first inequality holds since $b_2^{(t)}\le n-1$.
+Thus $b^{(t)}\in L_n$ and its first-coordinate difference is $1$; it is
+an element of $\mathcal H_n$.
+For $i\ge2$, the original inequalities give
+$0\le x_i\le g(n-i+1)$, and the elementary truncation identity gives
+$\sum_t b_i^{(t)}=x_i$. The first coordinates sum to $x_2+g=x_1$.
+This proves generation. Finally a vector with difference $1$ cannot split
+into two nonzero vectors, since each has positive integral difference.
+\end{proof}
+
+The following principle is useful beyond the present problem.
+
+\begin{lemma}[Saturation from equal leading growth]\label{lem:growth}
+Let $C\subseteq\mathbb R_{\ge0}^n$ be a full-dimensional rational polyhedral
+cone and $L=C\cap\Z^n$. Let $A\subseteq k[y_1,\ldots,y_n]$ be a subalgebra,
+with degree-lexicographic initial algebra. Suppose
+\[
+ k[L]\subseteq\inA A,
+\]
+and, for the filtration by total degree at most $N$,
+\[
+ \dim_k A_{\le N}=cN^n+O(N^{n-1}),\qquad
+ \#\{e\in L:|e|\le N\}=cN^n+O(N^{n-1}).
+\]
+Then $\inA A=k[L]$.
+\end{lemma}
+\begin{proof}
+Gaussian elimination on the finite-dimensional vector space $A_{\le N}$
+gives a basis with distinct leading monomials. Consequently its dimension
+is the number of monomials of degree at most $N$ in $\inA A$.
+For the reverse direction in this equality, a product of leading monomials
+is the leading monomial of the product of the underlying polynomials;
+degree-lexicographic order ensures the latter polynomial has the same
+total degree as that leading monomial.
+
+Suppose that $y^u\in\inA A$ with $u\notin C$. Choose one of the defining
+linear inequalities $f\ge0$ for $C$ that is violated by $u$, so $f(u)<0$.
+Choose linearly independent integer vectors $v_1,\ldots,v_n\in C$.
+Fix small positive constants $\kappa,\eta$ such that
+\[
+ \kappa|u|+\eta\sum_i|v_i|<1,
+ \qquad \kappa f(u)+\eta\sum_i f(v_i)<0.
+\]
+This is possible by first choosing $\kappa$ and then $\eta$.
+For all sufficiently large $N$, the vectors
+\[
+ \lfloor\kappa N\rfloor u+\sum_{i=1}^n m_iv_i,
+ \qquad 0\le m_i\le\lfloor\eta N\rfloor,
+\]
+have total degree at most $N$, violate $f\ge0$, and belong to the exponent
+semigroup of $\inA A$. They are distinct because the $v_i$ are independent.
+Thus, in addition to all the lattice points in $C$ of degree at most $N$,
+the initial algebra contains at least
+$(\lfloor\eta N\rfloor+1)^n$ other such monomials. This contradicts the
+equal leading growth constants. Hence no $u$ outside $C$ occurs. Since
+$L$ contains every lattice point in $C$, the asserted equality follows.
+\end{proof}
+
+\begin{lemma}[The two growth constants]\label{lem:volumes}
+For the Lecture Hall algebra and cone,
+\begin{align*}
+ \dim_k A_n(k)_{\le N}
+ &=\frac{2^n}{(2n)!}N^n+O(N^{n-1}),\\
+ \#\{e\in L_n:|e|\le N\}
+ &=\frac{2^n}{(2n)!}N^n+O(N^{n-1}).
+\end{align*}
+\end{lemma}
+\begin{proof}
+The unique Dyck path of semilength $i-1$ that reaches height $i-1$ is the
+single mountain. Thus for $i\ge2$
+\begin{equation}\label{eq:triangular}
+ \ell_i=c_i y_i+q_i(y_1,\ldots,y_{i-1}),\qquad
+ c_i=\left(\prod_{h=1}^{i-1}\epsilon_h\right)
+          \prod_{j=1}^{i-1}y_j^2\ne0.
+\end{equation}
+Together with $\ell_1=y_1$, this proves algebraic independence over every
+field: in a putative relation viewed as a polynomial in $\ell_i$, the
+coefficient of the highest power of $y_i$ is nonzero by induction.
+Each $\ell_i$ has total degree $2i-1$. Therefore the first count equals
+\[
+ \#\{a\in\N^n:\sum_{i=1}^n(2i-1)a_i\le N\}
+ =\frac{N^n}{n!\prod_{i=1}^n(2i-1)}+O(N^{n-1})
+ =\frac{2^n}{(2n)!}N^n+O(N^{n-1}).
+\]
+The estimate counts integer points in a weighted simplex. It follows, for
+example, by attaching a unit cube to each nonnegative integer point:
+the union lies between the weighted simplices of bounds $N$ and
+$N+\sum_i(2i-1)$.
+
+For the second count the cone is generated by the independent integer rays
+\[
+ v^{(j)}=(n,n-1,\ldots,n-j+1,0,\ldots,0),\qquad 1\le j\le n.
+\]
+If $V$ is their column matrix, $|\det V|=n!$, and
+$w_j=|v^{(j)}|=j(2n-j+1)/2$. Hence
+\[
+ \vol\{x\in C_n:|x|\le1\}
+ =\frac{|\det V|}{n!\prod_j w_j}
+ =\frac{2^n}{(2n)!},
+ \qquad \prod_jw_j=\frac{(2n)!}{2^n}.
+\]
+Integer-point count equals this volume times $N^n$, up to $O(N^{n-1})$.
+Here is an elementary justification: cover the dilated simplex by unit
+lattice cubes. Cubes wholly inside contribute their full volume and one
+lattice point under a fixed half-open convention. Only cubes intersecting
+the boundary can affect the difference. Each of its finitely many facets
+intersects $O(N^{n-1})$ cubes: solve its hyperplane equation for a coordinate
+with nonzero coefficient after fixing the other $n-1$ cube coordinates.
+There are $O(N^{n-1})$ such choices and a bounded number of remaining
+coordinate choices. This proves the required error estimate.
+\end{proof}
+
+\section{The initial algebra and the Lecture Hall series}
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Every $\ell_S$ belongs to $A_n(k)$ by its determinant definition.
+Theorem~\ref{thm:formula} and Proposition~\ref{prop:bijection} show that
+its monic leading terms run through $y^h$, $h\in\mathcal H_n$.
+Lemma~\ref{lem:hilbert} therefore gives
+$k[L_n]\subseteq\inA A_n(k)$.
+Lemmas~\ref{lem:volumes} and~\ref{lem:growth} prove the reverse inclusion.
+The leading monomials of $\mathcal B_n$ generate this initial algebra, so
+$\mathcal B_n$ is a SAGBI basis by definition. Since the exponent vectors
+are distinct indecomposable elements of the semigroup, none can be
+removed. This also proves minimality.
+\end{proof}
+
+\begin{corollary}[Bivariate Lecture Hall Theorem]\label{cor:series}
+As a formal power series,
+\[
+ \sum_{e\in L_n}q_1^{e_1+e_3+\cdots}q_2^{e_2+e_4+\cdots}
+ =\prod_{i=1}^n\frac{1}{1-q_1^i q_2^{i-1}}.
+\]
+\end{corollary}
+\begin{proof}
+Give odd-indexed $y_j$ bidegree $(1,0)$ and even-indexed $y_j$ bidegree
+$(0,1)$. Every adjacent weight $y_hy_{h+1}$ has bidegree $(1,1)$, so
+$\ell_i$ has bidegree $(i,i-1)$. Algebraic independence gives the product
+on the right as the Hilbert series of $A_n(k)$. Gaussian elimination
+within each finite-dimensional bihomogeneous component shows that taking
+initial terms preserves this Hilbert series. Theorem~\ref{thm:main}
+identifies the initial algebra with the monomial algebra on the left.
+\end{proof}
+
+This is the classical theorem of Bousquet--M\'elou and Eriksson, recalled
+in \cite[Theorem 1.2]{Katthan}; the identity itself is not new. The proof
+here derives it from the initial-algebra result and elementary volume
+comparison, rather than using it to prove that result. In particular,
+the argument has no circular dependence on the Lecture Hall Theorem.
+
+\section{An integral basis and an explicit flat family}
+Set $A_n(\Z)=\Z[\ell_1,\ldots,\ell_n]$.
+
+\begin{theorem}[Integral and deformation extensions]\label{thm:flat}
+The set $\mathcal B_n$ is a monic SAGBI basis over $\Z$ and
+\[
+ \inA A_n(\Z)=\Z[L_n].
+\]
+There is an explicit finitely generated $\Z[t]$-subalgebra
+$\mathcal R_n\subseteq\Z[t,y_1,\ldots,y_n]$, free as a $\Z[t]$-module,
+with
+\[
+ \mathcal R_n/(t-1)\mathcal R_n\cong A_n(\Z),\qquad
+ \mathcal R_n/t\mathcal R_n\cong\Z[L_n].
+\]
+The same construction remains free, hence flat, after extension to any
+field. Thus it supplies the toric deformation in all characteristics.
+\end{theorem}
+\begin{proof}
+Embed the integral algebra in $A_n(\Q)$. The leading exponent of any
+nonzero integral polynomial in the algebra belongs to $L_n$ by
+Theorem~\ref{thm:main}. For each $e\in L_n$, choose a decomposition
+$e=h_1+\cdots+h_a$ into elements of $\mathcal H_n$, for example the one
+in Lemma~\ref{lem:hilbert}. Use Proposition~\ref{prop:bijection} to select
+$S(h_j)$ and put
+\[
+ F_e=\prod_{j=1}^a\ell_{S(h_j)},\qquad F_0=1.
+\]
+It has leading monomial $y^e$ with coefficient $1$.
+Repeatedly subtracting an integer multiple of the corresponding $F_e$
+from a polynomial cancels its leading term and strictly decreases the
+leading monomial. The process terminates: total degrees do not increase,
+and there are finitely many monomials in a fixed degree bound. It uses no
+division. Thus the $F_e$ span $A_n(\Z)$; their distinct leading monomials
+also make them linearly independent over $\Z$.
+This proves the integral SAGBI assertion.
+
+For an explicit weight vector, let $D_n=n(n+1)/2$ and set
+\[
+ W_j=(D_n+1)^{n-j}\qquad(1\le j\le n).
+\]
+Every generator $\ell_S$ has total degree at most $D_n$.
+Indeed for $r=|S|>0$ the degree is
+$2\sum_{s\in S}s+2r-r^2\le r(2n+1-2r)\le D_n$;
+the last inequality follows because
+$D_n-r(2n+1-2r)=(n-2r)(n-2r+1)/2\ge0$.
+The empty subset has degree $1$.
+These weights make the lexicographic leading monomial of each generator
+its unique greatest-weight monomial. At the first differing exponent
+coordinate, its positive contribution is at least $W_j$, whereas all
+possible negative contributions from later coordinates are at most
+$D_nW_{j+1}<W_j$.
+
+For $h\in\mathcal H_n$ define
+\[
+ \widetilde\ell_h(t,y)=t^{W\cdot h}
+      \ell_{S(h)}(t^{-W_1}y_1,\ldots,t^{-W_n}y_n),
+ \quad
+ \mathcal R_n=\Z[t,\widetilde\ell_h:h\in\mathcal H_n].
+\]
+The displayed expressions are polynomials: every occurring monomial has
+weight at most $W\cdot h$. For each $e\in L_n$ similarly put
+\[
+ \widetilde F_e=t^{W\cdot e}F_e(t^{-W_1}y_1,\ldots,t^{-W_n}y_n).
+\]
+It is a product of the indicated generators.
+
+Each $F_e$ has unique highest-weight monomial $y^e$. In the unique integral
+basis expansion of a polynomial, the largest weight among the occurring
+$F_e$ cannot cancel: their highest-weight monomials are distinct. Since
+$F_eF_f-F_{e+f}$ has weight strictly below $W\cdot(e+f)$, it follows that
+\[
+ F_eF_f=F_{e+f}+\sum_{W\cdot g<W\cdot(e+f)}c_gF_g,
+ \qquad c_g\in\Z.
+\]
+Homogenizing yields
+\[
+ \widetilde F_e\widetilde F_f
+ =\widetilde F_{e+f}+
+   \sum_g c_g t^{W\cdot(e+f)-W\cdot g}\widetilde F_g.
+\]
+Thus the $\Z[t]$-span of the $\widetilde F_e$ is closed under multiplication
+and is exactly $\mathcal R_n$. Their distinct leading $y$-monomials, each
+with coefficient $1$, show that this span is free over $\Z[t]$.
+Modulo $t$ the displayed multiplication becomes
+$\widetilde F_e\widetilde F_f=\widetilde F_{e+f}$, giving $\Z[L_n]$.
+At $t=1$ the basis specializes to the basis $F_e$ of $A_n(\Z)$.
+After inverting $t$, the invertible change of variables
+$y_j\mapsto t^{-W_j}y_j$ and invertible scalar factors on the generators give
+$\mathcal R_n[t^{-1}]\cong A_n(\Z)[t,t^{-1}]$.
+Base change preserves this explicit free basis and both fiber descriptions.
+\end{proof}
+
+\section{Finite records and scope}\label{sec:verification}
+The accompanying data contain finite exact records with the scopes below.
+The full extension suite and the earlier polynomiality suite were not rerun
+for this edition. The recorded regeneration of the extension data was
+completed in separate stages after an interruption; original process logs
+are not included. Stored counts and hashes do not independently certify
+that execution history.
+
+The verifier reconstructs the finite tests summarized below.
+Its input is the Dyck-path definition and the original Toeplitz minors;
+the leading-term formula is used only as the expected answer.
+\begin{center}
+\begin{tabular}{p{0.36\textwidth}p{0.55\textwidth}}
+\toprule
+Check & Exact scope and output\\
+\midrule
+Original flag minors & All $2^{10}=1024$ subsets of $[10]$, including the
+empty subset, in $11$ variables. All leading exponents and coefficients
+agree. The expanded polynomials have $884566$ terms in total; the largest
+has $5427$ terms.\\[3pt]
+Generic Schur determinants & All $195$ partitions of sizes $0$ through $11$,
+computed by exact Bareiss determinants of independently generated moments.\\[3pt]
+Bijection and inverse & Every subset for each $1\le n\le16$: $65535$ formula
+checks. These check the combinatorial formulas, not symbolic determinants
+in dimension $16$.\\[3pt]
+Lattice and Hilbert counts & Direct enumeration in each $1\le n\le8$ through
+total degree $40$: $24485$ vectors overall. Bigraded counts agree with the
+weighted polynomial algebra, and each layer decomposition is checked.\\[3pt]
+Full small polynomials & All $128$ minors for subsets of $[7]$ are recorded
+as complete sparse coefficient lists in $8$ variables.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The directory \texttt{code/} contains the executable verifier and comparison
+script. The directory \texttt{data/} contains all expected outputs, including
+leading exponents, partition profiles, term counts, and canonical polynomial
+hashes for the larger symbolic tests. Hash formatting is documented in the
+top-level README. Running the verifier regenerates the six mathematical
+data files. The earlier polynomiality manuscript and its separate
+verification files remain at the top level of this research package.
+
+The proofs, not the finite tests, establish the all-$n$ statements.
+The work does not claim that a numerical specialization retains algebraic
+independence or a SAGBI basis, and does not address uniqueness of the full
+defining system at vanishing divisors. Its algebra statements concern
+independent indeterminates. The generic Schur lemma, the explicit bijection,
+and the all-dimensional conclusions are proved above; they are not listed
+as conjectures or as extrapolations. A limited literature check located the
+original question and its publication record but does not certify priority
+for these arguments. Independent mathematical review remains appropriate.
+
+\paragraph{AI assistance.}
+This extension was developed with AI assistance. All mathematical reasoning
+needed for the stated results is presented here, and the exact verification
+code and data are provided for independent review.
+
+\appendix
+\section{Identification with the defining Toeplitz equations}\label{app:identification}
+This appendix reproduces the foundation established in \cite{Polynomiality}.
+It is included for completeness, not claimed as a new extension.
+For a sequence $P$, let
+\[
+ M(P)_{r,c}=\begin{cases}-P_{c-r+1}&c\ge r,\\0&c<r.\end{cases}
+\]
+Define the square minors and target monomials by
+\[
+ E_i(P)=-\det M(P)_{\{1,\ldots,\lceil i/2\rceil\},
+                       \{\lfloor i/2\rfloor+1,\ldots,i\}},\qquad
+ T_i=\prod_{j=1}^i y_j^{i+1-j}.
+\]
+
+\begin{lemma}[Hankel products]\label{lem:hankel}
+For independent Dyck weights and every $m\ge1$,
+\begin{align*}
+ H_m^{(0)}:=\det[\mu_{i+j}]_{0\le i,j<m}
+ &=\prod_{h=1}^{m-1}(\alpha_{2h-1}\alpha_{2h})^{m-h},\\
+ H_m^{(1)}:=\det[\mu_{i+j+1}]_{0\le i,j<m}
+ &=\alpha_1^m\prod_{h=1}^{m-1}(\alpha_{2h}\alpha_{2h+1})^{m-h}.
+\end{align*}
+\end{lemma}
+\begin{proof}
+Pair consecutive steps of a Dyck path. This gives a Motzkin path with
+up weight $1$, down weight $\lambda_h=\alpha_{2h-1}\alpha_{2h}$,
+and horizontal weights $b_0=\alpha_1$ and
+$b_h=\alpha_{2h}+\alpha_{2h+1}$ for $h\ge1$.
+Let $J$ be the tridiagonal matrix on nonnegative indices, with diagonal
+$b_h$, superdiagonal $1$, and subdiagonal $\lambda_h$.
+Then $\mu_j=(J^j)_{0,0}$ by path enumeration.
+Put $d_0^*=1$, $d_h^*=\lambda_1\cdots\lambda_h$, and
+$D=\diag(d_0^*,d_1^*,\ldots)$. Direct multiplication gives
+$JD=DJ^\transpose$, hence
+$(J^j)_{h,0}=d_h^*(J^j)_{0,h}$.
+
+Fix $m$ and write $L_{ih}=(J^i)_{0,h}$ for $0\le i,h<m$.
+This is unit lower triangular. If $J_m,D_m$ are the leading blocks, path
+length bounds give the exact factorizations
+\[
+ [\mu_{i+j}]_{i,j<m}=LD_mL^\transpose,\qquad
+ [\mu_{i+j+1}]_{i,j<m}=LJ_mD_mL^\transpose.
+\]
+For the second identity split a path after $i$ and then one more step;
+the two interface heights are at most $i$ and $j$, respectively, so no
+term outside these finite blocks occurs. The first determinant is now
+$\prod_{h=0}^{m-1}d_h^*$.
+
+For $\delta_m=\det J_m$, tridiagonal expansion gives
+\[
+ \delta_0=1,\quad\delta_1=\alpha_1,\quad
+ \delta_m=(\alpha_{2m-2}+\alpha_{2m-1})\delta_{m-1}
+          -\alpha_{2m-3}\alpha_{2m-2}\delta_{m-2}.
+\]
+Induction cancels the two terms involving $\alpha_{2m-2}$ and yields
+$\delta_m=\prod_{h=1}^m\alpha_{2h-1}$.
+Taking the second determinant and rearranging factors gives the shifted
+product. No division or sign assumption is used.
+\end{proof}
+
+\begin{proposition}[The moment identification]\label{prop:identification}
+The polynomials in~\eqref{eq:weights} satisfy $E_i(\ell)=T_i$ for every
+$i\ge1$. Over the fraction field of the independent $y_j$, they are the
+unique sequence satisfying those equations.
+\end{proposition}
+\begin{proof}
+Put $s_m=(-1)^{1+m(m+1)/2}$. Row reversal, row signs, and the outer minus
+in the Toeplitz minors give
+\[
+ E_{2m-1}(\ell)=s_m y_1^mH_m^{(0)},\qquad
+ E_{2m}(\ell)=s_m y_1^mH_m^{(1)}.
+\]
+Substitute~\eqref{eq:weights} in Lemma~\ref{lem:hankel}.
+The exponents of $y_j$ in the two products, after multiplication by $y_1^m$,
+are respectively $2m-j$ and $2m+1-j$ on their supports. Their common sign,
+for $m\ge2$, is
+\[
+ (-1)^{\sum_{h=2}^{m-1}(m-h)}
+ =(-1)^{(m-2)(m-1)/2}=s_m.
+\]
+For $m=1$ both signs are $1$ directly. This proves all the equations.
+
+For uniqueness, $E_1=P_1$ and $E_2=P_2$. For $i\ge3$ the entry $-P_i$
+occurs only in the first row and last column of its square minor. If
+$k=\lceil i/2\rceil$, its coefficient in $E_i$ is
+$(-1)^kE_{i-2}(P)$, by cofactor expansion and shifting indices.
+After the previous equations have been solved this coefficient is
+$(-1)^kT_{i-2}\ne0$. Successive solution in the fraction field gives a
+unique new $P_i$ each time. This identifies the sequence with the one in
+the cited polynomiality note and source. The argument does not assert stepwise uniqueness
+after a specialization that makes these coefficients vanish.
+\end{proof}
+
+\begin{thebibliography}{9}
+\bibitem{Katthan}
+Lukas Katth\"an,
+\emph{The Lecture Hall Cone as a toric deformation},
+arXiv:1809.01377v1 (2018), especially Definitions 3.1 and 4.1,
+Conjecture 4.2, and Problem 5.1.
+\url{https://arxiv.org/abs/1809.01377v1}.
+Published version: \emph{Algebraic and Geometric Combinatorics on Lattice
+Polytopes}, World Scientific (2019), 242--253,
+\url{https://doi.org/10.1142/9789811200489_0015}.
+The theorem numbering used throughout this report is the arXiv numbering.
+
+\bibitem{Polynomiality}
+\emph{Polynomiality of the Lecture Hall sequence via signed Dyck paths},
+version 0.1.1, October 13, 2026.
+\url{https://github.com/Aurantium-47/lecture-hall-polynomiality/releases/tag/v0.1.1}.
+The moment identification is reproduced in Appendix~\ref{app:identification}.
+
+\bibitem{Sokal}
+Alan D. Sokal,
+\emph{A simple algorithm for expanding a power series as a continued fraction},
+Expositiones Mathematicae \textbf{41} (2023), 245--287.
+\url{https://arxiv.org/abs/2206.15434}.
+\url{https://doi.org/10.1016/j.exmath.2022.12.001}.
+
+\bibitem{Flajolet}
+Philippe Flajolet,
+\emph{Combinatorial aspects of continued fractions},
+Discrete Mathematics \textbf{32} (1980), 125--161.
+\url{https://algo.inria.fr/flajolet/Publications/Flajolet80b.pdf}.
+\end{thebibliography}
+\end{document}
