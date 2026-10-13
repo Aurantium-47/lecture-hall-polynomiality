@@ -1,0 +1,270 @@
+name: W05 banded matrix spine (not the Lecture Hall theorem)
+
+'on':
+  push:
+    branches: [codex/w05-hankel-spine]
+    paths: [lean-candidate/**, .github/workflows/w05-hankel-spine.yml]
+
+permissions: {}
+concurrency:
+  group: w05-hankel-spine
+  cancel-in-progress: false
+
+jobs:
+  candidate-test:
+    if: github.event.repository.private == false && github.repository == 'Aurantium-47/lecture-hall-polynomiality'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    env:
+      CANDIDATE_SHA: ${{ github.sha }}
+      LEAN_NUM_THREADS: '1'
+      MATHLIB_NO_CACHE_ON_UPDATE: '1'
+    steps:
+      - name: Fetch and identify the candidate alongside the unchanged release
+        shell: bash
+        run: |
+          set -euo pipefail
+          test ! -e public-source
+          git init public-source
+          git -C public-source remote add origin https://github.com/Aurantium-47/lecture-hall-polynomiality.git
+          git -C public-source fetch --depth 1 origin "$CANDIDATE_SHA"
+          git -C public-source checkout --detach FETCH_HEAD
+          test "$(git -C public-source rev-parse HEAD)" = "$CANDIDATE_SHA"
+          git -C public-source fetch --depth 1 origin 0ec015b5c751ab901eb22b0d84e619c6c5711544
+          python3 - <<'PY'
+          import hashlib, json, os, pathlib, shutil, subprocess
+          root = pathlib.Path('public-source')
+          baseline = '0ec015b5c751ab901eb22b0d84e619c6c5711544'
+          expected = {'lean-candidate/ImportProbe.lean': '2c37940b0a2f99fc123035aba9b82569c3b21fd13be3b52ad59d6b3d1741a4eb', 'lean-candidate/W05/BandedPowers.lean': '777ea5ac532c2e704d6f1bffa526404bdebb35a435373e2511a2edbb83363b3e', 'lean-candidate/lake-manifest.json': '9e3e2801dc4172b4eb3be9a58283a51b6a1d0bc2abaf190979c9821737e1524f', 'lean-candidate/lakefile.toml': '3f334acb5dfbc277b0e084cbd5937f6e7670f9175a12fe9ce8ed499d800b3dbd', 'lean-candidate/lean-toolchain': '55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea'}
+          workflow = '.github/workflows/w05-hankel-spine.yml'
+          changed = subprocess.check_output(['git', '-C', str(root), 'diff', '--name-status', baseline, 'HEAD'], text=True).splitlines()
+          assert set(changed) == {'A\t' + p for p in list(expected) + [workflow]}, changed
+          for path, digest in expected.items():
+              assert hashlib.sha256((root / path).read_bytes()).hexdigest() == digest, path
+          mem = {s.split(':')[0]: int(s.split()[1]) * 1024 for s in pathlib.Path('/proc/meminfo').read_text().splitlines() if s.startswith(('MemTotal:', 'MemAvailable:'))}
+          print('RUNNER_RESOURCES', json.dumps(dict(mem, disk_free=shutil.disk_usage('.').free)), flush=True)
+          assert mem['MemTotal'] >= 14 * 1024**3 and mem['MemAvailable'] >= 12 * 1024**3
+          assert shutil.disk_usage('.').free >= 10 * 1024**3, 'Insufficient disk; do not prune'
+          pathlib.Path('candidate-hashes.json').write_text(json.dumps(expected, sort_keys=True))
+          print('CANDIDATE_COMMIT', os.environ['CANDIDATE_SHA'], 'UNCHANGED_RELEASE', baseline, flush=True)
+          print('CANDIDATE_SOURCE_HASHES', json.dumps(expected, sort_keys=True), flush=True)
+          print('WORKFLOW_SHA256', hashlib.sha256((root / workflow).read_bytes()).hexdigest(), flush=True)
+          print('STATUS: this is an uncompiled mathematical candidate; only this run can establish compilation.', flush=True)
+          PY
+          test "$(tr -d '\r\n' < public-source/lean-candidate/lean-toolchain)" = leanprover/lean4:v4.19.0
+          curl --fail --location --retry 3 https://github.com/leanprover/lean4/releases/download/v4.19.0/lean-4.19.0-linux.tar.zst --output lean-4.19.0-linux.tar.zst
+          printf '%s\n' '6fe3ce97a58f44e2b3567d455b994eacec5bfe9ae7774f2a573444480ba813fe  lean-4.19.0-linux.tar.zst' | sha256sum --check
+          tar --zstd -xf lean-4.19.0-linux.tar.zst
+          "$PWD/lean-4.19.0-linux/bin/lean" --version
+          "$PWD/lean-4.19.0-linux/bin/lean" --version | grep -F '6caaee842e94'
+          printf '%s\n' '92c3d35b5bfaa5e0fea413a775d504cf46cd95e1345df61c2274f76779e7e023  lean-4.19.0-linux/bin/lean' '5111aee5c9434ab05d4265606475ef22e8bda69aaf3a0657b61a7eec6e550bed  lean-4.19.0-linux/bin/lake' | sha256sum --check
+          printf '%s\n' "$PWD/lean-4.19.0-linux/bin" >> "$GITHUB_PATH"
+          printf 'LEAN_SYSROOT=%s\n' "$PWD/lean-4.19.0-linux" >> "$GITHUB_ENV"
+
+      - name: Fetch exact dependency revisions without updating the manifest
+        working-directory: public-source/lean-candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib, json, pathlib, subprocess
+          root = pathlib.Path.cwd()
+          manifest = root / 'lake-manifest.json'
+          assert hashlib.sha256(manifest.read_bytes()).hexdigest() == '9e3e2801dc4172b4eb3be9a58283a51b6a1d0bc2abaf190979c9821737e1524f'
+          print('MANIFEST_SHA256', hashlib.sha256(manifest.read_bytes()).hexdigest())
+          packages = json.loads(manifest.read_text())['packages']
+          assert len(packages) == 9
+          assert next(p for p in packages if p['name'] == 'mathlib')['rev'] == 'c44e0c8ee63ca166450922a373c7409c5d26b00b'
+          for p in packages:
+              assert p['type'] == 'git' and p['url'].startswith('https://github.com/')
+              target = root / '.lake/packages' / p['name']
+              assert not target.exists()
+              target.mkdir(parents=True)
+              subprocess.run(['git', 'init', str(target)], check=True)
+              subprocess.run(['git', '-C', str(target), 'remote', 'add', 'origin', p['url']], check=True)
+              subprocess.run(['git', '-C', str(target), 'fetch', '--depth', '1', 'origin', p['rev']], check=True)
+              subprocess.run(['git', '-C', str(target), 'checkout', '--detach', 'FETCH_HEAD'], check=True)
+              actual = subprocess.check_output(['git', '-C', str(target), 'rev-parse', 'HEAD'], text=True).strip()
+              assert actual == p['rev']
+              print('DEPENDENCY', p['name'], actual)
+              if p['name'] == 'proofwidgets':
+                  subprocess.run(['git', '-C', str(target), 'fetch', '--depth', '1', 'origin',
+                                  'refs/tags/v0.0.57:refs/tags/v0.0.57'], check=True)
+                  release_commit = subprocess.check_output(
+                      ['git', '-C', str(target), 'rev-parse', 'v0.0.57^{commit}'], text=True).strip()
+                  assert release_commit == p['rev']
+                  release_tag = subprocess.check_output(
+                      ['git', '-C', str(target), 'describe', '--tags', '--exact-match', 'HEAD'], text=True).strip()
+                  assert release_tag == 'v0.0.57'
+                  print('RELEASE_TAG', p['name'], release_tag, release_commit)
+          # Keep all downloaded files: disable only the upstream cache helper's directory pruning.
+          helper = root / '.lake/packages/mathlib/Cache/Requests.lean'
+          text = helper.read_text()
+          for old in ['IO.FS.removeDirAll (buildDir / "lib")', 'IO.FS.removeDirAll (buildDir / "ir")']:
+              assert text.count(old) == 1
+              text = text.replace(old, 'pure ()')
+          helper.write_text(text)
+          assert hashlib.sha256(helper.read_bytes()).hexdigest() == '646fed31a48d85ed75746ec09d06c23f5abdaca455518b6760b0dcb2b10c47c0'
+          print('CACHE_HELPER_PATCH_SHA256', hashlib.sha256(helper.read_bytes()).hexdigest())
+          subprocess.run(['git', '-C', str(helper.parents[1]), 'diff', '--', 'Cache/Requests.lean'], check=True)
+          PY
+
+      - name: Obtain the fixed external caches
+        working-directory: public-source/lean-candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          timeout --signal=TERM --kill-after=10s 900 /usr/bin/time -v lake exe cache get Mathlib.Combinatorics.Enumerative.DyckWord Mathlib.LinearAlgebra.Matrix.Block Mathlib.Algebra.MvPolynomial.Rename Mathlib.RingTheory.Localization.FractionRing Mathlib.Data.Matrix.Mul
+          git diff --exit-code HEAD -- lake-manifest.json lean-toolchain lakefile.toml
+          printf '%s\n' 'TRUST: external caches are precompiled inputs, not dependency source rebuilds or independent kernel checks.'
+
+      - name: Compile fresh candidate modules and inspect full types and axioms
+        working-directory: public-source/lean-candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib, json, os, pathlib, re, signal, subprocess, time
+          root = pathlib.Path.cwd()
+          own = ['ImportProbe', 'W05.BandedPowers']
+          expected_names = ['W05.pow_entry_zero_of_band', 'W05.pow_entry_maximal_displacement']
+          expected = json.loads((root.parent.parent / 'candidate-hashes.json').read_text())
+          output = root / 'fresh-candidate'
+          assert not output.exists()
+          (output / 'lib').mkdir(parents=True)
+          libraries = [output / 'lib']
+          for p in json.loads((root / 'lake-manifest.json').read_text())['packages']:
+              package = root / '.lake/packages' / p['name']
+              assert subprocess.check_output(['git', '-C', str(package), 'rev-parse', 'HEAD'], text=True).strip() == p['rev']
+              status = subprocess.check_output(['git', '-C', str(package), 'status', '--porcelain=v1', '--untracked-files=no'], text=True).strip()
+              assert not status or (p['name'] == 'mathlib' and status == 'M Cache/Requests.lean'), status
+              library = package / '.lake/build/lib/lean'
+              if library.is_dir():
+                  libraries.append(library)
+              else:
+                  assert p['name'] == 'Cli'
+          builtins = pathlib.Path(os.environ['LEAN_SYSROOT']) / 'lib/lean'
+          for library in libraries[1:] + [builtins]:
+              for name in own + ['FreshW05Audit']:
+                  assert not (library / (name.replace('.', '/') + '.olean')).exists()
+          env = dict(os.environ, LEAN_PATH=os.pathsep.join(map(str, libraries)), LEAN_NUM_THREADS='1')
+          lean = str(pathlib.Path(os.environ['LEAN_SYSROOT']) / 'bin/lean')
+          # Keep the successful fixed-version compiler flags and external resource guard.
+          flags = ['-j', '1', '-s', '131072', '-DElab.async=false']
+          print('LEAN_PATH', env['LEAN_PATH'], flush=True)
+          print('FLAGS', flags, flush=True)
+          print('BUDGET: 6 GiB group RSS, 512 MiB group swap, 2 GiB system available floor, 180 s/module, 1200 s total; no retry.', flush=True)
+          build_start = time.monotonic()
+
+          def available():
+              return int(re.search(r'^MemAvailable:\s+(\d+)', pathlib.Path('/proc/meminfo').read_text(), re.M)[1]) * 1024
+
+          def group_memory(group):
+              rss, swap = 0, 0
+              for directory in pathlib.Path('/proc').iterdir():
+                  if not directory.name.isdigit():
+                      continue
+                  try:
+                      stat = (directory / 'stat').read_text().rsplit(')', 1)[1].split()
+                      if int(stat[2]) != group:
+                          continue
+                      status = (directory / 'status').read_text()
+                      for field, amount in re.findall(r'^(VmRSS|VmSwap):\s+(\d+)', status, re.M):
+                          if field == 'VmRSS': rss += int(amount) * 1024
+                          else: swap += int(amount) * 1024
+                  except (FileNotFoundError, ProcessLookupError):
+                      continue
+              return rss, swap
+
+          def stop(group):
+              try: os.killpg(group, signal.SIGKILL)
+              except ProcessLookupError: pass
+
+          def sha(path):
+              h = hashlib.sha256()
+              with path.open('rb') as stream:
+                  for chunk in iter(lambda: stream.read(1024 * 1024), b''): h.update(chunk)
+              return h.hexdigest()
+
+          def run(args, label, seconds=180):
+              assert available() >= 8 * 1024**3, 'Command preflight failed; stop without retry'
+              assert time.monotonic() - build_start < 1200, 'Total build budget exhausted'
+              log = output / (label + '.log')
+              started = time.monotonic()
+              record = dict(command=args, peak_group_rss=0, peak_group_swap=0, abort_reason=None)
+              print('COMMAND', label, args, flush=True)
+              with log.open('xb') as stream:
+                  process = subprocess.Popen(args, cwd=root, env=env, stdout=stream, stderr=subprocess.STDOUT, start_new_session=True)
+                  try:
+                      while process.poll() is None:
+                          rss, swap = group_memory(process.pid)
+                          record['peak_group_rss'] = max(record['peak_group_rss'], rss)
+                          record['peak_group_swap'] = max(record['peak_group_swap'], swap)
+                          if rss > 6 * 1024**3: record['abort_reason'] = 'group_rss'
+                          elif swap > 512 * 1024**2: record['abort_reason'] = 'group_swap'
+                          elif available() < 2 * 1024**3: record['abort_reason'] = 'system_available'
+                          elif time.monotonic() - started > seconds: record['abort_reason'] = 'command_time'
+                          elif time.monotonic() - build_start > 1200: record['abort_reason'] = 'total_build_time'
+                          if record['abort_reason']:
+                              stop(process.pid)
+                              break
+                          time.sleep(0.5)
+                  finally:
+                      if process.poll() is None: stop(process.pid)
+                      record['exit_code'] = process.wait()
+                      record['elapsed_seconds'] = time.monotonic() - started
+              print(log.read_text(errors='replace'), flush=True)
+              print('RESOURCE_RESULT', label, json.dumps(record, sort_keys=True), flush=True)
+              print('LOG_SHA256', label, sha(log), flush=True)
+              assert record['exit_code'] == 0 and record['abort_reason'] is None, 'Stop; no automatic retry or budget escalation'
+              text = log.read_text(errors='replace')
+              assert not re.search(r"declaration uses ['`]sorry|\bsorryAx\b", text), 'Unfinished declaration'
+              return text
+
+          # Validate imports first, then the two finite banded-power proofs; stop on first error.
+          for name in own:
+              source = root / (name.replace('.', '/') + '.lean')
+              assert sha(source) == expected['lean-candidate/' + source.relative_to(root).as_posix()]
+              target = output / 'lib' / (name.replace('.', '/') + '.olean')
+              target.parent.mkdir(parents=True, exist_ok=True)
+              run(['/usr/bin/time', '-v', lean] + flags + ['-o', str(target), str(source)], name)
+              assert target.is_file()
+              print('SOURCE_SHA256', name, sha(source), 'OLEAN_SHA256', sha(target), flush=True)
+
+          probe = root / 'FreshW05Audit.lean'
+          assert not probe.exists()
+          probe.write_text('import ImportProbe\nimport W05.BandedPowers\n\nset_option pp.all true\n#check @W05.pow_entry_zero_of_band\n#print axioms W05.pow_entry_zero_of_band\n#check @W05.pow_entry_maximal_displacement\n#print axioms W05.pow_entry_maximal_displacement\n')
+          print('PROBE_SHA256', sha(probe), flush=True)
+          imports = run([lean, '--deps', str(probe)], 'actual-imports', 60)
+          deps = [pathlib.Path(s.strip()).resolve() for s in imports.splitlines() if s.strip()]
+          for name in own:
+              assert deps.count((output / 'lib' / (name.replace('.', '/') + '.olean')).resolve()) == 1
+          for path in deps:
+              assert path.is_relative_to((output / 'lib').resolve()) or path.is_relative_to(builtins.resolve()), path
+              print('ACTUAL_IMPORT_SHA256', str(path), sha(path), flush=True)
+          text = run(['/usr/bin/time', '-v', lean] + flags + ['-o', str(output / 'lib/FreshW05Audit.olean'), str(probe)], 'complete-types-axioms')
+          observed = {}
+          for name, axioms in re.findall(r"^'([^']+)' depends on axioms: \[([^\]]*)\]", text, re.M):
+              assert name not in observed
+              observed[name] = [a.strip() for a in axioms.split(',') if a.strip()]
+          for name in re.findall(r"^'([^']+)' does not depend on any axioms", text, re.M):
+              assert name not in observed
+              observed[name] = []
+          assert set(observed) == set(expected_names) and len(observed) == 2
+          assert all(set(a) <= {'propext', 'Classical.choice', 'Quot.sound'} for a in observed.values()), observed
+          for name in expected_names:
+              assert len(re.findall(r'^@?' + re.escape(name) + r'(?:\s|\.{|\(|\{|\[|:)', text, re.M)) == 1, name
+          print('FINAL_AXIOMS_JSON', json.dumps(observed, sort_keys=True), flush=True)
+          assert all(sha(root.parent / p) == h for p, h in expected.items())
+          subprocess.run(['git', 'diff', '--exit-code', 'HEAD', '--'], cwd=root.parent, check=True)
+          print('PASS: both candidate modules and both banded-power declarations compiled; complete types and transitive axioms observed.', flush=True)
+          print('SCOPE: only the two universal finite banded-matrix power lemmas; no Jacobi, Dyck identification, Hankel identity or Lecture Hall theorem claim.', flush=True)
+          print('NOT PERFORMED: dependency source rebuild, full dependency replay, independent-kernel check, priority/minimality review.', flush=True)
+          PY
+
+      - name: Final runner resources
+        if: always()
+        shell: bash
+        run: |
+          free -b
+          df -B1 .
