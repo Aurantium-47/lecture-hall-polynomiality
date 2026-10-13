@@ -87,7 +87,9 @@ theorem canonicalJacobiHankel_prescribed_zero (N : ℕ) :
       (-1 : MvPolynomial ℕ ℤ) ^ (N * (N - 1) / 2) * prescribedMonomial (2 * N + 1) := by
   rw [canonicalJacobiHankel_signed_det_zero, mul_left_comm,
     nestedWeightProduct_odd (fun j => (MvPolynomial.X j : MvPolynomial ℕ ℤ)) N]
-  rw [prescribedMonomial, Fin.prod_univ_eq_prod_range]
+  rw [prescribedMonomial,
+    Fin.prod_univ_eq_prod_range
+      (fun j : ℕ => (MvPolynomial.X j : MvPolynomial ℕ ℤ) ^ (2 * N + 1 - j)) (2 * N + 1)]
 
 /-- The scaled signed H1 determinant has the exact original even-index monomial. -/
 theorem canonicalJacobiHankel_prescribed_one (N : ℕ) :
@@ -110,7 +112,9 @@ theorem canonicalJacobiHankel_prescribed_one (N : ℕ) :
       have hs : 2 * (N + 1) = (2 * N + 1) + 1 := by omega
       rw [hs,
         ← prefixPowerProduct_succ (fun j => (MvPolynomial.X j : MvPolynomial ℕ ℤ)) (2 * N + 1),
-        prescribedMonomial, Fin.prod_univ_eq_prod_range]
+        prescribedMonomial,
+        Fin.prod_univ_eq_prod_range
+          (fun j : ℕ => (MvPolynomial.X j : MvPolynomial ℕ ℤ) ^ (2 * N + 2 - j)) (2 * N + 2)]
 
 end
 end W05
