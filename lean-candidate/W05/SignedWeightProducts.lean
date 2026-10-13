@@ -30,7 +30,7 @@ theorem signedJacobiWeight_even (h : ℕ) :
       ⟨by omega, h + 1, by omega⟩
     have hs : 2 * h + 2 - 1 = 2 * h + 1 := by omega
     simp only [signedJacobiWeight, if_neg hn, if_pos he, hs, if_neg hh,
-      map_neg, map_one, neg_one_mul, neg_mul]
+      map_neg, map_one, neg_one_mul, neg_mul, one_mul]
 
 /-- The actual d_h is an explicit signed product of variable monomials, also at h=0. -/
 theorem jacobiDiagonalWeight_signed (h : ℕ) :
@@ -61,9 +61,9 @@ theorem canonicalJacobiHankel_signed_det_zero (N : ℕ) :
         ∏ h : Fin (N + 1), ∏ k ∈ Finset.range h.val,
           MvPolynomial.X (2 * k) * MvPolynomial.X (2 * k + 1) ^ 2 *
             MvPolynomial.X (2 * k + 2) := by
-  have he : (∑ h : Fin (N + 1), h.val - 1) = N * (N - 1) / 2 := by
+  have he : (∑ h : Fin (N + 1), (h.val - 1)) = N * (N - 1) / 2 := by
     rw [Fin.sum_univ_succ]
-    simp only [Fin.val_zero, Nat.zero_sub, Fin.val_succ, Nat.add_sub_cancel, Nat.zero_add]
+    simp only [Fin.val_zero, Nat.zero_sub, Fin.val_succ, Nat.add_sub_cancel, Nat.add_sub_cancel_right, Nat.zero_add]
     rw [Fin.sum_univ_eq_sum_range (fun h : ℕ => h) N, Finset.sum_range_id]
   rw [canonicalJacobiHankel_det_zero]
   simp_rw [jacobiDiagonalWeight_signed]
