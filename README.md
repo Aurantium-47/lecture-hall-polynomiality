@@ -1,6 +1,6 @@
 # Lecture Hall polynomiality and SAGBI extensions
 
-The [Lean supplement](FORMALIZATION.md) now proves the polynomiality core directly over rational functions: existence, uniqueness, and an integer-polynomial witness in the required variable prefix for every term. The written Dyck-path and SAGBI results retain their separate scope. The mathematical source and execution record are linked in the supplement.
+The [Lean supplement](FORMALIZATION.md) proves the polynomiality core over rational functions and the exact signed Dyck-path identification: genuine path weights and finite sums, existence and uniqueness, and an integer-polynomial witness in the required variable prefix for every term. Composition formulas, monomial counts, and SAGBI/degeneration results retain their separate written scope. The fixed source, actual execution record, and [reproduction boundaries](REPRODUCIBILITY.md) are linked in the supplement.
 
 **Extension author: Aurantium.** This edition adds the [SAGBI and toric-degeneration extension](extensions/LectureHall_extensions.pdf) to the unchanged [polynomiality manuscript](main.pdf). Its baseline is the corrected [v0.1.1 release](https://github.com/Aurantium-47/lecture-hall-polynomiality/releases/tag/v0.1.1), commit `f6e01a2697549781bf15facf86c6f17184facfaf`. The baseline proof, PDF, verifier, recorded output, and dependency file are byte-identical to that release. This extension edition does not replace the historical release.
 
@@ -104,13 +104,16 @@ The baseline and extension dependency records and data are kept separately. No o
 | SUMMARY_ZH.md | Chinese summary |
 | REFERENCES.md | Primary references and their roles |
 | RIGHTS.md | Source attribution, external dependencies, and reuse status |
-| PUBLIC_FILES.txt | Exact release file list |
-| SHA256SUMS.txt | SHA-256 hashes of release files other than the hash file itself |
+| PUBLIC_FILES.txt | Exact current distribution file list |
+| SHA256SUMS.txt | SHA-256 hashes of distributed files other than the hash file itself |
 | extensions/LectureHall_extensions.tex and .pdf | Complete extension proof, including its self-contained Appendix A |
 | extensions/code/ | Mathematical verifier, exact-data comparator, and manifest checker |
 | extensions/data/ | Six stored exact-data files with the scope and execution limits above |
 | extensions/requirements.txt | Separate extension dependency pin |
 | extensions/MANIFEST.json | Extension file sizes and SHA256 hashes, excluding itself |
+| FORMALIZATION.md and REPRODUCIBILITY.md | Exact Lean theorem coverage, indexing, execution and trust boundaries |
+| lean-candidate/ and .github/workflows/ | Preserved checked Lean sources, fixed configuration and workflows |
+| verification/W05_actual_signed_dyck_type.txt and W05_signed_dyck_execution_summary.json | Actual signed-Dyck types and new execution summary; older core records remain alongside them |
 
 ## Reproduce the checks
 

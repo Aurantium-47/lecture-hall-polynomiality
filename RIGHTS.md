@@ -1,6 +1,6 @@
 # Sources, dependencies, and reuse
 
-The extension manuscript is signed **Aurantium** (GitHub account **Aurantium-47**). The corrected v0.1.1 baseline manuscript and its data are preserved as a separate work. No institutional affiliation is claimed. This work was prepared with AI assistance; no human peer-review is claimed. The subsequently checked Lean polynomiality core and its precise scope are documented in FORMALIZATION.md; the extension manuscript's other statements have not been formalized.
+The extension manuscript is signed **Aurantium** (GitHub account **Aurantium-47**). The corrected v0.1.1 baseline manuscript and its data are preserved as a separate work. No institutional affiliation is claimed. This work was prepared with AI assistance; no human peer-review is claimed. The checked Lean polynomiality core and signed Dyck identification are documented in FORMALIZATION.md and REPRODUCIBILITY.md; the composition, monomial-count and SAGBI/degeneration statements have not been formalized.
 
 The mathematical sources are attributed in the manuscript and REFERENCES.md. The general continued-fraction and Hankel identities are credited to their cited literature; no ownership of those classical results is asserted here.
 

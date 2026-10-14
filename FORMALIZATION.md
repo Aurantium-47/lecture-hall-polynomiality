@@ -1,49 +1,57 @@
-# Formalized polynomiality core
+# Formalized polynomiality and signed Dyck identification
 
-The Lean supplement proves the existence and uniqueness of the sequence defined by the positive-index equations below, directly in the fraction field of rational-coefficient polynomials. Every term has an integer-coefficient polynomial representative in exactly its permitted prefix of variables. This covers the polynomiality core of Katthän's Conjecture 3.4 under the source interpretation stated in the README.
+The Lean supplement proves the original defining equations have a unique solution over rational functions, every term has an integer-polynomial witness in the required variable prefix, and that solution has the manuscript's exact signed Dyck-path expression. The fixed mathematical source is commit `634f8fa6637688044f12ad108b14051e6d29e8bb`. The source interpretations below remain part of these statements.
 
-The supplementary source is fixed at commit `1dc269cf5bedfc1320a3f4f6d440cf12dd0d9876`. The mathematical modules are in `lean-candidate/W05/`; the terminal theorem is `W05.rational_solution_unique_with_integer_prefix` in `RationalCore.lean`.
+## Equations and the polynomiality core
 
-## Statement and indexing
+Let `K = FractionRing (MvPolynomial Nat Rat)`. For `i >= 1`, put `d = (i+1)/2`, with natural-number division. The `d` by `d` matrix has entry `-P(i/2+c-r)` for `r,c : Fin d`; its actual index differences are nonnegative. `SatisfiesRational P` requires the negative determinant to equal the product over `j : Fin i` of the image of `X_j` in `K`, raised to `i-j.val`. The negative entries and exterior minus sign are both retained.
 
-Let `K = FractionRing (MvPolynomial Nat Rat)`. For `i >= 1`, put `d = (i+1)/2`, with natural-number division, and define the `d` by `d` matrix with entry `-P(i/2+c-r)` for `r,c : Fin d`. The actual indices have nonnegative differences. The predicate `SatisfiesRational P` requires the negative determinant of this matrix to equal
+[W05.rational_solution_unique_with_integer_prefix](lean-candidate/W05/RationalCore.lean) has no input assumptions. It gives existence, uniqueness among all solutions in `K`, and, for every `n : Nat`, a witness in `MvPolynomial (Fin (n+1)) Int`. Its image under variable inclusion, coefficient inclusion `Int -> Rat`, and the fraction-field embedding equals `P n`.
 
-```text
-product over j : Fin i of (image of X_j in K)^(i-j.val).
+Here `P n` represents `ell_(n+1)`, and `X_j` represents `y_(j+1)`. Index zero and the first two equations are included. Uniqueness concerns independent indeterminates in this fraction field; it does not assert uniqueness after every numerical specialization at vanishing divisors. The [historical complete core type](verification/W05_actual_main_type.txt) remains unchanged.
+
+## Direct Dyck formula
+
+[DyckWeight.lean](lean-candidate/W05/DyckWeight.lean) reads the actual symbols of mathlib's `DyckWord`. Before symbol `k`, height is the number of earlier up steps minus earlier down steps. The proved prefix condition makes this natural subtraction exact. An up step has weight one; a down step uses `alpha` at its departure height. `dyckWeight` is the product over the actual word indices.
+
+[DyckMomentIdentification.lean](lean-candidate/W05/DyckMomentIdentification.lean) defines `dyckMoment alpha n` as the finite sum of these products over all genuine Dyck words of semilength `n`. Its definition does not use a Jacobi recurrence, matrix power, or canonical moment. Actual mutually inverse maps to all length-`2*n` closed walks in `pathGraph (2*(n+1))`, preservation of the direct weights, and finite-sum reindexing connect it to the weighted-walk matrix expansion and two-step Jacobi contraction.
+
+The resulting statements include:
+
+```lean
+dyckMoment alpha n = canonicalJacobiMoment alpha n
+
+signedCanonicalCandidate n =
+  MvPolynomial.X 0 * dyckMoment signedJacobiWeight n
 ```
 
-The final theorem has no input assumptions. It asserts that there exists such a sequence `P : Nat -> K`, that any other sequence in the same field satisfying these equations equals `P`, and that for every `n : Nat` there exists
+For every `P : Nat -> FractionRing (MvPolynomial Nat Rat)` satisfying the original equations and every `n : Nat`, `W05.SatisfiesRational_dyck` proves
 
-```text
-f : MvPolynomial (Fin (n+1)) Int
+```lean
+P n = integerPolynomialToRationalField
+  (MvPolynomial.X 0 * dyckMoment signedJacobiWeight n)
 ```
 
-whose image under the variable inclusion, coefficient inclusion `Int -> Rat`, and fraction-field embedding equals `P n`. Thus `P n` represents the original term `ell_(n+1)` and `X_j` represents `y_(j+1)`. The sequence index zero and the equations with indices one and two are included explicitly. The theorem is about independent indeterminates; this uniqueness argument is not a statement about every numerical specialization at zero divisors.
+At positive height `h`, `signedJacobiWeight h` is `C(epsilon_h) * X_(h-1) * X_h`, where `epsilon_h = -1` exactly when `h >= 4` and `h` is even, and is one otherwise. This gives precisely `ell_(n+1) = y_1 * mu_n`, including the external `X_0` factor.
 
-The exact fully expanded terminal type is distributed in `verification/W05_actual_main_type.txt`.
+The empty word has weight one and `dyckMoment alpha 0 = 1`. Every genuine down step departs from positive height; weight and moment congruence theorems prove `alpha_0` has no effect. Legal zero-weight paths remain in the sums. Zero and negative weights are allowed; the general moment theorem requires `CommSemiring`, which the integer polynomial ring satisfies. The [unaltered complete signed-Dyck type excerpt](verification/W05_actual_signed_dyck_type.txt) includes the definition types, weight preservation, moment equality, signed candidate identity, and arbitrary rational-field solution identity.
 
-## Proof ingredients and scope
+## Scope and source interpretation
 
-The proof uses finite Jacobi matrices, bandwidth of their powers, division-free diagonal balance, Hankel factorization, a bidiagonal determinant identity, exact truncation stability, signed products, and the actual negative Toeplitz minors. A corner-cofactor difference identity and nonzero prescribed monomials give uniqueness by strong induction. The rational-field proof uses the natural coefficient map for existence and integer witnesses and proves uniqueness directly for arbitrary rational-field solutions.
+The chain also proves bandwidth, exact finite cutoffs, division-free diagonal balance, Hankel factorization, a bidiagonal determinant identity, signed products, actual negative Toeplitz minors, and strong-induction uniqueness. The integer-prefix result and signed Dyck expression apply to the same unique rational-field solution.
 
-These modules do not formalize the manuscript's exact Dyck-path identification, composition coefficient formula, monomial count, or the SAGBI and degeneration extension. Those results retain their separate written proofs. This supplement does not make a worldwide-priority claim.
+The original paper's page 3 printed column range has one more column than row. The supplement uses `floor(i/2)+1,...,i`, supported by its square-block description and examples. The page 4 final monomial of `ell_4` disagrees with the defining equations and page 8 list; the [README](README.md#source-interpretation) gives the consistent expression. These are disclosed interpretations, not an author-issued erratum or a proof of a literal nonsquare determinant.
 
-The source paper's page 3 column range has one extra column if read literally. The supplement uses `floor(i/2)+1,...,i`, consistent with its square-block description and examples. The page 4 final monomial of `ell_4` disagrees with the defining equations and the page 8 list. The README records the formula consistent with the equations and later list. These qualifications remain part of the statement; they are not an author-issued erratum.
+The composition coefficient formula, exact nonzero-monomial counts, continued-fraction statements as separate theorems, and SAGBI/degeneration extension have not been formalized here. Their written proofs and historical finite records retain their separate scope. No worldwide-priority or human peer-review claim is made.
 
-## Actual execution
+## Execution and retained history
 
-The fixed [GitHub Actions run 38480976066](https://github.com/Aurantium-47/lecture-hall-polynomiality/actions/runs/38480976066), job `115583199709`, compiled 19 project modules, including `ImportProbe`. All 19 project imports were bound to newly generated `.olean` files. It printed 103 complete declaration types and their transitive axiom lists. All 21 resource-supervised Lean commands exited zero, both integer- and rational-domain field checks ran, and the final source-integrity and declaration assertions passed.
+[Run 38511499860](https://github.com/Aurantium-47/lecture-hall-polynomiality/actions/runs/38511499860), job `115680821200`, compiled all **28 project modules**, including `ImportProbe` and the complete earlier core. It checked 28 newly generated project imports, 175 complete declaration types and transitive axiom lists, and 30 resource-supervised Lean commands with exit zero. All 41 definition/instance printouts, both integer- and rational-domain Field checks, and final source-integrity and declaration assertions were observed. Later normal metadata confirmed the same unique job and all seven steps completed successfully. Job completion time and HTTP headers were not returned and remain null in the [new execution summary](verification/W05_signed_dyck_execution_summary.json).
 
-The union of reported axioms is `propext`, `Classical.choice`, and `Quot.sound`. No `sorryAx`, custom axiom, or native-evaluation trust is used in these checked declarations. The peak sampled process-group RSS was 1,906,372,608 bytes, with no observed swap usage or resource-guard abort. This is a sampled group metric, not a claim about all system memory.
+The axiom union is `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx`, custom axiom, or native-evaluation trust is used. Peak sampled process-group RSS was 1,906,302,976 bytes, with zero observed swap and no guard abort. This is a sampled process-group metric.
 
-The run used Lean 4.19.0 and mathlib commit `c44e0c8ee63ca166450922a373c7409c5d26b00b`, with the nine dependencies pinned by `lean-candidate/lake-manifest.json`. Project sources were newly compiled, while external libraries used fixed precompiled caches. Full external dependency source rebuilding, full dependency replay, and an independent kernel implementation were not performed. The exact run's terminal success and complete job log were obtained; a separate final job/step metadata fetch was not performed.
+The earlier core record remains intact: commit `1dc269cf5bedfc1320a3f4f6d440cf12dd0d9876`, [run 38480976066](https://github.com/Aurantium-47/lecture-hall-polynomiality/actions/runs/38480976066), 19 modules, 103 declaration types/axiom lists, and 21 commands. Its [execution summary](verification/W05_execution_summary.json) describes coverage at that historical stage, including the then-unformalized Dyck identification. The new run compiled the full 28-module chain, not only the nine added modules.
 
-## Reproduction
-
-The workflow retains its historical banded-spine title. Its terminal declaration and recorded source hashes, rather than that early title, define the verified scope.
-
-The checked workflow `.github/workflows/w05-hankel-spine.yml` contains the exact source hashes, dependency revisions, five cache roots, ordered per-module compilation commands, fresh-import checks, full type/axiom probe, and resource guards. It runs on the verification branch `codex/w05-hankel-spine`; updating the default documentation does not trigger another verification run. A reproduction should use that fixed workflow and commit and retain its resource limits. No repeat run is claimed for this documentation update.
-
-The old v0.2.0 release remains the historical manuscript-and-computation package. Its mathematical manuscripts, code, data, dependency files, tag, and release are preserved. This default-branch update adds the formal supplement and its execution record.
+[Reproduction and trust boundaries](REPRODUCIBILITY.md) give fixed versions, external caches, two disclosed cache-helper edits, historical workflow titles, byte-hash conventions, and resource guards. Neither Lean nor the mathematical verification suites were rerun for this documentation update. Manuscripts, PDFs, computation records, the v0.2.0 tag, and historical release remain unchanged.
 
 This work was completed with AI assistance.

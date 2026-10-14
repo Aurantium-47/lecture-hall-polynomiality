@@ -1,0 +1,306 @@
+{
+  "source_commit": "634f8fa6637688044f12ad108b14051e6d29e8bb",
+  "source_tree": "693e4670ea95c81f64996ac7f007680b46c0ddc1",
+  "run_url": "https://github.com/Aurantium-47/lecture-hall-polynomiality/actions/runs/38511499860",
+  "run_id": 38511499860,
+  "job_id": 115680821200,
+  "event": "push",
+  "run_attempt": 1,
+  "run_status": "completed",
+  "run_conclusion": "success",
+  "project_modules": 28,
+  "fresh_project_imports": 28,
+  "includes_all_earlier_core_modules": true,
+  "complete_types_and_axiom_lists": 175,
+  "declaration_kinds": {
+    "theorem": 134,
+    "definition": 40,
+    "instance": 1
+  },
+  "complete_definition_and_instance_printouts": 41,
+  "resource_supervised_commands": 30,
+  "all_command_exit_codes_zero": true,
+  "all_abort_reasons_null": true,
+  "final_assertions_executed": true,
+  "axiom_union": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "lean": "4.19.0",
+  "mathlib": "c44e0c8ee63ca166450922a373c7409c5d26b00b",
+  "dependencies": [
+    {
+      "name": "mathlib",
+      "revision": "c44e0c8ee63ca166450922a373c7409c5d26b00b"
+    },
+    {
+      "name": "plausible",
+      "revision": "77e08eddc486491d7b9e470926b3dbe50319451a"
+    },
+    {
+      "name": "LeanSearchClient",
+      "revision": "25078369972d295301f5a1e53c3e5850cf6d9d4c"
+    },
+    {
+      "name": "importGraph",
+      "revision": "e6a9f0f5ee3ccf7443a0070f92b62f8db12ae82b"
+    },
+    {
+      "name": "proofwidgets",
+      "revision": "c4919189477c3221e6a204008998b0d724f49904"
+    },
+    {
+      "name": "aesop",
+      "revision": "5d50b08dedd7d69b3d9b3176e0d58a23af228884"
+    },
+    {
+      "name": "Qq",
+      "revision": "fa4f7f15d97591a9cf3aa7724ba371c7fc6dda02"
+    },
+    {
+      "name": "batteries",
+      "revision": "f5d04a9c4973d401c8c92500711518f7c656f034"
+    },
+    {
+      "name": "Cli",
+      "revision": "02dbd02bc00ec4916e99b04b2245b30200e200d0"
+    }
+  ],
+  "workflow_path": ".github/workflows/w05-dyck-identification.yml",
+  "workflow_sha256": "0b7857279c297e7b5d05d03ba20e57d99dc336bc52f4c7fb06787ad4ec388614",
+  "workflow_title_is_historical": true,
+  "audit_probe_sha256": "42742b48bc808408cfc7175a09a6055a88616dc90b35c27fbe0bfd73089d7fb5",
+  "peak_sampled_process_group_rss_bytes": 1906302976,
+  "observed_swap_bytes": 0,
+  "terminal_job_metadata_separately_observed": true,
+  "terminal_job_metadata_received_after_initial_log": true,
+  "terminal_job_status": "completed",
+  "terminal_job_conclusion": "success",
+  "terminal_steps": [
+    {
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 1
+    },
+    {
+      "name": "Fetch and identify the candidate alongside the unchanged release",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 2
+    },
+    {
+      "name": "Fetch exact dependency revisions without updating the manifest",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 3
+    },
+    {
+      "name": "Obtain the fixed external caches",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 4
+    },
+    {
+      "name": "Compile fresh candidate modules and inspect full types and axioms",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 5
+    },
+    {
+      "name": "Final runner resources",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 6
+    },
+    {
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 7
+    }
+  ],
+  "terminal_job_completed_at": null,
+  "terminal_job_logs_url": null,
+  "HTTP_headers": null,
+  "log_archive_timestamp_from_headers": null,
+  "Python_supervisor_numeric_exit": null,
+  "child_process_exits_and_final_assertions_observed": true,
+  "external_precompiled_cache": true,
+  "cache_helper_patch": {
+    "file": "mathlib/Cache/Requests.lean",
+    "prune_calls_replaced_with_pure": 2,
+    "sha256": "646fed31a48d85ed75746ec09d06c23f5abdaca455518b6760b0dcb2b10c47c0"
+  },
+  "independent_kernel_check": false,
+  "full_external_dependency_source_rebuild": false,
+  "full_external_dependency_replay": false,
+  "main_types_file": "verification/W05_actual_signed_dyck_type.txt",
+  "main_types_sha256": "962716099afd7c26a190bb92abc9bcabe5d2447d338926f475b3cb87f22583b2",
+  "main_types_copied_without_byte_changes": true,
+  "complete_job_log_sha256": "dde34bc5a1db5e5d87d3afde2c21a3b7e8508ebf712f56712a7493389c6bbd45",
+  "compiled_sources": [
+    {
+      "path": "lean-candidate/ImportProbe.lean",
+      "source_sha256": "2c37940b0a2f99fc123035aba9b82569c3b21fd13be3b52ad59d6b3d1741a4eb",
+      "fresh_olean_sha256": "99851b493fd3c491a70128986a5d628a4acbe13219f8b94fda489e7f72d93354"
+    },
+    {
+      "path": "lean-candidate/W05/BandedPowers.lean",
+      "source_sha256": "777ea5ac532c2e704d6f1bffa526404bdebb35a435373e2511a2edbb83363b3e",
+      "fresh_olean_sha256": "d254d641df89e34bf7c6d126f017be0a8b114e1ca8b3a4d67b30c42e458e5e77"
+    },
+    {
+      "path": "lean-candidate/W05/FiniteJacobi.lean",
+      "source_sha256": "c91a0a6a6c07553b4af848a232325b36b5873c86187a99b959f4c5f63d97f9b4",
+      "fresh_olean_sha256": "e14d596faf6a16f5f4ad10f5de867477b0844e9bed9d3817d80b1a6e12e98b65"
+    },
+    {
+      "path": "lean-candidate/W05/JacobiBalance.lean",
+      "source_sha256": "950a53bf3548307e90d8eb18b7ee4d9549a11f5cdd86d62bcb5de918139f6354",
+      "fresh_olean_sha256": "3d03b782daa0317304915cb69fa7e19127e52731ba8f9e6ca34c3db3cc7ece4d"
+    },
+    {
+      "path": "lean-candidate/W05/FiniteHankel.lean",
+      "source_sha256": "32f8125e76975430d2c3771e85df686d24e8de6db621069f067b5db046753d79",
+      "fresh_olean_sha256": "bcd264570370201f1b9c2cacdda7277210c018c576e166aa41e67722ae47b3f4"
+    },
+    {
+      "path": "lean-candidate/W05/JacobiCutoff.lean",
+      "source_sha256": "d3517765094adbd434f8c83e30ce7323d68a33cd0d700c486aa8a9d863baea34",
+      "fresh_olean_sha256": "8c16b3648a2e177a16e1711246cfbbedadcf08d5a98321f671e758967332f301"
+    },
+    {
+      "path": "lean-candidate/W05/JacobiMoments.lean",
+      "source_sha256": "9e5efa211dd440d15faed9f0e235b28edcaefb1f72ac301a3e03f86cdecb9e78",
+      "fresh_olean_sha256": "18501ec750c26b6519e3c6f6fb410a9ea6e487289e3ff7d800401672a22f7a44"
+    },
+    {
+      "path": "lean-candidate/W05/JacobiPolynomialWitness.lean",
+      "source_sha256": "862b9385e5c4e2b56e66546c4347d70244be5da8e616b3d39fb4f745050891fe",
+      "fresh_olean_sha256": "1fd370dfab049ebf8acc1e1af6a09bfd50f7210f13cc88690d2a60d20b3cfd8b"
+    },
+    {
+      "path": "lean-candidate/W05/JacobiBidiagonal.lean",
+      "source_sha256": "3943b99967eb6f3c6ed6bbb22faa00b30f2ebaab0d23fe5ffd08c3174d25cbb2",
+      "fresh_olean_sha256": "07739e1a1b78787bdafdc9afc811b65a9d93f1cb6de88b475552c238233fe2ed"
+    },
+    {
+      "path": "lean-candidate/W05/CanonicalHankel.lean",
+      "source_sha256": "8aef64b43316f8afff119e94ff35a65088974e7e69351d9cf1f77929c52035ba",
+      "fresh_olean_sha256": "da6ad364f0cc22a6a2f3143bbee7c7d2bc08b27d695d9c0a6c012a584c5f4e43"
+    },
+    {
+      "path": "lean-candidate/W05/ToeplitzSign.lean",
+      "source_sha256": "fdcedfd161cc6e20c4a34ac1b5d57aa0bdfb242047e772d5a19ced781a149db3",
+      "fresh_olean_sha256": "80907de9ae47860ae0ef5e956fc5c3bcd561c3e846bd352f092387ce4bb4e6bd"
+    },
+    {
+      "path": "lean-candidate/W05/SignedWeightProducts.lean",
+      "source_sha256": "13f4f2a157e57ebc8c169ace01a7851965600cc6de8043f97ea849e1d1d441fc",
+      "fresh_olean_sha256": "afb0014a13c98e06b024a63d0a41637a1f2bc0383d391c839fc6e71ee6f2b671"
+    },
+    {
+      "path": "lean-candidate/W05/PrescribedProducts.lean",
+      "source_sha256": "e5fe641345f0fbb5fab5eeb335b94e428b2f0e8dbebff68941160edbd9e280f1",
+      "fresh_olean_sha256": "50e00533c7c4c66e4d4f5a236908b6e756ffa3dc42b9dd76d111dcfc6accb551"
+    },
+    {
+      "path": "lean-candidate/W05/PolynomialSatisfies.lean",
+      "source_sha256": "d7c7d73cdf81d919ea62ce6a495111df1464a008bfd6daba17dbf4083dca8cae",
+      "fresh_olean_sha256": "21d583c0efc1040babcb74fd9745b7913e1c793520c2d7c29eb0a4918b2afd88"
+    },
+    {
+      "path": "lean-candidate/W05/FractionSatisfies.lean",
+      "source_sha256": "0c69adb870a6b581a1ce91126f7121d0dad71d8aa69edf9aeb2b0b36ec8370d8",
+      "fresh_olean_sha256": "764e1178c4b9f11c76ae560d3320530b77467314385e8c59ff8176d87072cc9b"
+    },
+    {
+      "path": "lean-candidate/W05/ToeplitzCorner.lean",
+      "source_sha256": "e7151b0dd764633bb253f91d8aa7dae5f7ff668f54659f79eedbf1fc3efbbdc2",
+      "fresh_olean_sha256": "de756c4c961e332128be779a605a7296c02c93ab0f8643efb0d6fcd4e0e41fbe"
+    },
+    {
+      "path": "lean-candidate/W05/Uniqueness.lean",
+      "source_sha256": "ba9cc0936dde57ffc544ec156ecd239ec71fb00cbe38f57c689f4e814fd28713",
+      "fresh_olean_sha256": "62b372440b3d9ddb23a1ae88c2e6e065f8c2e85f40a1b5d04d19d8ef58341f08"
+    },
+    {
+      "path": "lean-candidate/W05/RationalTransport.lean",
+      "source_sha256": "6e5a44af0899ee15cb07e2638c901757e8a1804e910943fa710ed28fe8b97d3e",
+      "fresh_olean_sha256": "17a9d15bec05bf1fa328e4d0f5ca322ce411c138e980376bf29fda00a9370f9f"
+    },
+    {
+      "path": "lean-candidate/W05/RationalCore.lean",
+      "source_sha256": "6d915ac2069cef91f5597c68992517853c0d1e904306a31e43f2b76f74b78b40",
+      "fresh_olean_sha256": "9beb0e3d5b8a126ed11780096614f6fe47eb89197e696a3daa316fb10766943d"
+    },
+    {
+      "path": "lean-candidate/W05/DyckContraction.lean",
+      "source_sha256": "db87e5ae54e4ce7cba23373d1ae64bd0be9fc0498673f73644172c2920cf58f7",
+      "fresh_olean_sha256": "17b574fc2bb95a8afaebfc51ec66c0bbacd586442a2fcb0b3f11dbfdcecf1546"
+    },
+    {
+      "path": "lean-candidate/W05/DyckWalkSum.lean",
+      "source_sha256": "7f3eb63c01d03e882f599bd0f5a46448668ce0e4d430dc12d07802c9200ab937",
+      "fresh_olean_sha256": "e446fc9a5f4f3ffcc1e2b93c0e0e35a99256c36baa0eaf0491ef3c932cd25f0f"
+    },
+    {
+      "path": "lean-candidate/W05/DyckWordHeights.lean",
+      "source_sha256": "31616560ea2cc6956537159bbcd950626b7e5481aabf9fcc750915c8c6ebb35a",
+      "fresh_olean_sha256": "ff9c671c81c059be9ff3d446d520e1c8b9af9135664bbe53237fc56d703d1044"
+    },
+    {
+      "path": "lean-candidate/W05/DyckWordEncoding.lean",
+      "source_sha256": "61557468f60427b7044346ff899227a87db9a730da6b406b52c626f702a2ebcd",
+      "fresh_olean_sha256": "539abb46174c57e40e0f75d6aeef9ae55825ba5d3825d4c30f4e61f87f3e6e29"
+    },
+    {
+      "path": "lean-candidate/W05/WalkDyckDecoding.lean",
+      "source_sha256": "e68db9b2d9f27f3ff721a5db1e8b28883f22219ee04a88f6eee3cbb401993d3e",
+      "fresh_olean_sha256": "eafcdc5324460926b1d1796acaf2ab506c6f4130e46e0eb089efefd172313cb2"
+    },
+    {
+      "path": "lean-candidate/W05/DyckWalkReadback.lean",
+      "source_sha256": "c772652e31a0c1cc30a7883c0cbd617ef8bf2dfde841cec70b2a3935bbcf8a45",
+      "fresh_olean_sha256": "cdbe835d5ecb3e4ae4a14d2bcc4ad7f6f6dffd50a42a894aa1f2b0c769145adb"
+    },
+    {
+      "path": "lean-candidate/W05/DyckWalkEquiv.lean",
+      "source_sha256": "ff7de13928ad9cfd0aaf1fa54023aa9dff3cc3003ccd14f66d326b045779e730",
+      "fresh_olean_sha256": "ddd2674e4d3094d56ebf83c41b917ac95c97669e1f0e5dd4f0b9aedcd8ec2f1d"
+    },
+    {
+      "path": "lean-candidate/W05/DyckWeight.lean",
+      "source_sha256": "2e52ade5ad224ed52a5e2dd506dbfcada8c5982681b89ebc38fe73d56f0ae7fb",
+      "fresh_olean_sha256": "a0a690df0efeca6ce348221bc79638e57e0336a1ee1857c476c2569190e7f1e0"
+    },
+    {
+      "path": "lean-candidate/W05/DyckMomentIdentification.lean",
+      "source_sha256": "863fb00b2b12cbf733570e68d42381cdad1097287637b438ab43e16fe38d6e0d",
+      "fresh_olean_sha256": "6919373ffa58203a312d60007998d2a7103404fe06ff63a18a5c0c75de05b5dd"
+    }
+  ],
+  "historical_core_record": {
+    "source_commit": "1dc269cf5bedfc1320a3f4f6d440cf12dd0d9876",
+    "summary_path": "verification/W05_execution_summary.json",
+    "project_modules": 19,
+    "complete_types_and_axiom_lists": 103,
+    "resource_supervised_commands": 21,
+    "record_bytes_preserved": true
+  },
+  "scope": "Direct descending-source-height products and the genuine finite sum over semilength-n DyckWords; true weight-preserving equivalence to finite walks; equality with canonical moments and X0-scaled signed expression for every solution of the original rational-field equations. Includes n=0, arbitrary zero/negative weights, alpha0 independence, and the prior unique solution with exact integer prefix witnesses.",
+  "source_interpretations": [
+    "intended square column set floor(i/2)+1 through i",
+    "ell4 expression determined by the equations and consistent later list, not the inconsistent earlier printed monomial"
+  ],
+  "not_formalized": [
+    "composition coefficient formula",
+    "exact nonzero monomial counts",
+    "continued-fraction identities as separate theorems",
+    "SAGBI and degeneration extension"
+  ],
+  "AI_assistance": true,
+  "new_build_for_documentation_update": false
+}

@@ -1,8 +1,10 @@
+.github/workflows/w05-dyck-identification.yml
 .github/workflows/w05-hankel-spine.yml
 FORMALIZATION.md
 PUBLIC_FILES.txt
 README.md
 REFERENCES.md
+REPRODUCIBILITY.md
 RIGHTS.md
 SHA256SUMS.txt
 SUMMARY_ZH.md
@@ -22,6 +24,14 @@ extensions/requirements.txt
 lean-candidate/ImportProbe.lean
 lean-candidate/W05/BandedPowers.lean
 lean-candidate/W05/CanonicalHankel.lean
+lean-candidate/W05/DyckContraction.lean
+lean-candidate/W05/DyckMomentIdentification.lean
+lean-candidate/W05/DyckWalkEquiv.lean
+lean-candidate/W05/DyckWalkReadback.lean
+lean-candidate/W05/DyckWalkSum.lean
+lean-candidate/W05/DyckWeight.lean
+lean-candidate/W05/DyckWordEncoding.lean
+lean-candidate/W05/DyckWordHeights.lean
 lean-candidate/W05/FiniteHankel.lean
 lean-candidate/W05/FiniteJacobi.lean
 lean-candidate/W05/FractionSatisfies.lean
@@ -38,6 +48,7 @@ lean-candidate/W05/SignedWeightProducts.lean
 lean-candidate/W05/ToeplitzCorner.lean
 lean-candidate/W05/ToeplitzSign.lean
 lean-candidate/W05/Uniqueness.lean
+lean-candidate/W05/WalkDyckDecoding.lean
 lean-candidate/lake-manifest.json
 lean-candidate/lakefile.toml
 lean-candidate/lean-toolchain
@@ -46,5 +57,7 @@ main.tex
 requirements.txt
 verification.json
 verification/W05_actual_main_type.txt
+verification/W05_actual_signed_dyck_type.txt
 verification/W05_execution_summary.json
+verification/W05_signed_dyck_execution_summary.json
 verify.py

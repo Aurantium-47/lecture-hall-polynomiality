@@ -1,6 +1,6 @@
 # Lecture Hall：多项式性基线与 SAGBI 扩展
 
-新增 [Lean 形式化补充](FORMALIZATION.md)：在实际有理系数多项式的分式域中，证明全部正下标定义方程存在唯一解，且每一项都有精确前缀变量的整数多项式见证。原文方阵列集和第四项的解释限制保持；Dyck 精确识别、composition 及 SAGBI 扩展仍依各自文字证明。
+[Lean 形式化补充](FORMALIZATION.md)现已覆盖原带符号 Dyck 精确识别：从真正 DyckWord 的下降步出发高度直接乘积和有限路径和，证明其等于原方程在有理系数多项式分式域中的唯一解，并保留每一项精确前缀变量的整数多项式见证。原文方阵列集和第四项的解释限制保持；composition、非零单项式计数及 SAGBI/退化扩展仍依各自文字证明。固定执行证据与信任边界见[复现说明](REPRODUCIBILITY.md)。
 
 本版保留更正后的 v0.1.1 多项式性证明 `main.tex/main.pdf`，并增加 [扩展论文](extensions/LectureHall_extensions.pdf)。以下原有推导属于基线成果；新扩展的范围另列于文末。两份完整证明分别保留，未以扩展替换旧稿。
 
