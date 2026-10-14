@@ -1,0 +1,32 @@
+{
+  "source_commit": "1dc269cf5bedfc1320a3f4f6d440cf12dd0d9876",
+  "run_url": "https://github.com/Aurantium-47/lecture-hall-polynomiality/actions/runs/38480976066",
+  "job_id": 115583199709,
+  "project_modules": 19,
+  "fresh_project_imports": 19,
+  "complete_types_and_axiom_lists": 103,
+  "resource_supervised_commands": 21,
+  "all_command_exit_codes_zero": true,
+  "final_assertions_executed": true,
+  "axiom_union": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "lean": "4.19.0",
+  "mathlib": "c44e0c8ee63ca166450922a373c7409c5d26b00b",
+  "peak_sampled_process_group_rss_bytes": 1906372608,
+  "observed_swap_bytes": 0,
+  "terminal_job_metadata_separately_observed": false,
+  "external_precompiled_cache": true,
+  "independent_kernel_check": false,
+  "full_external_dependency_source_rebuild": false,
+  "main_type_sha256": "e5e603c7a231573679bf1565c2a5ba78a9fdcffeb2c23139153c85c6b864e0e0",
+  "scope": "Unique rational-field solution to all positive-index defining equations with integer-polynomial witnesses in Fin(n+1). Disclosed intended square-column convention applies.",
+  "not_formalized": [
+    "exact Dyck-path identification",
+    "composition formula",
+    "monomial counts",
+    "SAGBI and degeneration extension"
+  ]
+}

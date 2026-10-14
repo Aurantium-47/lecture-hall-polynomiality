@@ -1,0 +1,241 @@
+W05.rational_solution_unique_with_integer_prefix : @Exists.{1}
+  (Nat →
+    @FractionRing.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+      (@MvPolynomial.instCommRingMvPolynomial.{0, 0} Rat Nat Rat.commRing))
+  fun
+    (P :
+      Nat →
+        @FractionRing.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+          (@MvPolynomial.instCommRingMvPolynomial.{0, 0} Rat Nat Rat.commRing)) =>
+  And (W05.SatisfiesRational P)
+    (And
+      (∀
+        (Q :
+          Nat →
+            @FractionRing.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+              (@MvPolynomial.instCommRingMvPolynomial.{0, 0} Rat Nat Rat.commRing)),
+        W05.SatisfiesRational Q →
+          @Eq.{1}
+            (Nat →
+              @FractionRing.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                (@MvPolynomial.instCommRingMvPolynomial.{0, 0} Rat Nat Rat.commRing))
+            Q P)
+      (∀ (n : Nat),
+        @Exists.{1}
+          (@MvPolynomial.{0, 0}
+            (Fin
+              (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) n
+                (@OfNat.ofNat.{0} Nat 1 (instOfNatNat 1))))
+            Int Int.instCommSemiring)
+          fun
+            (f :
+              @MvPolynomial.{0, 0}
+                (Fin
+                  (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) n
+                    (@OfNat.ofNat.{0} Nat 1 (instOfNatNat 1))))
+                Int Int.instCommSemiring) =>
+          @Eq.{1}
+            (@FractionRing.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+              (@MvPolynomial.instCommRingMvPolynomial.{0, 0} Rat Nat Rat.commRing))
+            (P n)
+            (@DFunLike.coe.{1, 1, 1}
+              (@RingHom.{0, 0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                (@FractionRing.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                  (@MvPolynomial.instCommRingMvPolynomial.{0, 0} Rat Nat Rat.commRing))
+                (@Semiring.toNonAssocSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                  (@CommSemiring.toSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                    (@MvPolynomial.commSemiring.{0, 0} Rat Nat Rat.commSemiring)))
+                (@Semiring.toNonAssocSemiring.{0}
+                  (@FractionRing.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                    (@MvPolynomial.instCommRingMvPolynomial.{0, 0} Rat Nat Rat.commRing))
+                  (@OreLocalization.instSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                    (@CommSemiring.toSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                      (@MvPolynomial.commSemiring.{0, 0} Rat Nat Rat.commSemiring))
+                    (@nonZeroDivisors.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                      (@Semiring.toMonoidWithZero.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                        (@CommSemiring.toSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                          (@CommRing.toCommSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                            (@MvPolynomial.instCommRingMvPolynomial.{0, 0} Rat Nat Rat.commRing)))))
+                    (@OreLocalization.oreSetComm.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                      (@CommRing.toCommMonoid.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                        (@MvPolynomial.instCommRingMvPolynomial.{0, 0} Rat Nat Rat.commRing))
+                      (@nonZeroDivisors.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                        (@Semiring.toMonoidWithZero.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                          (@CommSemiring.toSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                            (@CommRing.toCommSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                              (@MvPolynomial.instCommRingMvPolynomial.{0, 0} Rat Nat Rat.commRing)))))))))
+              (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+              (fun (x : @MvPolynomial.{0, 0} Nat Rat Rat.commSemiring) =>
+                @FractionRing.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                  (@MvPolynomial.instCommRingMvPolynomial.{0, 0} Rat Nat Rat.commRing))
+              (@RingHom.instFunLike.{0, 0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                (@FractionRing.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                  (@MvPolynomial.instCommRingMvPolynomial.{0, 0} Rat Nat Rat.commRing))
+                (@Semiring.toNonAssocSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                  (@CommSemiring.toSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                    (@MvPolynomial.commSemiring.{0, 0} Rat Nat Rat.commSemiring)))
+                (@Semiring.toNonAssocSemiring.{0}
+                  (@FractionRing.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                    (@MvPolynomial.instCommRingMvPolynomial.{0, 0} Rat Nat Rat.commRing))
+                  (@OreLocalization.instSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                    (@CommSemiring.toSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                      (@MvPolynomial.commSemiring.{0, 0} Rat Nat Rat.commSemiring))
+                    (@nonZeroDivisors.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                      (@Semiring.toMonoidWithZero.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                        (@CommSemiring.toSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                          (@CommRing.toCommSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                            (@MvPolynomial.instCommRingMvPolynomial.{0, 0} Rat Nat Rat.commRing)))))
+                    (@OreLocalization.oreSetComm.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                      (@CommRing.toCommMonoid.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                        (@MvPolynomial.instCommRingMvPolynomial.{0, 0} Rat Nat Rat.commRing))
+                      (@nonZeroDivisors.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                        (@Semiring.toMonoidWithZero.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                          (@CommSemiring.toSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                            (@CommRing.toCommSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                              (@MvPolynomial.instCommRingMvPolynomial.{0, 0} Rat Nat Rat.commRing)))))))))
+              (@algebraMap.{0, 0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                (@FractionRing.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                  (@MvPolynomial.instCommRingMvPolynomial.{0, 0} Rat Nat Rat.commRing))
+                (@MvPolynomial.commSemiring.{0, 0} Rat Nat Rat.commSemiring)
+                (@OreLocalization.instSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                  (@CommSemiring.toSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                    (@MvPolynomial.commSemiring.{0, 0} Rat Nat Rat.commSemiring))
+                  (@nonZeroDivisors.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                    (@Semiring.toMonoidWithZero.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                      (@CommSemiring.toSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                        (@CommRing.toCommSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                          (@MvPolynomial.instCommRingMvPolynomial.{0, 0} Rat Nat Rat.commRing)))))
+                  (@OreLocalization.oreSetComm.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                    (@CommRing.toCommMonoid.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                      (@MvPolynomial.instCommRingMvPolynomial.{0, 0} Rat Nat Rat.commRing))
+                    (@nonZeroDivisors.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                      (@Semiring.toMonoidWithZero.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                        (@CommSemiring.toSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                          (@CommRing.toCommSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                            (@MvPolynomial.instCommRingMvPolynomial.{0, 0} Rat Nat Rat.commRing)))))))
+                (@OreLocalization.instAlgebra.{0, 0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                  (@CommSemiring.toSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                    (@MvPolynomial.commSemiring.{0, 0} Rat Nat Rat.commSemiring))
+                  (@nonZeroDivisors.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                    (@Semiring.toMonoidWithZero.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                      (@CommSemiring.toSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                        (@CommRing.toCommSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                          (@MvPolynomial.instCommRingMvPolynomial.{0, 0} Rat Nat Rat.commRing)))))
+                  (@OreLocalization.oreSetComm.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                    (@CommRing.toCommMonoid.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                      (@MvPolynomial.instCommRingMvPolynomial.{0, 0} Rat Nat Rat.commRing))
+                    (@nonZeroDivisors.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                      (@Semiring.toMonoidWithZero.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                        (@CommSemiring.toSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                          (@CommRing.toCommSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                            (@MvPolynomial.instCommRingMvPolynomial.{0, 0} Rat Nat Rat.commRing))))))
+                  (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                  (@MvPolynomial.commSemiring.{0, 0} Rat Nat Rat.commSemiring)
+                  (@Algebra.id.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                    (@MvPolynomial.commSemiring.{0, 0} Rat Nat Rat.commSemiring))))
+              (@DFunLike.coe.{1, 1, 1}
+                (@RingHom.{0, 0} (@MvPolynomial.{0, 0} Nat Int Int.instCommSemiring)
+                  (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                  (@Semiring.toNonAssocSemiring.{0} (@MvPolynomial.{0, 0} Nat Int Int.instCommSemiring)
+                    (@CommSemiring.toSemiring.{0} (@MvPolynomial.{0, 0} Nat Int Int.instCommSemiring)
+                      (@MvPolynomial.commSemiring.{0, 0} Int Nat Int.instCommSemiring)))
+                  (@Semiring.toNonAssocSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                    (@CommSemiring.toSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                      (@MvPolynomial.commSemiring.{0, 0} Rat Nat Rat.commSemiring))))
+                (@MvPolynomial.{0, 0} Nat Int Int.instCommSemiring)
+                (fun (x : @MvPolynomial.{0, 0} Nat Int Int.instCommSemiring) =>
+                  @MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                (@RingHom.instFunLike.{0, 0} (@MvPolynomial.{0, 0} Nat Int Int.instCommSemiring)
+                  (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                  (@Semiring.toNonAssocSemiring.{0} (@MvPolynomial.{0, 0} Nat Int Int.instCommSemiring)
+                    (@CommSemiring.toSemiring.{0} (@MvPolynomial.{0, 0} Nat Int Int.instCommSemiring)
+                      (@MvPolynomial.commSemiring.{0, 0} Int Nat Int.instCommSemiring)))
+                  (@Semiring.toNonAssocSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                    (@CommSemiring.toSemiring.{0} (@MvPolynomial.{0, 0} Nat Rat Rat.commSemiring)
+                      (@MvPolynomial.commSemiring.{0, 0} Rat Nat Rat.commSemiring))))
+                (@MvPolynomial.map.{0, 0, 0} Int Rat Nat Int.instCommSemiring Rat.commSemiring
+                  (@Int.castRingHom.{0} Rat
+                    (@Ring.toNonAssocRing.{0} Rat (@DivisionRing.toRing.{0} Rat Rat.instDivisionRing))))
+                (@DFunLike.coe.{1, 1, 1}
+                  (@AlgHom.{0, 0, 0} Int
+                    (@MvPolynomial.{0, 0}
+                      (Fin
+                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) n
+                          (@OfNat.ofNat.{0} Nat 1 (instOfNatNat 1))))
+                      Int Int.instCommSemiring)
+                    (@MvPolynomial.{0, 0} Nat Int Int.instCommSemiring) Int.instCommSemiring
+                    (@CommSemiring.toSemiring.{0}
+                      (@MvPolynomial.{0, 0}
+                        (Fin
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) n
+                            (@OfNat.ofNat.{0} Nat 1 (instOfNatNat 1))))
+                        Int Int.instCommSemiring)
+                      (@MvPolynomial.commSemiring.{0, 0} Int
+                        (Fin
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) n
+                            (@OfNat.ofNat.{0} Nat 1 (instOfNatNat 1))))
+                        Int.instCommSemiring))
+                    (@CommSemiring.toSemiring.{0} (@MvPolynomial.{0, 0} Nat Int Int.instCommSemiring)
+                      (@MvPolynomial.commSemiring.{0, 0} Int Nat Int.instCommSemiring))
+                    (@MvPolynomial.algebra.{0, 0, 0} Int Int
+                      (Fin
+                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) n
+                          (@OfNat.ofNat.{0} Nat 1 (instOfNatNat 1))))
+                      Int.instCommSemiring Int.instCommSemiring (@Algebra.id.{0} Int Int.instCommSemiring))
+                    (@MvPolynomial.algebra.{0, 0, 0} Int Int Nat Int.instCommSemiring Int.instCommSemiring
+                      (@Algebra.id.{0} Int Int.instCommSemiring)))
+                  (@MvPolynomial.{0, 0}
+                    (Fin
+                      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) n
+                        (@OfNat.ofNat.{0} Nat 1 (instOfNatNat 1))))
+                    Int Int.instCommSemiring)
+                  (fun
+                      (x :
+                        @MvPolynomial.{0, 0}
+                          (Fin
+                            (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) n
+                              (@OfNat.ofNat.{0} Nat 1 (instOfNatNat 1))))
+                          Int Int.instCommSemiring) =>
+                    @MvPolynomial.{0, 0} Nat Int Int.instCommSemiring)
+                  (@AlgHom.funLike.{0, 0, 0} Int
+                    (@MvPolynomial.{0, 0}
+                      (Fin
+                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) n
+                          (@OfNat.ofNat.{0} Nat 1 (instOfNatNat 1))))
+                      Int Int.instCommSemiring)
+                    (@MvPolynomial.{0, 0} Nat Int Int.instCommSemiring) Int.instCommSemiring
+                    (@CommSemiring.toSemiring.{0}
+                      (@MvPolynomial.{0, 0}
+                        (Fin
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) n
+                            (@OfNat.ofNat.{0} Nat 1 (instOfNatNat 1))))
+                        Int Int.instCommSemiring)
+                      (@MvPolynomial.commSemiring.{0, 0} Int
+                        (Fin
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) n
+                            (@OfNat.ofNat.{0} Nat 1 (instOfNatNat 1))))
+                        Int.instCommSemiring))
+                    (@CommSemiring.toSemiring.{0} (@MvPolynomial.{0, 0} Nat Int Int.instCommSemiring)
+                      (@MvPolynomial.commSemiring.{0, 0} Int Nat Int.instCommSemiring))
+                    (@MvPolynomial.algebra.{0, 0, 0} Int Int
+                      (Fin
+                        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) n
+                          (@OfNat.ofNat.{0} Nat 1 (instOfNatNat 1))))
+                      Int.instCommSemiring Int.instCommSemiring (@Algebra.id.{0} Int Int.instCommSemiring))
+                    (@MvPolynomial.algebra.{0, 0, 0} Int Int Nat Int.instCommSemiring Int.instCommSemiring
+                      (@Algebra.id.{0} Int Int.instCommSemiring)))
+                  (@MvPolynomial.rename.{0, 0, 0}
+                    (Fin
+                      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) n
+                        (@OfNat.ofNat.{0} Nat 1 (instOfNatNat 1))))
+                    Nat Int Int.instCommSemiring
+                    fun
+                      (j :
+                        Fin
+                          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) n
+                            (@OfNat.ofNat.{0} Nat 1 (instOfNatNat 1)))) =>
+                    @Fin.val
+                      (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat) n
+                        (@OfNat.ofNat.{0} Nat 1 (instOfNatNat 1)))
+                      j)
+                  f)))))

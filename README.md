@@ -1,5 +1,7 @@
 # Lecture Hall polynomiality and SAGBI extensions
 
+The [Lean supplement](FORMALIZATION.md) now proves the polynomiality core directly over rational functions: existence, uniqueness, and an integer-polynomial witness in the required variable prefix for every term. The written Dyck-path and SAGBI results retain their separate scope. The mathematical source and execution record are linked in the supplement.
+
 **Extension author: Aurantium.** This edition adds the [SAGBI and toric-degeneration extension](extensions/LectureHall_extensions.pdf) to the unchanged [polynomiality manuscript](main.pdf). Its baseline is the corrected [v0.1.1 release](https://github.com/Aurantium-47/lecture-hall-polynomiality/releases/tag/v0.1.1), commit `f6e01a2697549781bf15facf86c6f17184facfaf`. The baseline proof, PDF, verifier, recorded output, and dependency file are byte-identical to that release. This extension edition does not replace the historical release.
 
 This repository contains a proof that every term of Katthän's Lecture Hall sequence is a polynomial, for the intended definition in arXiv:1809.01377v1, Conjecture 3.4. The sequence is identified explicitly with a specialization of the Stieltjes–Rogers polynomials, using signed Dyck-path weights.
@@ -66,7 +68,7 @@ The extension proves `in_deglex A_n(k)=k[L_n]`. The `2^(n-1)` negative top-row T
 
 Theorem 7.1 constructs a finitely generated `Z[t]`-algebra that is free as a module with an **infinite-rank** basis. Its fibers are `A_n(Z)` at `t=1` and `Z[L_n]` at `t=0`; after inverting `t` it becomes the trivial family, and base change to any field preserves the construction. The proof includes the strict weight decrease needed for multiplication. Finite generation as an algebra does not mean finite rank as a module.
 
-The generic Schur-moment leading-term recursion and the equal-leading-growth argument are also proved in the extension. Classical Hankel/Jacobi–Trudi identities, the Lecture Hall generating series, and the baseline polynomiality result are not claimed as new extension results. No worldwide-priority, human peer-review, or formal-verification claim is made.
+The generic Schur-moment leading-term recursion and the equal-leading-growth argument are also proved in the extension. Classical Hankel/Jacobi–Trudi identities, the Lecture Hall generating series, and the baseline polynomiality result are not claimed as new extension results. No worldwide-priority or human peer-review claim is made. These extension statements have not been formalized in Lean.
 
 The source's Examples 4.4–4.5 also contain extra `-E_i` signs inconsistent with direct Definition 4.1; the minor definition and its displayed matrices determine the signs used here. This is a disclosed interpretation, not an author-issued erratum. The theorems concern independent indeterminates. Numerical specialization need not preserve algebraic independence or a SAGBI basis; uniqueness of the complete defining system at vanishing divisors is not addressed.
 
