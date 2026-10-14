@@ -7,6 +7,11 @@ open Finset Function
 
 namespace W05
 
+/-- Structural path-graph adjacency is decidable from its exact arithmetic characterization. -/
+instance pathGraphAdjDecidable (H : ℕ) : DecidableRel (SimpleGraph.pathGraph H).Adj :=
+  fun u v => decidable_of_iff
+    (u.val + 1 = v.val ∨ v.val + 1 = u.val) SimpleGraph.pathGraph_adj.symm
+
 /-- The actual step matrix, expressed using structural adjacency rather than nonzero weights. -/
 theorem dyckStepMatrix_eq_ite_adj {R : Type} [Semiring R]
     (α : ℕ → R) (H : ℕ) (u v : Fin H) :
